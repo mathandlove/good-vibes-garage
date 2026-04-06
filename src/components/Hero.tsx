@@ -8,14 +8,13 @@ export default function Hero() {
           <p className={`${styles.eyebrow} reveal`}>Dr. Elliott Hedman</p>
 
           <h1 className={`${styles.headline} reveal reveal-delay-1`}>
-            The tools changed.<br />
-            <em className={styles.accentWord}>Who gets to build</em><br />
-            just changed with them.
+            AI is changing<br />
+            <em className={styles.accentWord}>how we build.</em>
           </h1>
 
           <p className={`${styles.subhead} reveal reveal-delay-2`}>
-            Researcher, builder, and educator on a mission to expand who gets to create things.
-            AI just made that mission a lot more interesting.
+            Good Vibe Garage is where I'm leaning into that shift: making things with AI,
+            sharing what I'm learning, and exploring how creation is changing as the tools change.
           </p>
 
           <div className={`${styles.ctas} reveal reveal-delay-3`}>
