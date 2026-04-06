@@ -34,6 +34,8 @@
   display: flex;
   flex-direction: column;
   gap: 28px;
+  overflow: visible;
+  padding-bottom: 4px;
 }
 
 .eyebrow {
