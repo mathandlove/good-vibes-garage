@@ -1,0 +1,127 @@
+.footer {
+  background: var(--text);
+  color: #fff;
+  padding: 80px 0 40px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  flex-wrap: wrap;
+}
+
+.contactBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 480px;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: #fff;
+}
+
+.sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.emailLink {
+  display: inline-block;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--accent);
+  border-bottom: 1.5px solid var(--accent);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+  align-self: flex-start;
+}
+
+.emailLink:hover { opacity: 0.75; }
+
+/* Social */
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.socialLabel {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+.socialLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.socialLink {
+  color: rgba(255,255,255,0.5);
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.socialLink:hover {
+  color: var(--accent);
+}
+
+/* Bottom bar */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.copy {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.35);
+  font-weight: 400;
+}
+
+.bottomRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.buildStamp {
+  font-size: 0.7rem;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgba(255,255,255,0.18);
+  letter-spacing: 0.04em;
+}
+
+.copyRight {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.2);
+  font-style: italic;
+  font-family: var(--font-display);
+}
+
+@media (max-width: 768px) {
+  .top { flex-direction: column; gap: 40px; }
+  .social { align-items: flex-start; }
+  .bottom { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .bottomRight { align-items: flex-start; }
+}

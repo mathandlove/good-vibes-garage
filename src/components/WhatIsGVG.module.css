@@ -1,0 +1,137 @@
+.section {
+  background: var(--bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+  margin-bottom: 64px;
+}
+
+.left {}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  position: sticky;
+  top: calc(var(--nav-height) + 24px);
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.body {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* Podcast callout */
+.podcastCallout {
+  background: var(--bg-raised);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 28px 32px;
+}
+
+.calloutInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.calloutLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.podcastIcon {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.calloutTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.calloutSub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.miniForm {
+  display: flex;
+  gap: 0;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.miniForm:focus-within {
+  border-color: var(--accent);
+}
+
+.miniInput {
+  padding: 10px 14px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text);
+  background: var(--bg);
+  border: none;
+  outline: none;
+  width: 200px;
+}
+
+.miniInput::placeholder { color: #aaa; }
+
+.miniBtn {
+  padding: 10px 16px;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.miniBtn:hover { background: var(--accent-dark); }
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .heading { position: static; }
+
+  .calloutInner { flex-direction: column; align-items: flex-start; }
+
+  .miniInput { width: 160px; }
+}
