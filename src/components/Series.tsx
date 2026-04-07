@@ -23,29 +23,15 @@ export default function Series() {
             </h2>
             <p className={`${styles.body} reveal reveal-delay-2`}>
               I sit down with non-profits, hear what they're trying to do, and
-              we build it together — live, from scratch, using AI. No pitch decks.
-              No six-month timelines. Just an idea and 30 minutes.
+              we build it together — live, from scratch, using AI. Along the way
+              I show how to vibe code and the power of building fast and iterating.
             </p>
 
-            <div className={`${styles.emailCapture} reveal reveal-delay-3`}>
-              <p className={styles.emailLabel}>Get notified when the first episode drops</p>
-              <form
-                className={styles.emailForm}
-                action="#"
-                method="post"
-                onSubmit={e => e.preventDefault()}
-              >
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="your@email.com"
-                  required
-                  className={styles.emailInput}
-                />
-                <button type="submit" className={styles.emailBtn}>
-                  Notify me
-                </button>
-              </form>
+            <div className={`${styles.apply} reveal reveal-delay-3`}>
+              <p className={styles.applyLabel}>I do one Good Vibes workshop a week.</p>
+              <a href="mailto:elliott@goodvibesgarage.ai?subject=Good Vibes Workshop" className={styles.applyBtn}>
+                Sign up if you're interested →
+              </a>
             </div>
           </div>
         </div>

@@ -84,66 +84,37 @@
   line-height: 1.75;
 }
 
-.emailCapture {
+.apply {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
 
-.emailLabel {
-  font-size: 0.82rem;
-  font-weight: 500;
+.applyLabel {
+  font-size: 0.95rem;
   color: var(--text-muted);
-  letter-spacing: 0.02em;
+  line-height: 1.6;
 }
 
-.emailForm {
-  display: flex;
-  gap: 0;
-  width: 100%;
-  max-width: 400px;
-  border: 1.5px solid var(--border);
-  border-radius: 4px;
-  overflow: hidden;
-  transition: border-color 0.2s ease;
-}
-
-.emailForm:focus-within {
-  border-color: var(--accent);
-}
-
-.emailInput {
-  flex: 1;
-  padding: 12px 16px;
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  color: var(--text);
-  background: transparent;
-  border: none;
-  outline: none;
-}
-
-.emailInput::placeholder {
-  color: #aaa;
-}
-
-.emailBtn {
-  padding: 12px 20px;
-  background: var(--text);
-  color: var(--bg);
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.2s ease, color 0.2s ease;
-  letter-spacing: 0.04em;
-}
-
-.emailBtn:hover {
+.applyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: var(--accent);
   color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 4px;
+  transition: background 0.2s ease, transform 0.2s ease;
+  letter-spacing: 0.04em;
+  align-self: flex-start;
+}
+
+.applyBtn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 900px) {

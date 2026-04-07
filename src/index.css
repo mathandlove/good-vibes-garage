@@ -31,21 +31,13 @@
   --border:       #D8D5CE;
   --border-light: #E4E1DA;
 
-  /* Fonts — Fraunces (optical serif, personality) + Syne (geometric, maker energy) */
+  /* Fonts — Fraunces (optical serif, personality) + Space Grotesk (geometric, maker energy) */
   --font-display: 'Fraunces', Georgia, serif;
-  --font-body:    'Syne', system-ui, sans-serif;
+  --font-body:    'Space Grotesk', system-ui, sans-serif;
 
   --nav-height: 68px;
 }
 
-/*
- * Syne's font metrics clip descenders (g, y, p, q).
- * We add a small padding-bottom on paragraphs so the last line's descenders
- * aren't clipped by container overflow or tight spacing.
- */
-p, li, dd, blockquote {
-  padding-bottom: 2px;
-}
 
 html {
   scroll-behavior: smooth;
@@ -56,7 +48,7 @@ body {
   font-family: var(--font-body);
   background-color: var(--bg);
   color: var(--text);
-  line-height: 1.75;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;

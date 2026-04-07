@@ -6,13 +6,14 @@ export default function Hero() {
       <div className={styles.container}>
         <div className={styles.content}>
           <h1 className={`${styles.headline} reveal`}>
-            I teach people<br />
-            <em className={styles.accentWord}>how to vibe code.</em>
+            I vibe code and<br />
+            <em className={styles.accentWord}>help other people do it too.</em>
           </h1>
 
           <p className={`${styles.subhead} reveal reveal-delay-1`}>
-            I'm Elliott. I spend my days designing for AI and my free time
-            helping people use AI to do social good.
+            Using AI to build things requires a mind shift, not computer science
+            expertise. I'm making a series where I sit down with non-technical
+            people and we build something real together.
           </p>
 
           <div className={`${styles.ctas} reveal reveal-delay-2`}>
