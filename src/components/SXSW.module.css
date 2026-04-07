@@ -88,6 +88,13 @@
 
 .linkSecondary:hover { color: var(--text); }
 
+.comingSoon {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
 /* Video */
 .videoWrap {
   position: relative;

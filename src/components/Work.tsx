@@ -5,9 +5,8 @@ const projects = [
     name: 'SXSW EDU',
     description: 'A conference talk that reframed vibe coding as a structural shift in access — not a developer shortcut. Standing room only.',
     tag: 'Talk',
-    href: '#sxsw',
+    href: '#talk',
     internal: true,
-    artifact: '"The tools aren\'t the bottleneck anymore."',
   },
   {
     name: 'Wonder Stories',
@@ -15,7 +14,6 @@ const projects = [
     tag: 'Product',
     href: 'https://www.wonderstories.app',
     internal: false,
-    artifact: 'Live app · adaptive narrative · AI-generated story paths',
   },
   {
     name: 'Robodexo',
@@ -23,15 +21,13 @@ const projects = [
     tag: 'Experiment',
     href: 'https://www.robodexo.com',
     internal: false,
-    artifact: null,
   },
   {
     name: 'Level UP',
     description: 'A curriculum framework for turning curious people into confident builders. Tested across classrooms, workshops, and orgs.',
     tag: 'Teaching',
-    href: '#teaching',
+    href: '#about',
     internal: true,
-    artifact: null,
   },
   {
     name: 'Play Extremes',
@@ -39,7 +35,6 @@ const projects = [
     tag: 'Research',
     href: 'https://www.playextremes.com',
     internal: false,
-    artifact: null,
   },
 ]
 
@@ -48,8 +43,7 @@ export default function Work() {
     <section className={`${styles.section} section`} id="work">
       <div className="container">
         <div className={`${styles.header} reveal`}>
-          <h2 className={styles.heading}>Featured Work</h2>
-          <p className={styles.sub}>Talks, products, experiments, and research — a track record of building at the edges.</p>
+          <h2 className={styles.heading}>Recent Work</h2>
         </div>
 
         <div className={styles.grid}>
@@ -67,9 +61,6 @@ export default function Work() {
               </div>
               <h3 className={styles.cardTitle}>{p.name}</h3>
               <p className={styles.cardDesc}>{p.description}</p>
-              {p.artifact && (
-                <p className={styles.cardArtifact}>{p.artifact}</p>
-              )}
             </a>
           ))}
         </div>

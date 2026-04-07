@@ -13,9 +13,6 @@ export default function Nav() {
 
   const links = [
     { label: 'About', href: '#about' },
-    { label: 'Work', href: '#work' },
-    { label: 'Teaching', href: '#teaching' },
-    { label: 'Podcast', href: '#podcast' },
     { label: 'Contact', href: '#contact' },
   ]
 
@@ -24,7 +21,7 @@ export default function Nav() {
       <div className={styles.inner}>
         <a href="#" className={styles.brand}>
           <span className={styles.brandName}>Good Vibes Garage</span>
-          <span className={styles.brandSub}>Dr. Elliott Hedman</span>
+          <span className={styles.brandSub}>Elliott Hedman</span>
         </a>
 
         <ul className={`${styles.links} ${menuOpen ? styles.open : ''}`}>

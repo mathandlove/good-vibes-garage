@@ -38,38 +38,12 @@
   filter: grayscale(0%);
 }
 
-.credentials {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.cred {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  letter-spacing: 0.04em;
-}
-
-.credDivider {
-  color: var(--border);
-}
-
 /* Content */
 .content {
   display: flex;
   flex-direction: column;
   gap: 24px;
   padding-top: 8px;
-}
-
-.eyebrow {
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
 }
 
 .heading {
@@ -123,5 +97,4 @@
 
   .photo { object-position: center top; }
 
-  .credentials { margin-top: 0; }
 }

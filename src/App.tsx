@@ -2,9 +2,8 @@ import { useEffect } from 'react'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import SXSW from './components/SXSW'
-import WhatIsGVG from './components/WhatIsGVG'
+import Series from './components/Series'
 import Work from './components/Work'
-import Teaching from './components/Teaching'
 import About from './components/About'
 import Footer from './components/Footer'
 
@@ -30,7 +29,6 @@ function useScrollReveal() {
 
 function useHeroEntrance() {
   useEffect(() => {
-    // Trigger hero elements immediately on load
     const timer = setTimeout(() => {
       document.querySelectorAll('.reveal').forEach((el, i) => {
         const rect = el.getBoundingClientRect()
@@ -53,9 +51,8 @@ export default function App() {
       <main>
         <Hero />
         <SXSW />
-        <WhatIsGVG />
+        <Series />
         <Work />
-        <Teaching />
         <About />
       </main>
       <Footer />

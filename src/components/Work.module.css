@@ -13,13 +13,6 @@
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text);
-  margin-bottom: 8px;
-}
-
-.sub {
-  font-size: 1rem;
-  color: var(--text-muted);
-  font-weight: 300;
 }
 
 .grid {
@@ -106,17 +99,6 @@
   font-size: 0.875rem;
   color: var(--text-muted);
   line-height: 1.65;
-}
-
-.cardArtifact {
-  font-size: 0.78rem;
-  font-style: italic;
-  color: var(--accent);
-  border-top: 1px solid var(--border-light);
-  padding-top: 10px;
-  margin-top: 4px;
-  line-height: 1.5;
-  opacity: 0.85;
 }
 
 @media (max-width: 900px) {

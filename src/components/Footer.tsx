@@ -6,17 +6,13 @@ export default function Footer() {
       <div className="container">
         <div className={styles.top}>
           <div className={`${styles.contactBlock} reveal`}>
-            <h2 className={styles.heading}>Let's talk.</h2>
-            <p className={styles.sub}>
-              Whether you're curious about vibe coding, want to bring Elliott in for a workshop or talk, or just want to say hi —
-            </p>
+            <h2 className={styles.heading}>Say hi.</h2>
             <a href="mailto:elliott@goodvibesgarage.ai" className={styles.emailLink}>
               elliott@goodvibesgarage.ai
             </a>
           </div>
 
           <div className={`${styles.social} reveal reveal-delay-2`}>
-            <p className={styles.socialLabel}>Follow the work</p>
             <div className={styles.socialLinks}>
               <a href="#" aria-label="LinkedIn" className={styles.socialLink}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -39,10 +35,9 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <p className={styles.copy}>
-            © Dr. Elliott Hedman / Good Vibes Garage
+            © Elliott Hedman / Good Vibes Garage
           </p>
           <div className={styles.bottomRight}>
-            <p className={styles.buildStamp}>v0.1 — still in the garage</p>
             <p className={styles.copyRight}>Built with vibe coding. Obviously.</p>
           </div>
         </div>
