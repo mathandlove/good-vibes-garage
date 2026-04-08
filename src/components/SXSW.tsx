@@ -3,29 +3,28 @@ import styles from './SXSW.module.css'
 
 export default function SXSW() {
   return (
+    // To switch variations, add styles.varEditorial or styles.varStudio to className below
     <section className={`${styles.sxsw} section`} id="talk">
       <div className="container">
         <div className={styles.grid}>
           <div className={styles.left}>
             <div className={`${styles.badge} reveal`}>
-              <span className={styles.badgeText}>SXSW EDU 2025</span>
+              <span className={styles.badgeText}>SXSW EDU 2026</span>
             </div>
 
             <h2 className={`${styles.heading} reveal reveal-delay-1`}>
-              What happens when students<br />
-              <em>start building with AI?</em>
+              I secretly taught students to use AI — and they all became better learners.
             </h2>
+
             <p className={`${styles.body} reveal reveal-delay-2`}>
-              I gave this talk to a room full of teachers. The idea is simple: students don't
-              need to understand machine learning. They need to learn how to describe what
-              they want to make — and then make it.
+              For a year I volunteered in classrooms — not teaching AI to write
+              essays, but to help students figure things out. This is what I
+              learned.
             </p>
+
             <div className={`${styles.ctaWrap} reveal reveal-delay-3`}>
-              <a
-                href="mailto:elliott@goodvibesgarage.ai?subject=SXSW Talk"
-                className={styles.ctaLink}
-              >
-                Want to bring this talk to your school? Let's chat &rarr;
+              <a href="#" className={styles.ctaLink}>
+                Read the article &rarr;
               </a>
             </div>
           </div>
@@ -34,7 +33,7 @@ export default function SXSW() {
             <div className={styles.photoWrap}>
               <img
                 src={sxswPhoto}
-                alt="Elliott Hedman speaking at SXSW EDU 2025"
+                alt="Elliott Hedman speaking at SXSW EDU 2026"
                 className={styles.photo}
               />
             </div>

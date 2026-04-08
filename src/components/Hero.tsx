@@ -1,39 +1,25 @@
-import elliottImg from '../assets/elliott-hedman.jpg'
+import heroImg from '../assets/Images/collaboration.png'
 import styles from './Hero.module.css'
 
 export default function Hero() {
   return (
     <section className={styles.hero} id="hero">
-      <div className={styles.container}>
-        <div className={styles.content}>
-          <h1 className={`${styles.headline} reveal`}>
-            I spend my time thinking about how to build new ideas with&nbsp;AI.
-          </h1>
+      <img
+        src={heroImg}
+        alt="Elliott Hedman collaborating with others around a laptop"
+        className={styles.bgImage}
+      />
+      <div className={styles.overlay} />
 
-          <p className={`${styles.subheadLarge} reveal reveal-delay-1`}>
-            This is my garage.
-          </p>
+      <div className={styles.content}>
+        <h1 className={`${styles.headline} reveal`}>
+          I'm a vibe coding teacher.
+        </h1>
 
-          <p className={`${styles.subhead} reveal reveal-delay-2`}>
-            I sit down with people who have ideas and we build them
-            together, live, using AI. No coding background needed&nbsp;&mdash;
-            just something you want to make.
-          </p>
+        <p className={`${styles.bodyCopy} reveal reveal-delay-1`}>
+          I help non-coders build real things for social good.
+        </p>
 
-          <div className={`${styles.ctas} reveal reveal-delay-3`}>
-            <a href="#series" className={styles.btnPrimary}>
-              See What's Coming <span className={styles.btnArrow}>&rarr;</span>
-            </a>
-          </div>
-        </div>
-
-        <div className={`${styles.imageCol} reveal reveal-delay-2`}>
-          <img
-            src={elliottImg}
-            alt="Elliott Hedman"
-            className={styles.heroImage}
-          />
-        </div>
       </div>
     </section>
   )

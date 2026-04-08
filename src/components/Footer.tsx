@@ -5,9 +5,10 @@ export default function Footer() {
     <footer className={styles.footer} id="contact">
       <div className="container">
         <div className={`${styles.contactBlock} reveal`}>
-          <h2 className={styles.heading}>Let's build something.</h2>
+          <h2 className={styles.heading}>I'm just getting started.</h2>
           <p className={styles.sub}>
-            Got an idea? Want to be on the show? Just curious? Drop me a line.
+            If any of this sounds interesting, sign up and I'll let you know
+            when there's something to see.
           </p>
           <a href="mailto:elliott@goodvibesgarage.ai" className={styles.emailLink}>
             elliott@goodvibesgarage.ai
@@ -27,8 +28,6 @@ export default function Footer() {
             >
               LinkedIn
             </a>
-            <span className={styles.divider}>&middot;</span>
-            <span className={styles.builtWith}>Built with vibe coding. Obviously.</span>
           </div>
         </div>
       </div>

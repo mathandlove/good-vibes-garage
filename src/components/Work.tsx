@@ -3,36 +3,36 @@ import styles from './Work.module.css'
 const projects = [
   {
     name: 'Wonder Stories',
-    description: 'A reading app where the story changes based on what the reader is curious about. Built with AI, designed for kids.',
+    description: 'Working at the Boys & Girls Club, I noticed the kids loved Kahoot! and absolutely despised reading. I wanted to create a reading experience that could compete in their Marvel and Fortnite world. 26,000 active users now — and parents of kids with dyslexia keep telling me their children won\'t read anything else.',
     tag: 'Product',
     href: 'https://www.wonderstories.app',
     internal: false,
   },
   {
     name: 'Robodexo',
-    description: 'A storytelling experiment where the AI is a character in the narrative, not just a tool behind it.',
+    description: 'I had a week off work, a 3-month-old, and my 40th birthday coming up. I always throw elaborate murder mysteries. This time I wanted everyone to be a Pokemon trainer — playing cards with QR codes, quests, tournaments, discovery. Built the whole thing in a week. 70 people came.',
     tag: 'Experiment',
     href: 'https://www.robodexo.com',
     internal: false,
   },
   {
     name: 'Level UP',
-    description: 'A curriculum to help people go from "I have an idea" to actually making it. Used in classrooms and workshops.',
+    description: 'My first attempt to help students use AI to improve their actual writing ability. This was before Claude Code, and it was hard. But it taught me a lot about what this kind of teaching needs.',
     tag: 'Teaching',
     href: 'https://www.buildempathy.com/levelup',
     internal: false,
   },
   {
-    name: 'Teaching Toddlers to Read',
-    description: 'A guide for parents who want to help their kids learn to read — built with empathy research and real families.',
+    name: 'Toddlers Can Read',
+    description: 'Partnered with Spencer Russell to build a mock app and test it in a week. We wanted to find out what busy parents actually need to teach their kids to read. The answer: clear structure and extreme fun.',
     tag: 'Teaching',
     href: 'https://www.buildempathy.com/empoweringparents',
     internal: false,
   },
   {
     name: 'Play Extremes',
-    description: 'A design research tool from my time at MIT. Helps teams figure out why an experience isn\'t working.',
-    tag: 'Research',
+    description: 'I had a game idea. Built it in a day using only vibe coding. No reason other than: why not?',
+    tag: 'Game',
     href: 'https://www.playextremes.com',
     internal: false,
   },
@@ -45,8 +45,8 @@ export default function Work() {
         <div className={`${styles.header} reveal`}>
           <h2 className={styles.heading}>Things I've Built</h2>
           <p className={styles.subheading}>
-            I make things with AI. Some are products, some are experiments, some are just me figuring
-            out what's possible.
+            Here's what I've been building along the way. Each one started as an
+            idea I couldn't stop thinking about.
           </p>
         </div>
 

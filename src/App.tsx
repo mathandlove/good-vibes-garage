@@ -31,13 +31,15 @@ function useScrollReveal() {
 function useHeroEntrance() {
   useEffect(() => {
     const timer = setTimeout(() => {
-      document.querySelectorAll('.reveal').forEach((el, i) => {
+      let seq = 0
+      document.querySelectorAll('.reveal').forEach((el) => {
         const rect = el.getBoundingClientRect()
         if (rect.top < window.innerHeight) {
-          setTimeout(() => el.classList.add('visible'), i * 80)
+          setTimeout(() => el.classList.add('visible'), seq * 80)
+          seq++
         }
       })
-    }, 100)
+    }, 150)
     return () => clearTimeout(timer)
   }, [])
 }
@@ -64,20 +66,19 @@ export default function App() {
       <main>
         <Hero />
 
-        <Series />
+        <SXSW />
+        <About />
         <Testimonial />
         <Work />
-        <SXSW />
+        <Series />
 
         <section className="pullQuoteSection reveal">
           <div className="pullQuoteInner">
             When our skills don't meet what we want to produce, we lose the
             ability to create. AI flips that switch.
-            <span className="pullQuoteAttr">&mdash; Elliott, SXSW EDU 2025</span>
+            <span className="pullQuoteAttr">&mdash; Elliott, SXSW EDU 2026</span>
           </div>
         </section>
-
-        <About />
       </main>
       <Footer />
     </>
