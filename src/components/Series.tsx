@@ -1,6 +1,18 @@
+import { useState, type FormEvent } from 'react'
 import styles from './Series.module.css'
 
 export default function Series() {
+  const [email, setEmail] = useState('')
+  const [submitted, setSubmitted] = useState(false)
+
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault()
+    if (!email) return
+    // Opens mailto with the subscriber's email pre-filled
+    window.location.href = `mailto:elliott@goodvibesgarage.ai?subject=Good Vibes Updates&body=Hey Elliott, I'd love to know when the show drops. My email: ${encodeURIComponent(email)}`
+    setSubmitted(true)
+  }
+
   return (
     <section className={`${styles.series} section`} id="series">
       <div className="container">
@@ -15,7 +27,7 @@ export default function Series() {
             Each episode, I sit down with someone doing meaningful work &mdash;
             a nonprofit director, a teacher, a community organizer &mdash; someone
             with an idea and no way to build it. We build it together in one session,
-            start to finish, using AI.
+            start to finish, using AI. The first episodes are in production now.
           </p>
         </div>
 
@@ -48,9 +60,25 @@ export default function Series() {
         </div>
 
         <div className={`${styles.actions} reveal reveal-delay-4`}>
-          <a href="mailto:elliott@goodvibesgarage.ai?subject=Good Vibes Updates" className={styles.notifyBtn}>
-            Get Notified When It Drops <span>&rarr;</span>
-          </a>
+          {submitted ? (
+            <p className={styles.thankYou}>
+              Thanks! Hit send on that email and I'll keep you posted.
+            </p>
+          ) : (
+            <form onSubmit={handleSubmit} className={styles.signupForm}>
+              <input
+                type="email"
+                required
+                placeholder="your@email.com"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                className={styles.emailInput}
+              />
+              <button type="submit" className={styles.notifyBtn}>
+                Get Notified <span>&rarr;</span>
+              </button>
+            </form>
+          )}
           <a href="mailto:elliott@goodvibesgarage.ai?subject=Be on the show" className={styles.guestLink}>
             Want to be a guest? Tell me about your idea.
           </a>

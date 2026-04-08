@@ -3,6 +3,7 @@ import Nav from './components/Nav'
 import Hero from './components/Hero'
 import SXSW from './components/SXSW'
 import Series from './components/Series'
+import Testimonial from './components/Testimonial'
 import Work from './components/Work'
 import About from './components/About'
 import Footer from './components/Footer'
@@ -63,22 +64,16 @@ export default function App() {
       <main>
         <Hero />
 
+        <Series />
+        <Testimonial />
+        <Work />
+        <SXSW />
+
         <section className="pullQuoteSection reveal">
           <div className="pullQuoteInner">
             When our skills don't meet what we want to produce, we lose the
             ability to create. AI flips that switch.
             <span className="pullQuoteAttr">&mdash; Elliott, SXSW EDU 2025</span>
-          </div>
-        </section>
-
-        <SXSW />
-        <Series />
-        <Work />
-
-        <section className="pullQuoteSection reveal">
-          <div className="pullQuoteInner">
-            You don't need a CS degree. You need a good question and 30 minutes.
-            <span className="pullQuoteAttr">&mdash; Elliott</span>
           </div>
         </section>
 

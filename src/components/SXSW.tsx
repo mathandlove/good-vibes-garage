@@ -20,10 +20,14 @@ export default function SXSW() {
               need to understand machine learning. They need to learn how to describe what
               they want to make — and then make it.
             </p>
-            <blockquote className={`${styles.pullQuote} reveal reveal-delay-3`}>
-              "When our skills don't meet what we want to produce, we lose the ability to
-              create. AI flips that switch."
-            </blockquote>
+            <div className={`${styles.ctaWrap} reveal reveal-delay-3`}>
+              <a
+                href="mailto:elliott@goodvibesgarage.ai?subject=SXSW Talk"
+                className={styles.ctaLink}
+              >
+                Want to bring this talk to your school? Let's chat &rarr;
+              </a>
+            </div>
           </div>
 
           <div className={`${styles.right} reveal reveal-delay-2`}>

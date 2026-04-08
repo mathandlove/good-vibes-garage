@@ -44,6 +44,7 @@
   border-bottom: 2px solid transparent;
 }
 
+
 .card:first-child {
   grid-column: span 2;
 }

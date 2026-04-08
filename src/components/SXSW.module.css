@@ -76,15 +76,22 @@
   line-height: 1.75;
 }
 
-.pullQuote {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-style: italic;
-  color: rgba(255,255,255,0.8);
-  border-left: 3px solid var(--accent);
-  padding-left: 16px;
-  line-height: 1.55;
-  margin: 0;
+.ctaWrap {
+  margin-top: 8px;
+}
+
+.ctaLink {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--accent);
+  border-bottom: 1.5px solid var(--accent);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+
+.ctaLink:hover {
+  opacity: 0.75;
 }
 
 /* Photo */

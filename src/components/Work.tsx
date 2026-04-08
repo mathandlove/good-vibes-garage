@@ -2,13 +2,6 @@ import styles from './Work.module.css'
 
 const projects = [
   {
-    name: 'SXSW EDU Talk',
-    description: 'What happens when you let students build with AI instead of just learn about it. A packed room of teachers rethinking everything.',
-    tag: 'Talk',
-    href: '#talk',
-    internal: true,
-  },
-  {
     name: 'Wonder Stories',
     description: 'A reading app where the story changes based on what the reader is curious about. Built with AI, designed for kids.',
     tag: 'Product',
@@ -26,8 +19,15 @@ const projects = [
     name: 'Level UP',
     description: 'A curriculum to help people go from "I have an idea" to actually making it. Used in classrooms and workshops.',
     tag: 'Teaching',
-    href: '#about',
-    internal: true,
+    href: 'https://www.buildempathy.com/levelup',
+    internal: false,
+  },
+  {
+    name: 'Teaching Toddlers to Read',
+    description: 'A guide for parents who want to help their kids learn to read — built with empathy research and real families.',
+    tag: 'Teaching',
+    href: 'https://www.buildempathy.com/empoweringparents',
+    internal: false,
   },
   {
     name: 'Play Extremes',
@@ -61,7 +61,7 @@ export default function Work() {
             >
               <div className={styles.cardTop}>
                 <span className={styles.tag}>{p.tag}</span>
-                <span className={styles.arrow}>&nearr;</span>
+                <span className={styles.arrow}>&#x2197;</span>
               </div>
               <h3 className={styles.cardTitle}>{p.name}</h3>
               <p className={styles.cardDesc}>{p.description}</p>

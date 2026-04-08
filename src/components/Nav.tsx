@@ -16,7 +16,7 @@ export default function Nav() {
     { label: 'Work', href: '#work' },
     { label: 'SXSW Talk', href: '#talk' },
     { label: 'About', href: '#about' },
-    { label: 'Say Hi', href: '#contact', cta: true },
+    { label: 'Get Notified', href: '#series', cta: true },
   ]
 
   return (
