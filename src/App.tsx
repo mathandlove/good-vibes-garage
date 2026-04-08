@@ -41,18 +41,47 @@ function useHeroEntrance() {
   }, [])
 }
 
+function useMouseGlow() {
+  useEffect(() => {
+    const handleMove = (e: MouseEvent) => {
+      document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`)
+      document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`)
+    }
+    window.addEventListener('mousemove', handleMove, { passive: true })
+    return () => window.removeEventListener('mousemove', handleMove)
+  }, [])
+}
+
 export default function App() {
   useScrollReveal()
   useHeroEntrance()
+  useMouseGlow()
 
   return (
     <>
       <Nav />
       <main>
         <Hero />
+
+        <section className="pullQuoteSection reveal">
+          <div className="pullQuoteInner">
+            When our skills don't meet what we want to produce, we lose the
+            ability to create. AI flips that switch.
+            <span className="pullQuoteAttr">&mdash; Elliott, SXSW EDU 2025</span>
+          </div>
+        </section>
+
         <SXSW />
         <Series />
         <Work />
+
+        <section className="pullQuoteSection reveal">
+          <div className="pullQuoteInner">
+            You don't need a CS degree. You need a good question and 30 minutes.
+            <span className="pullQuoteAttr">&mdash; Elliott</span>
+          </div>
+        </section>
+
         <About />
       </main>
       <Footer />

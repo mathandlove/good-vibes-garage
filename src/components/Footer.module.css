@@ -1,17 +1,8 @@
 .footer {
   background: var(--text);
+  background-image: radial-gradient(ellipse at 20% 0%, rgba(107, 122, 42, 0.06) 0%, transparent 60%);
   color: #fff;
   padding: 80px 0 40px;
-}
-
-.top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 60px;
-  padding-bottom: 60px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  flex-wrap: wrap;
 }
 
 .contactBlock {
@@ -19,6 +10,8 @@
   flex-direction: column;
   gap: 16px;
   max-width: 480px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .heading {
@@ -32,7 +25,7 @@
 
 .sub {
   font-size: 1rem;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255, 255, 255, 0.55);
   line-height: 1.7;
   font-weight: 300;
 }
@@ -50,38 +43,6 @@
 
 .emailLink:hover { opacity: 0.75; }
 
-/* Social */
-.social {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: flex-end;
-}
-
-.socialLabel {
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-}
-
-.socialLinks {
-  display: flex;
-  gap: 20px;
-}
-
-.socialLink {
-  color: rgba(255,255,255,0.5);
-  transition: color 0.2s;
-  display: flex;
-  align-items: center;
-}
-
-.socialLink:hover {
-  color: var(--accent);
-}
-
 /* Bottom bar */
 .bottom {
   display: flex;
@@ -94,34 +55,38 @@
 
 .copy {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255, 255, 255, 0.35);
   font-weight: 400;
 }
 
-.bottomRight {
+.bottomLinks {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 2px;
+  align-items: center;
+  gap: 12px;
 }
 
-.buildStamp {
-  font-size: 0.7rem;
-  font-family: 'Courier New', Courier, monospace;
-  color: rgba(255,255,255,0.18);
-  letter-spacing: 0.04em;
+.bottomLink {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.45);
+  transition: color 0.2s;
 }
 
-.copyRight {
+.bottomLink:hover {
+  color: var(--accent);
+}
+
+.divider {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.builtWith {
   font-size: 0.78rem;
-  color: rgba(255,255,255,0.2);
+  color: rgba(255, 255, 255, 0.2);
   font-style: italic;
   font-family: var(--font-display);
 }
 
 @media (max-width: 768px) {
-  .top { flex-direction: column; gap: 40px; }
-  .social { align-items: flex-start; }
   .bottom { flex-direction: column; align-items: flex-start; gap: 4px; }
-  .bottomRight { align-items: flex-start; }
+  .bottomLinks { flex-wrap: wrap; }
 }

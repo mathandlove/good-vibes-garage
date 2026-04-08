@@ -1,81 +1,32 @@
 .series {
-  background: var(--bg-raised);
+  background: var(--bg);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.left {
+.intro {
   display: flex;
   flex-direction: column;
-}
-
-.placeholder {
-  position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  background: linear-gradient(135deg, #1a1a1a 0%, #0e1a2d 100%);
-  aspect-ratio: 16 / 9;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.placeholderIcon {
-  font-size: 2rem;
-  color: rgba(255, 255, 255, 0.2);
-}
-
-.placeholderText {
-  font-size: 0.875rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 0.04em;
-}
-
-.right {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.badge {
-  margin-bottom: 0;
-}
-
-.badgeText {
-  display: inline-block;
-  padding: 6px 14px;
-  border: 1.5px solid var(--accent);
-  border-radius: 3px;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
+  gap: 16px;
+  max-width: 600px;
+  margin-bottom: 56px;
 }
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  line-height: 1.15;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--text);
 }
 
-.heading em {
+.tagline {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
   font-style: italic;
   color: var(--accent);
+  font-weight: 400;
 }
 
 .body {
@@ -84,19 +35,127 @@
   line-height: 1.75;
 }
 
-.apply {
+/* Episodes grid */
+.episodes {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
+  margin-bottom: 48px;
 }
 
-.applyLabel {
+.episodeCard {
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Featured episode — large, dark, cinematic */
+.featured {
+  background: var(--text);
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.episodeMeta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.episodeNumber {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.featured .episodeNumber {
+  font-size: 5rem;
+  position: absolute;
+  top: -8px;
+  right: 24px;
+  color: rgba(255, 255, 255, 0.04);
+  line-height: 1;
+}
+
+.recordingBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.recordingDot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: recordingPulse 2s ease-in-out infinite;
+}
+
+.recordingLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.episodeTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+  max-width: 500px;
+}
+
+.episodeDesc {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
+  max-width: 460px;
+}
+
+/* Upcoming episodes row */
+.upcomingRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.upcoming {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  padding: 32px 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.upcoming .episodeNumber {
+  font-size: 2rem;
+  color: var(--text-faint);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.upcomingText {
   font-size: 0.95rem;
   color: var(--text-muted);
   line-height: 1.6;
 }
 
-.applyBtn {
+/* Actions */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.notifyBtn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -109,15 +168,14 @@
   border-radius: 4px;
   transition: background 0.2s ease, transform 0.2s ease;
   letter-spacing: 0.04em;
-  align-self: flex-start;
 }
 
-.applyBtn:hover {
+.notifyBtn:hover {
   background: var(--accent-dark);
   transform: translateY(-1px);
 }
 
-.applyLink {
+.guestLink {
   font-size: 0.85rem;
   color: var(--text-muted);
   text-decoration: underline;
@@ -125,17 +183,16 @@
   transition: color 0.2s ease;
 }
 
-.applyLink:hover {
+.guestLink:hover {
   color: var(--accent);
 }
 
 @media (max-width: 900px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .featured {
+    padding: 40px 28px;
   }
 
-  .left {
-    order: -1;
+  .upcomingRow {
+    grid-template-columns: 1fr;
   }
 }

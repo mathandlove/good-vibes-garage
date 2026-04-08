@@ -1,7 +1,25 @@
+/* Full-bleed dark section — breaks the rhythm */
 .sxsw {
-  background: var(--bg-raised);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  background: var(--text);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Faint background texture */
+.sxsw::before {
+  content: 'SXSW';
+  position: absolute;
+  top: 50%;
+  right: -2%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 14vw;
+  font-weight: 900;
+  color: rgba(255,255,255,0.02);
+  pointer-events: none;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .badge {
@@ -22,7 +40,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: 1fr 1.3fr;
   gap: 80px;
   align-items: center;
 }
@@ -30,12 +48,12 @@
 .left {
   display: flex;
   flex-direction: column;
+  gap: 24px;
 }
 
 .right {
   display: flex;
   flex-direction: column;
-  gap: 24px;
 }
 
 .heading {
@@ -44,7 +62,7 @@
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: var(--text);
+  color: #fff;
 }
 
 .heading em {
@@ -54,57 +72,26 @@
 
 .body {
   font-size: 1rem;
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.6);
   line-height: 1.75;
 }
 
 .pullQuote {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-style: italic;
-  color: var(--text);
+  color: rgba(255,255,255,0.8);
   border-left: 3px solid var(--accent);
   padding-left: 16px;
-  line-height: 1.5;
-}
-
-.links {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: flex-start;
-}
-
-.linkPrimary {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--accent);
-  transition: opacity 0.2s;
-}
-
-.linkPrimary:hover { opacity: 0.75; }
-
-.linkSecondary {
-  font-size: 0.875rem;
-  font-weight: 400;
-  color: var(--text-muted);
-  transition: color 0.2s;
-}
-
-.linkSecondary:hover { color: var(--text); }
-
-.comingSoon {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--accent);
-  letter-spacing: 0.04em;
+  line-height: 1.55;
+  margin: 0;
 }
 
 /* Photo */
 .photoWrap {
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.12);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18);
 }
 
 .photo {
@@ -118,5 +105,9 @@
     gap: 40px;
   }
 
-  .left { order: -1; }
+  .right { order: -1; }
+
+  .sxsw::before {
+    font-size: 20vw;
+  }
 }

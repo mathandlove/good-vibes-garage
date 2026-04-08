@@ -1,10 +1,12 @@
 .section {
-  background: var(--bg);
-  border-top: 1px solid var(--border);
+  background: var(--text);
+  color: #fff;
+  position: relative;
 }
 
 .header {
   margin-bottom: 56px;
+  max-width: 520px;
 }
 
 .heading {
@@ -12,29 +14,38 @@
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--text);
+  color: #fff;
+  margin-bottom: 12px;
 }
 
+.subheading {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
+}
+
+/* Bento-ish grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 36px 32px;
-  background: var(--bg);
+  padding: 40px 32px;
+  background: rgba(255, 255, 255, 0.04);
   cursor: pointer;
   position: relative;
   transition: background 0.25s ease;
   text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.card:first-child {
+  grid-column: span 2;
 }
 
 .card::after {
@@ -51,7 +62,7 @@
 }
 
 .card:hover {
-  background: var(--accent-dim);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .card:hover::after {
@@ -75,29 +86,29 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
-  background: var(--accent-dim);
+  background: rgba(107, 122, 42, 0.15);
   padding: 3px 8px;
   border-radius: 3px;
 }
 
 .arrow {
   font-size: 1rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.3);
   opacity: 0;
   transition: opacity 0.2s, transform 0.2s;
 }
 
 .cardTitle {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  color: var(--text);
+  color: #fff;
   letter-spacing: -0.01em;
 }
 
 .cardDesc {
   font-size: 0.875rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.45);
   line-height: 1.65;
 }
 
@@ -105,11 +116,19 @@
   .grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .card:first-child {
+    grid-column: span 2;
+  }
 }
 
 @media (max-width: 600px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .card:first-child {
+    grid-column: span 1;
   }
 
   .card { padding: 28px 24px; }

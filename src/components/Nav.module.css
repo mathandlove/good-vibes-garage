@@ -51,7 +51,7 @@
 .links {
   list-style: none;
   display: flex;
-  gap: 36px;
+  gap: 28px;
 }
 
 .links a {
@@ -80,6 +80,20 @@
 
 .links a:hover::after {
   width: 100%;
+}
+
+/* Warm "Say Hi" link */
+.ctaLink {
+  color: var(--accent) !important;
+  font-weight: 600 !important;
+}
+
+.ctaLink::after {
+  background: var(--accent) !important;
+}
+
+.ctaLink:hover {
+  color: var(--accent-dark) !important;
 }
 
 .burger {
@@ -129,5 +143,9 @@
   .links a {
     font-size: 1.25rem;
     color: var(--text);
+  }
+
+  .ctaLink {
+    color: var(--accent) !important;
   }
 }

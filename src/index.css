@@ -103,9 +103,9 @@ img {
   50% { opacity: 0; }
 }
 
-@keyframes warmPulse {
-  0%, 100% { box-shadow: 0 4px 20px var(--warm-dim); }
-  50% { box-shadow: 0 4px 32px rgba(212, 92, 26, 0.25); }
+@keyframes accentPulse {
+  0%, 100% { box-shadow: 0 4px 20px var(--accent-dim); }
+  50% { box-shadow: 0 4px 32px rgba(107, 122, 42, 0.3); }
 }
 
 @keyframes pulse {
@@ -114,8 +114,8 @@ img {
 }
 
 @keyframes recordingPulse {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(212, 92, 26, 0.4); }
-  50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(212, 92, 26, 0); }
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(107, 122, 42, 0.4); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(107, 122, 42, 0); }
 }
 
 /* ── Scroll reveal ── */
@@ -155,7 +155,7 @@ img {
   font-style: italic;
   color: var(--text);
   line-height: 1.5;
-  border-left: 3px solid var(--warm);
+  border-left: 3px solid var(--accent);
   padding-left: 32px;
   position: relative;
 }
@@ -166,10 +166,21 @@ img {
   left: -8px;
   top: -16px;
   font-size: 4rem;
-  color: var(--warm);
+  color: var(--accent);
   opacity: 0.2;
   font-style: normal;
   line-height: 1;
+}
+
+.pullQuoteAttr {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-top: 16px;
+  letter-spacing: 0.02em;
 }
 
 /* ── Cursor glow utility ── */
@@ -184,7 +195,7 @@ img {
   border-radius: inherit;
   background: radial-gradient(
     600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    var(--warm-glow),
+    var(--accent-glow),
     transparent 40%
   );
   pointer-events: none;

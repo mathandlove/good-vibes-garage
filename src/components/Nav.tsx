@@ -12,8 +12,11 @@ export default function Nav() {
   }, [])
 
   const links = [
+    { label: 'The Show', href: '#series' },
+    { label: 'Work', href: '#work' },
+    { label: 'SXSW Talk', href: '#talk' },
     { label: 'About', href: '#about' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Say Hi', href: '#contact', cta: true },
   ]
 
   return (
@@ -27,7 +30,13 @@ export default function Nav() {
         <ul className={`${styles.links} ${menuOpen ? styles.open : ''}`}>
           {links.map(l => (
             <li key={l.href}>
-              <a href={l.href} onClick={() => setMenuOpen(false)}>{l.label}</a>
+              <a
+                href={l.href}
+                className={l.cta ? styles.ctaLink : undefined}
+                onClick={() => setMenuOpen(false)}
+              >
+                {l.label}
+              </a>
             </li>
           ))}
         </ul>
