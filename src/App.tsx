@@ -75,8 +75,8 @@ export default function App() {
         <section className="pullQuoteSection reveal">
           <div className="pullQuoteInner">
             When our skills don't meet what we want to produce, we lose the
-            ability to create. AI flips that switch.
-            <span className="pullQuoteAttr">&mdash; Elliott, SXSW EDU 2026</span>
+            ability to create. AI flips that switch — now it can help you build
+            things you can't even fully imagine yourself.
           </div>
         </section>
       </main>

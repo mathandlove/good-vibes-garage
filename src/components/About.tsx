@@ -21,27 +21,32 @@ export default function About() {
               Hey, I'm Elliott.
             </h2>
             <p className={`${styles.bio} reveal reveal-delay-2`}>
-              I've spent my career in two worlds &mdash; building new things
-              (Google, IDEO, LEGO, MIT Media Lab) and understanding people. I
-              used to run a consultancy helping companies prototype ideas fast.
-              That was fun, but I kept noticing something bigger.
+              In fifth grade, there was a kid named David who could draw
+              anything. I couldn't draw like David. So I stopped trying.
+              That's how it works &mdash; when our skills don't match what we
+              want to make, we stop believing we're builders.
             </p>
             <p className={`${styles.bio} reveal reveal-delay-3`}>
-              Most people have no idea what vibe coding is. They don't know that
-              right now, today, they could describe an idea and watch it become
-              real in 30 minutes. Not engineers &mdash; I'm talking about teachers,
-              nonprofit directors, community organizers. People with visions and
-              no way to build them.
+              It took me until MIT to feel it shift. And then again when I
+              first used AI to build a working prototype in less than a
+              day &mdash; something that would have taken weeks before. That
+              feeling of <em>I can actually make what I'm imagining</em> is
+              what I want other people to have.
             </p>
-            <p className={`${styles.bio} ${styles.kicker} reveal reveal-delay-4`}>
-              That gap isn't an engineering problem. It's a mindset problem.
-              And I'm fascinated by it.
+            <p className={`${styles.bio} reveal reveal-delay-4`}>
+              My friend Kristen was a lawyer who wanted a new, more meaningful
+              career. She had an idea for a tic-tac-toe game she'd been carrying
+              around for years and assumed it was out of reach. We sat down
+              together. She built it. She now runs her own company where
+              people hire her to build things for them.
             </p>
-            <p className={`${styles.bio} reveal reveal-delay-5`}>
-              So that's what this is. I'm sitting down with people, one at a
-              time, and showing them what's possible. I'm still early. But every
-              time someone goes from "there's no way I can do this" to building
-              the whole thing on their own &mdash; I know I'm in the right place.
+            <p className={`${styles.bio} reveal reveal-delay-4`}>
+              I've spent my career at Google, IDEO, LEGO, MIT Media Lab &mdash;
+              building things and helping people prototype ideas fast. But this
+              is the thing I've always cared most about: helping people become
+              iterative builders. People with visions and no reason to believe
+              the tools are available to them. That gap isn't an engineering
+              problem. It's a mindset problem.
             </p>
           </div>
         </div>

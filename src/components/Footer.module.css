@@ -43,6 +43,81 @@
 
 .emailLink:hover { opacity: 0.75; }
 
+.ctaRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.ctaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ctaLabel {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 400;
+  margin: 0;
+}
+
+.ctaDivider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  align-self: stretch;
+  min-height: 40px;
+}
+
+.signupForm {
+  display: flex;
+  gap: 0;
+}
+
+.signupInput {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  color: #fff;
+  font-size: 0.95rem;
+  padding: 8px 12px;
+  outline: none;
+  width: 200px;
+  transition: border-color 0.2s;
+}
+
+.signupInput::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.signupInput:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.signupButton {
+  background: var(--accent);
+  border: none;
+  border-radius: 0 4px 4px 0;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.signupButton:hover { opacity: 0.85; }
+
+.signupConfirm {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin: 0;
+}
+
 /* Bottom bar */
 .bottom {
   display: flex;

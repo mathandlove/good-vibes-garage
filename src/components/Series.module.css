@@ -4,6 +4,35 @@
   border-bottom: 1px solid var(--border);
 }
 
+.imageWrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 6;
+}
+
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 32px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.82);
+  color: #fff;
+  padding: 28px 32px;
+  border-radius: 4px;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .intro {
   display: flex;
   flex-direction: column;
@@ -14,11 +43,11 @@
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: var(--text);
+  color: #fff;
 }
 
 .tagline {
@@ -30,8 +59,8 @@
 }
 
 .body {
-  font-size: 1rem;
-  color: var(--text-muted);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
   line-height: 1.75;
 }
 
@@ -214,17 +243,29 @@
 
 .guestLink {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: #fff;
   text-decoration: underline;
   text-underline-offset: 3px;
-  transition: color 0.2s ease;
+  transition: opacity 0.2s ease;
+  align-self: flex-start;
 }
 
 .guestLink:hover {
-  color: var(--accent);
+  opacity: 0.7;
 }
 
 @media (max-width: 900px) {
+  .imageWrap {
+    aspect-ratio: 4 / 3;
+  }
+
+  .overlay {
+    position: static;
+    background: var(--text);
+    border-radius: 0 0 4px 4px;
+    max-width: 100%;
+  }
+
   .featured {
     padding: 40px 28px;
   }

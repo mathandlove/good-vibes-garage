@@ -3,38 +3,38 @@ import styles from './Work.module.css'
 const projects = [
   {
     name: 'Wonder Stories',
-    description: 'Working at the Boys & Girls Club, I noticed the kids loved Kahoot! and absolutely despised reading. I wanted to create a reading experience that could compete in their Marvel and Fortnite world. 26,000 active users now — and parents of kids with dyslexia keep telling me their children won\'t read anything else.',
+    description: 'Ten years at the Boys & Girls Club watching kids hate reading. I wanted to fix that. 26,000 users later, I\'m still building — currently letting students talk to storybook characters.',
     tag: 'Product',
     href: 'https://www.wonderstories.app',
-    internal: false,
+    featured: true,
   },
   {
     name: 'Robodexo',
-    description: 'I had a week off work, a 3-month-old, and my 40th birthday coming up. I always throw elaborate murder mysteries. This time I wanted everyone to be a Pokemon trainer — playing cards with QR codes, quests, tournaments, discovery. Built the whole thing in a week. 70 people came.',
+    description: 'I had a week off, a 3-month-old, and my 40th birthday. I built a full Pokémon trainer experience — custom physical cards, QR quests, live tournaments.',
     tag: 'Experiment',
     href: 'https://www.robodexo.com',
-    internal: false,
+    featured: false,
   },
   {
     name: 'Level UP',
-    description: 'My first attempt to help students use AI to improve their actual writing ability. This was before Claude Code, and it was hard. But it taught me a lot about what this kind of teaching needs.',
+    description: 'An app that helps kids reflect on their writing — built before Claude Code existed. Took me 3 months. I could build it in 3 days now.',
     tag: 'Teaching',
     href: 'https://www.buildempathy.com/levelup',
-    internal: false,
+    featured: false,
   },
   {
     name: 'Toddlers Can Read',
-    description: 'Partnered with Spencer Russell to build a mock app and test it in a week. We wanted to find out what busy parents actually need to teach their kids to read. The answer: clear structure and extreme fun.',
-    tag: 'Teaching',
+    description: 'First time I built a testable prototype for a client in a single day. We shipped it to parents to find out what they actually wanted when it comes to teaching reading.',
+    tag: 'Prototype',
     href: 'https://www.buildempathy.com/empoweringparents',
-    internal: false,
+    featured: false,
   },
   {
     name: 'Play Extremes',
-    description: 'I had a game idea. Built it in a day using only vibe coding. No reason other than: why not?',
+    description: 'Had a game idea in the morning. Built it that night. No reason other than: why not?',
     tag: 'Game',
     href: 'https://www.playextremes.com',
-    internal: false,
+    featured: false,
   },
 ]
 
@@ -45,8 +45,7 @@ export default function Work() {
         <div className={`${styles.header} reveal`}>
           <h2 className={styles.heading}>Things I've Built</h2>
           <p className={styles.subheading}>
-            Here's what I've been building along the way. Each one started as an
-            idea I couldn't stop thinking about.
+            Each one started as an idea I couldn't stop thinking about.
           </p>
         </div>
 
@@ -55,16 +54,22 @@ export default function Work() {
             <a
               key={p.name}
               href={p.href}
-              target={p.internal ? undefined : '_blank'}
-              rel={p.internal ? undefined : 'noopener noreferrer'}
-              className={`${styles.card} reveal reveal-delay-${Math.min(i + 1, 5)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={[
+                styles.card,
+                p.featured ? styles.cardFeatured : '',
+                `reveal reveal-delay-${Math.min(i + 1, 5)}`,
+              ].join(' ')}
             >
-              <div className={styles.cardTop}>
-                <span className={styles.tag}>{p.tag}</span>
-                <span className={styles.arrow}>&#x2197;</span>
+              <div className={styles.cardInner}>
+                <h3 className={styles.cardTitle}>{p.name}</h3>
+                <p className={styles.cardDesc}>{p.description}</p>
               </div>
-              <h3 className={styles.cardTitle}>{p.name}</h3>
-              <p className={styles.cardDesc}>{p.description}</p>
+              <div className={styles.cardFoot}>
+                <span className={styles.viewLabel}>View project</span>
+                <span className={styles.arrow}>↗</span>
+              </div>
             </a>
           ))}
         </div>
