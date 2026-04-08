@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import styles from './Nav.module.css'
 
 export default function Nav() {
@@ -11,34 +12,29 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const links = [
-    { label: 'The Show', href: '#series' },
-    { label: 'Work', href: '#work' },
-    { label: 'SXSW Talk', href: '#talk' },
-    { label: 'About', href: '#about' },
-    { label: 'Get Notified', href: '#series', cta: true },
-  ]
-
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.inner}>
-        <a href="#" className={styles.brand}>
+        <Link to="/" className={styles.brand}>
           <span className={styles.brandName}>Good Vibes Garage</span>
           <span className={styles.brandSub}>Elliott Hedman</span>
-        </a>
+        </Link>
 
         <ul className={`${styles.links} ${menuOpen ? styles.open : ''}`}>
-          {links.map(l => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                className={l.cta ? styles.ctaLink : undefined}
-                onClick={() => setMenuOpen(false)}
-              >
-                {l.label}
-              </a>
-            </li>
-          ))}
+          <li>
+            <Link to="/writing" onClick={() => setMenuOpen(false)}>
+              Writing
+            </Link>
+          </li>
+          <li>
+            <a
+              href="mailto:elliott@goodvibesgarage.ai"
+              className={styles.ctaLink}
+              onClick={() => setMenuOpen(false)}
+            >
+              Contact
+            </a>
+          </li>
         </ul>
 
         <button
