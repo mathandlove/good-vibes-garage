@@ -1,8 +1,8 @@
 .hero {
-  min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: var(--nav-height);
+  padding-top: calc(var(--nav-height) + 60px);
+  padding-bottom: 60px;
   position: relative;
 }
 
@@ -23,7 +23,7 @@
   margin: 0 auto;
   padding: 80px 40px;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.3fr 0.7fr;
   gap: 60px;
   align-items: center;
   width: 100%;
@@ -80,7 +80,7 @@
   font-weight: 400;
   color: var(--text-muted);
   line-height: 1.7;
-  max-width: 440px;
+  max-width: 520px;
 }
 
 .ctas {

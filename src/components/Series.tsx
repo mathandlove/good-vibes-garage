@@ -8,7 +8,7 @@ export default function Series() {
           <div className={`${styles.left} reveal`}>
             <div className={styles.placeholder}>
               <span className={styles.placeholderIcon}>▶</span>
-              <span className={styles.placeholderText}>Episodes coming soon</span>
+              <span className={styles.placeholderText}>First episode in the works</span>
             </div>
           </div>
 
@@ -18,19 +18,22 @@ export default function Series() {
             </div>
 
             <h2 className={`${styles.heading} reveal reveal-delay-1`}>
-              Building things with people<br />
-              <em>doing social good.</em>
+              I'm starting<br />
+              <em>something.</em>
             </h2>
             <p className={`${styles.body} reveal reveal-delay-2`}>
-              I sit down with non-profits, hear what they're trying to do, and
-              we build it together — live, from scratch, using AI. Along the way
-              I show how to vibe code and the power of building fast and iterating.
+              I want to sit down with people doing meaningful work — non-profits,
+              community organizations, anyone with an idea and no way to build
+              it — and we build it together, live, using AI. I'm looking for my
+              first guests.
             </p>
 
             <div className={`${styles.apply} reveal reveal-delay-3`}>
-              <p className={styles.applyLabel}>I do one Good Vibes workshop a week.</p>
-              <a href="mailto:elliott@goodvibesgarage.ai?subject=Good Vibes Workshop" className={styles.applyBtn}>
-                Sign up if you're interested →
+              <a href="mailto:elliott@goodvibesgarage.ai?subject=Good Vibes Updates" className={styles.applyBtn}>
+                Join the mailing list →
+              </a>
+              <a href="mailto:elliott@goodvibesgarage.ai?subject=Be on the show" className={styles.applyLink}>
+                Want to be on the show? Sign up here.
               </a>
             </div>
           </div>

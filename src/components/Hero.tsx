@@ -6,26 +6,17 @@ export default function Hero() {
       <div className={styles.container}>
         <div className={styles.content}>
           <h1 className={`${styles.headline} reveal`}>
-            I vibe code and<br />
+            I'm Elliott. I vibe code and<br />
             <em className={styles.accentWord}>help other people do it too.</em>
           </h1>
 
           <p className={`${styles.subhead} reveal reveal-delay-1`}>
-            Using AI to build things requires a mind shift, not computer science
-            expertise. I'm making a series where I sit down with non-technical
-            people and we build something real together.
+            I'm working on making vibe coding accessible. Using AI to build
+            things requires a mind shift, not computer science expertise. I'm
+            creating a series where I sit down with non-technical people and we
+            start building together.
           </p>
 
-          <div className={`${styles.ctas} reveal reveal-delay-2`}>
-            <a href="#talk" className={styles.btnPrimary}>
-              Watch the talk
-              <span className={styles.btnArrow}>→</span>
-            </a>
-            <a href="#series" className={styles.btnSecondary}>
-              See the build series
-              <span className={styles.btnArrow}>→</span>
-            </a>
-          </div>
         </div>
 
         <div className={`${styles.visual} reveal reveal-delay-2`}>

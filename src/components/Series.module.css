@@ -117,6 +117,18 @@
   transform: translateY(-1px);
 }
 
+.applyLink {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.applyLink:hover {
+  color: var(--accent);
+}
+
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;

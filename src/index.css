@@ -12,15 +12,16 @@
   --bg-card-hover:#E2E0D8;
 
   /* Primary accent — olive green. Grounded, maker culture, high contrast */
-  /* To swap colors: change the 4 values below. Current: olive green (#6B7A2A) */
   --accent:       #6B7A2A;
   --accent-dim:   rgba(107, 122, 42, 0.10);
   --accent-glow:  rgba(107, 122, 42, 0.18);
   --accent-dark:  #4E5A1E;
 
-  /* Warm secondary — used sparingly for warmth, not as primary brand color */
+  /* Warm secondary — the emotional signal color */
   --warm:         #D45C1A;
   --warm-dim:     rgba(212, 92, 26, 0.10);
+  --warm-glow:    rgba(212, 92, 26, 0.12);
+  --warm-dark:    #B34E16;
 
   /* Text */
   --text:         #18160F;
@@ -31,11 +32,19 @@
   --border:       #D8D5CE;
   --border-light: #E4E1DA;
 
-  /* Fonts — Fraunces (optical serif, personality) + Space Grotesk (geometric, maker energy) */
+  /* Fonts */
   --font-display: 'Fraunces', Georgia, serif;
   --font-body:    'Space Grotesk', system-ui, sans-serif;
 
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-bounce:   cubic-bezier(0.34, 1.56, 0.64, 1);
+
   --nav-height: 68px;
+
+  /* Mouse tracking (set via JS) */
+  --mouse-x: 50%;
+  --mouse-y: 50%;
 }
 
 
@@ -76,17 +85,51 @@ img {
   display: block;
 }
 
-/* Scroll reveal */
+/* ── Keyframes ── */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typewriterCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes warmPulse {
+  0%, 100% { box-shadow: 0 4px 20px var(--warm-dim); }
+  50% { box-shadow: 0 4px 32px rgba(212, 92, 26, 0.25); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+@keyframes recordingPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(212, 92, 26, 0.4); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(212, 92, 26, 0); }
+}
+
+/* ── Scroll reveal ── */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(28px) scale(0.98);
+  transition: opacity 0.7s var(--ease-out-expo),
+              transform 0.7s var(--ease-out-expo);
+  will-change: transform, opacity;
 }
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .reveal-delay-1 { transition-delay: 0.08s; }
@@ -95,7 +138,66 @@ img {
 .reveal-delay-4 { transition-delay: 0.32s; }
 .reveal-delay-5 { transition-delay: 0.40s; }
 
-/* Shared layout */
+/* ── Pull quote sections ── */
+.pullQuoteSection {
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.pullQuoteInner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 40px;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.5;
+  border-left: 3px solid var(--warm);
+  padding-left: 32px;
+  position: relative;
+}
+
+.pullQuoteInner::before {
+  content: '\201C';
+  position: absolute;
+  left: -8px;
+  top: -16px;
+  font-size: 4rem;
+  color: var(--warm);
+  opacity: 0.2;
+  font-style: normal;
+  line-height: 1;
+}
+
+/* ── Cursor glow utility ── */
+.cursorGlow {
+  position: relative;
+}
+
+.cursorGlow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    var(--warm-glow),
+    transparent 40%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+}
+
+.cursorGlow:hover::before {
+  opacity: 1;
+}
+
+/* ── Shared layout ── */
 .section { padding: 100px 0; }
 
 .container {
@@ -107,4 +209,10 @@ img {
 @media (max-width: 768px) {
   .section  { padding: 72px 0; }
   .container { padding: 0 20px; }
+  .pullQuoteSection { padding: 56px 0; }
+  .pullQuoteInner {
+    padding: 0 20px;
+    padding-left: 24px;
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
+  }
 }

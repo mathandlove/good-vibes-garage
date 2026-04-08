@@ -1,3 +1,4 @@
+import sxswPhoto from '../assets/Images/sxsw2026.png'
 import styles from './SXSW.module.css'
 
 export default function SXSW() {
@@ -5,7 +6,17 @@ export default function SXSW() {
     <section className={`${styles.sxsw} section`} id="talk">
       <div className="container">
         <div className={styles.grid}>
-          <div className={styles.left}>
+          <div className={`${styles.left} reveal`}>
+            <div className={styles.photoWrap}>
+              <img
+                src={sxswPhoto}
+                alt="Elliott Hedman speaking at SXSW EDU 2025"
+                className={styles.photo}
+              />
+            </div>
+          </div>
+
+          <div className={styles.right}>
             <div className={`${styles.badge} reveal`}>
               <span className={styles.badgeText}>SXSW EDU 2025</span>
             </div>
@@ -20,23 +31,8 @@ export default function SXSW() {
               they want to make — and then make it. This is what that looks like.
             </p>
             <div className={`${styles.links} reveal reveal-delay-3`}>
-              <span className={styles.comingSoon}>Video dropping this week</span>
-            </div>
-          </div>
-
-          <div className={`${styles.right} reveal reveal-delay-2`}>
-            <div className={styles.videoWrap}>
-              {/* Swap src URL when the video is live */}
-              <iframe
-                src="https://www.youtube.com/embed/PLACEHOLDER"
-                title="Elliott Hedman — SXSW EDU 2025"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className={styles.iframe}
-              />
-              <div className={styles.videoOverlay}>
-                <span className={styles.playLabel}>Coming soon</span>
-              </div>
+              {/* Replace href when the article is live */}
+              <a href="#" className={styles.linkPrimary}>Read the article →</a>
             </div>
           </div>
         </div>
