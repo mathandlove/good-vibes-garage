@@ -264,6 +264,7 @@
     background: var(--text);
     border-radius: 0 0 4px 4px;
     max-width: 100%;
+    border-top: 3px solid var(--accent);
   }
 
   .featured {

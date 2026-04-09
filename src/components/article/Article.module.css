@@ -1,0 +1,610 @@
+/* ─────────────────────────────────────────────
+   Shared article layout styles
+   Used by all writing pieces on Good Vibes Garage
+───────────────────────────────────────────── */
+
+.main {
+  padding-top: var(--nav-height);
+  min-height: 100vh;
+}
+
+.article {
+  padding: 64px 0 120px;
+}
+
+/* Narrow container for prose sections */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Wide container for the image+text cards */
+.cardsContainer {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 40px;
+  margin-top: 16px;
+}
+
+/* ── Header ── */
+
+.header {
+  position: relative;
+}
+
+/* Watermark content type behind the title */
+.header::before {
+  content: attr(data-type);
+  position: absolute;
+  top: 48px;
+  left: 32px;
+  font-family: var(--font-display);
+  font-size: 9rem;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.04;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  z-index: 0;
+}
+
+.header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.breadcrumb {
+  margin-bottom: 32px;
+}
+
+.breadcrumbLink {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbLink:hover {
+  color: var(--accent);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.typeTag {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-dim);
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+.dot {
+  color: var(--text-faint);
+  font-size: 0.85rem;
+}
+
+.date,
+.author,
+.readTime {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-muted);
+  line-height: 1.6;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Section divider ornament ── */
+
+.divider {
+  text-align: center;
+  color: var(--accent-light);
+  font-size: 1.2rem;
+  padding: 32px 0 16px;
+  opacity: 0.6;
+}
+
+/* ── Project metadata grid ── */
+
+.projectMeta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 32px 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 0;
+}
+
+.projectMetaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.projectMetaLabel {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.projectMetaValue {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .projectMeta {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ── Body prose ── */
+
+.body {
+  padding-top: 48px;
+}
+
+.lead {
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.75;
+  color: var(--text);
+  margin-bottom: 28px;
+}
+
+.p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 56px;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 500;
+  color: var(--text);
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+/* ── Blockquote — human voice treatment ── */
+
+.blockquote {
+  background: var(--bg-card);
+  border-left: 4px solid var(--accent-light);
+  padding: 20px 24px;
+  border-radius: 0 8px 8px 0;
+  margin: 28px 0;
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.list {
+  margin: 20px 0 28px 0;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.list li {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+/* ── Closing — full bleed ── */
+
+.closingWrap {
+  margin-left: calc(-1 * 40px);
+  margin-right: calc(-1 * 40px);
+  margin-top: 56px;
+  margin-bottom: 56px;
+}
+
+.closing {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--text);
+  padding: 64px 80px;
+  background: var(--bg-card);
+  border-top: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  border-radius: 0;
+  text-align: center;
+}
+
+/* ── Image + text cards ── */
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding: 64px 0;
+  border-top: 1px solid var(--border-light);
+}
+
+/* Text-only card: full width, no image column */
+.cardTextOnly {
+  padding: 64px 0;
+  border-top: 1px solid var(--border-light);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Reverse: image on right, text on left */
+.cardReverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+.cardReverse .cardImage {
+  order: 2;
+}
+
+.cardReverse .cardText {
+  order: 1;
+}
+
+.cardImage {
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-card);
+  box-shadow: 0 4px 24px rgba(24, 22, 15, 0.08);
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cardCaption {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  padding: 10px 14px;
+  background: var(--bg-card);
+}
+
+.cardText {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ── Ghost number behind heading ── */
+
+.cardNumberWrap {
+  position: relative;
+}
+
+.cardNumber {
+  position: absolute;
+  top: -12px;
+  left: -8px;
+  font-family: var(--font-display);
+  font-size: 8rem;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.18;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.cardTitle {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 20px;
+  margin-top: 72px; /* space for ghost number */
+  letter-spacing: -0.01em;
+}
+
+.cardHeading {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+/* Divider row for section heading before numbered cards */
+.sectionHeadingRow {
+  padding-top: 72px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 0;
+}
+
+.sectionHeading {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+/* ── Article CTA ── */
+
+.articleCta {
+  margin: 56px 0 40px;
+  padding: 40px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.articleCtaShare {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.articleCtaDivider {
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+  margin: 24px auto;
+  border-radius: 2px;
+  opacity: 0.4;
+}
+
+.articleCtaLabel {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.articleCtaButton {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  border: 1.5px solid var(--accent);
+  padding: 10px 24px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.articleCtaButton:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* ── Article Image ── */
+
+.articleImage {
+  margin: 2rem 0;
+}
+
+/* No caption: simple rounded image */
+.articleImageImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* With caption: image + caption as one unit */
+.articleImageWrap {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(24, 22, 15, 0.06);
+}
+
+.articleImageImgCaptioned {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.articleImageCaption {
+  padding: 10px 14px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.55;
+  background: var(--bg-card);
+}
+
+/* ── Video embed ── */
+
+.videoWrap {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 40px 0 8px;
+  box-shadow: 0 4px 24px rgba(24, 22, 15, 0.1);
+}
+
+.videoWrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ── Sources ── */
+
+.sources {
+  padding-top: 40px;
+  border-top: 1px solid var(--border-light);
+  margin-top: 16px;
+}
+
+.sourcesHeading {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.sourcesList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sourcesList li {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-light);
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 768px) {
+  .article {
+    padding: 40px 0 80px;
+  }
+
+  .container,
+  .cardsContainer {
+    padding: 0 20px;
+  }
+
+  .header::before {
+    font-size: 5rem;
+    top: 32px;
+    left: 16px;
+  }
+
+  .title {
+    font-size: clamp(1.6rem, 7vw, 2.4rem);
+  }
+
+  .blockquote {
+    padding: 16px 18px;
+  }
+
+  .h2 {
+    margin-top: 40px;
+  }
+
+  .closingWrap {
+    margin-left: calc(-1 * 20px);
+    margin-right: calc(-1 * 20px);
+  }
+
+  .closing {
+    padding: 40px 28px;
+  }
+
+  .card {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 40px 0;
+  }
+
+  .cardTextOnly {
+    padding: 40px 0;
+  }
+
+  /* Always: image first, text second on mobile */
+  .card .cardImage { order: 1; }
+  .card .cardText  { order: 2; }
+
+  .cardReverse .cardImage { order: 1; }
+  .cardReverse .cardText  { order: 2; }
+
+  .cardNumber {
+    font-size: 5rem;
+  }
+
+  .cardTitle {
+    margin-top: 48px;
+  }
+
+  .sectionHeadingRow {
+    padding-top: 48px;
+  }
+}

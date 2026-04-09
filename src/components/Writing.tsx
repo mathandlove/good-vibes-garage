@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from './Writing.module.css'
 
 const featured = {
@@ -6,10 +7,10 @@ const featured = {
     'Blanket school bans on AI are failing — students use it anyway. The more important conversation is about when AI helps thinking and when it replaces it.',
   type: 'Essay',
   date: '2025',
-  href: 'https://www.buildempathy.com/human-ai-interactions/aiabstinence',
+  href: '/writing/ai-abstinence',
 }
 
-const selected = [
+const selected: WritingItem[] = [
   {
     title: 'Why Kids Work Hard at Fortnite, Not Frog and Toad',
     description:
@@ -24,7 +25,8 @@ const selected = [
       'A year of design research with struggling readers in Denver Public Schools. The key finding: books only matter to kids when reading is essential to the play itself.',
     type: 'Case Study',
     date: '2023',
-    href: 'https://www.buildempathy.com/legoreading',
+    href: '/writing/lego-reading',
+    internal: true,
   },
   {
     title: 'The Death of Curiosity',
@@ -60,7 +62,67 @@ const selected = [
   },
 ]
 
-const academic = [
+const press = [
+  {
+    outlet: 'The 74',
+    title: 'An Antidote to Plagiarism',
+    description: 'A new app uses AI to help students think critically — rather than write for them.',
+    href: 'https://www.the74million.org/article/an-antidote-to-plagiarism-new-app-uses-ai-to-help-students-think-critically/',
+  },
+  {
+    outlet: 'SXSWEdu',
+    title: 'How Youth Use GenAI: Time to Rethink Plagiarism',
+    description: 'Recorded session on how young people use generative AI and what it means for education.',
+    href: 'https://www.youtube.com/watch?v=tZkgEHviMHY&t=1s',
+  },
+  {
+    outlet: 'Patch',
+    title: 'Wonder Stories: Proven to Engage Child Readers Like Digital Games',
+    description: 'How an interactive mystery app keeps children reading four times longer than traditional books.',
+    href: 'https://patch.com/illinois/downersgrove/wonder-stories-proven-engage-child-readers-digital-games',
+  },
+  {
+    outlet: 'MIT News',
+    title: 'Wearable Device Reveals Consumer Emotions',
+    description: 'Coverage of mPath and the MOXO sensor — measuring stress, frustration, and engagement in real environments.',
+    href: 'http://news.mit.edu/2017/wearable-device-reveals-consumer-emotions-0712',
+  },
+  {
+    outlet: 'Wired',
+    title: 'How Sensors That Test Our Stress Could Revolutionize Product Design',
+    description: 'Stress-sensing wearables and their application to design research and product development.',
+    href: 'http://www.wired.com/2014/12/sensors-test-stress-revolutionize-product-design/',
+  },
+  {
+    outlet: 'InformationWeek',
+    title: 'Can Data Teach Us Empathy?',
+    description: 'How combining sensors, data, and design thinking gives organizations genuine empathy for user experience.',
+    href: 'http://www.informationweek.com/it-life/can-data-teach-us-empathy/a/d-id/1321022',
+  },
+  {
+    outlet: 'LiveScience',
+    title: 'How Wearable Tech Could Improve Your Mental Health',
+    description: 'How devices tracking physiological data could identify anxiety triggers and support mental health.',
+    href: 'http://www.livescience.com/44516-future-of-smart-wristbands.html',
+  },
+  {
+    outlet: 'HuffPost',
+    title: 'The Quantified Spouse Movement',
+    description: 'Coverage of biometric tracking in everyday life, including work on measuring emotional experience.',
+    href: 'http://www.huffingtonpost.com/2013/01/28/quantified-spouse-movement_n_2567459.html',
+  },
+  {
+    outlet: 'Core77',
+    title: 'Interactive Sessions on Understanding Data and Human Behavior',
+    description: "Elliott's presentation on understanding data at the IIT Design Research Conference.",
+    href: 'http://www.core77.com/blog/conferences/drc_2012_interactive_sessions_on_understanding_data_and_human_behavior_23707.asp',
+  },
+]
+
+type WritingItem = { title: string; description: string; type: string; date: string; href: string; internal?: boolean }
+type AcademicItem = WritingItem
+
+const academic: AcademicItem[] = [
   {
     title: 'Wireless Measurement of Sympathetic Arousal During Therapy',
     description: 'Frontiers in Neuroscience. EDA sensors measuring physiological arousal in children during occupational therapy.',
@@ -115,7 +177,8 @@ const academic = [
     description: 'The gap between learning something and feeling like you learned it — and why it shapes whether kids keep going.',
     type: 'Essay',
     date: '2018',
-    href: 'https://medium.com/@elliotthedman/7-ways-to-help-kids-feel-their-learning-80f4abbeefb0',
+    href: '/writing/feel-their-learning',
+    internal: true,
   },
   {
     title: 'The 6 Steps to Infusing Literature with Engaging Questions',
@@ -140,10 +203,8 @@ export default function Writing() {
         </div>
 
         {/* Featured */}
-        <a
-          href={featured.href}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to={featured.href}
           className={`${styles.featured} reveal reveal-delay-1`}
         >
           <div className={styles.featuredMeta}>
@@ -155,27 +216,53 @@ export default function Writing() {
           <h3 className={styles.featuredTitle}>{featured.title}</h3>
           <p className={styles.featuredDesc}>{featured.description}</p>
           <span className={styles.cta}>Read article <span className={styles.arrow}>→</span></span>
-        </a>
+        </Link>
 
         {/* Selected Writing */}
         <div className={`${styles.groupBlock} reveal`}>
           <h3 className={styles.groupLabel}>Selected Writing</h3>
         </div>
         <div className={styles.archive}>
-          {selected.map((item, i) => (
+          {selected.map((item, i) => {
+            const className = `${styles.entry} reveal reveal-delay-${Math.min(i + 1, 5)}`
+            const inner = (
+              <>
+                <div className={styles.entryMain}>
+                  <h4 className={styles.entryTitle}>{item.title}</h4>
+                  <p className={styles.entryDesc}>{item.description}</p>
+                  <span className={styles.entryMeta}>{item.type} · {item.date}</span>
+                </div>
+                <span className={styles.entryArrow}>→</span>
+              </>
+            )
+            return item.internal ? (
+              <Link key={item.title} to={item.href} className={className}>
+                {inner}
+              </Link>
+            ) : (
+              <a key={item.title} href={item.href} target="_blank" rel="noopener noreferrer" className={className}>
+                {inner}
+              </a>
+            )
+          })}
+        </div>
+
+        {/* Press */}
+        <div className={`${styles.groupBlock} ${styles.groupBlockSpaced} reveal`}>
+          <h3 className={styles.groupLabel}>In the Press</h3>
+        </div>
+        <div className={`${styles.pressGrid} reveal`}>
+          {press.map((item) => (
             <a
               key={item.title}
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`${styles.entry} reveal reveal-delay-${Math.min(i + 1, 5)}`}
+              className={styles.pressCard}
             >
-              <div className={styles.entryMain}>
-                <h4 className={styles.entryTitle}>{item.title}</h4>
-                <p className={styles.entryDesc}>{item.description}</p>
-                <span className={styles.entryMeta}>{item.type} · {item.date}</span>
-              </div>
-              <span className={styles.entryArrow}>→</span>
+              <span className={styles.pressOutlet}>{item.outlet}</span>
+              <h4 className={styles.pressTitle}>{item.title}</h4>
+              <p className={styles.pressDesc}>{item.description}</p>
             </a>
           ))}
         </div>
@@ -186,22 +273,28 @@ export default function Writing() {
           <p className={styles.groupSub}>Conference papers, journal articles, and dissertation research.</p>
         </div>
         <div className={`${styles.archive} ${styles.archiveDim}`}>
-          {academic.map((item, i) => (
-            <a
-              key={item.title}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${styles.entry} ${styles.entryDim} reveal reveal-delay-${Math.min(i + 1, 5)}`}
-            >
-              <div className={styles.entryMain}>
-                <h4 className={styles.entryTitle}>{item.title}</h4>
-                <p className={styles.entryDesc}>{item.description}</p>
-                <span className={styles.entryMeta}>{item.type} · {item.date}</span>
-              </div>
-              <span className={styles.entryArrow}>→</span>
-            </a>
-          ))}
+          {academic.map((item, i) => {
+            const className = `${styles.entry} ${styles.entryDim} reveal reveal-delay-${Math.min(i + 1, 5)}`
+            const inner = (
+              <>
+                <div className={styles.entryMain}>
+                  <h4 className={styles.entryTitle}>{item.title}</h4>
+                  <p className={styles.entryDesc}>{item.description}</p>
+                  <span className={styles.entryMeta}>{item.type} · {item.date}</span>
+                </div>
+                <span className={styles.entryArrow}>→</span>
+              </>
+            )
+            return item.internal ? (
+              <Link key={item.title} to={item.href} className={className}>
+                {inner}
+              </Link>
+            ) : (
+              <a key={item.title} href={item.href} target="_blank" rel="noopener noreferrer" className={className}>
+                {inner}
+              </a>
+            )
+          })}
         </div>
 
       </div>

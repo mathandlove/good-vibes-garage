@@ -7,42 +7,7 @@ import Testimonial from './components/Testimonial'
 import Work from './components/Work'
 import About from './components/About'
 import Footer from './components/Footer'
-
-function useScrollReveal() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible')
-          }
-        })
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-    )
-
-    const revealEls = document.querySelectorAll('.reveal')
-    revealEls.forEach(el => observer.observe(el))
-
-    return () => observer.disconnect()
-  }, [])
-}
-
-function useHeroEntrance() {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      let seq = 0
-      document.querySelectorAll('.reveal').forEach((el) => {
-        const rect = el.getBoundingClientRect()
-        if (rect.top < window.innerHeight) {
-          setTimeout(() => el.classList.add('visible'), seq * 80)
-          seq++
-        }
-      })
-    }, 150)
-    return () => clearTimeout(timer)
-  }, [])
-}
+import { useScrollReveal, useHeroEntrance } from './hooks/useScrollReveal'
 
 function useMouseGlow() {
   useEffect(() => {

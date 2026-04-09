@@ -19,8 +19,8 @@ export default function Footer() {
           <div className={styles.ctaRow}>
             <div className={styles.ctaItem}>
               <p className={styles.ctaLabel}>Speaking, workshops & advising</p>
-              <a href="mailto:hedman@buildempathy.com" className={styles.emailLink}>
-                hedman@buildempathy.com
+              <a href="mailto:elliott@goodvibesgarage.ai" className={styles.emailLink}>
+                elliott@goodvibesgarage.ai
               </a>
             </div>
             <div className={styles.ctaDivider} />

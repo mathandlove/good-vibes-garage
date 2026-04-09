@@ -13,6 +13,7 @@
 
   /* Primary accent — olive green. Grounded, maker culture, high contrast */
   --accent:       #6B7A2A;
+  --accent-light: #A8B84A;
   --accent-dim:   rgba(107, 122, 42, 0.10);
   --accent-glow:  rgba(107, 122, 42, 0.18);
   --accent-dark:  #4E5A1E;
