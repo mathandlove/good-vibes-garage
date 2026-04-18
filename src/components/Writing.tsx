@@ -31,10 +31,11 @@ const selected: WritingItem[] = [
   {
     title: 'The Death of Curiosity',
     description:
-      'How the structures we build around learning — grading, compliance, performance — quietly kill the thing that makes learning work.',
+      'Companies say they value innovation — but reject vulnerability, own the answer instead of the question, and stay too busy fighting fires. The SXSW talk and essay that named the pattern.',
     type: 'Essay',
     date: '2019',
-    href: 'https://medium.com/p/e0fc2aca4408',
+    href: '/writing/death-of-curiosity',
+    internal: true,
   },
   {
     title: 'Why Personalized Learning Keeps Failing',
@@ -42,15 +43,98 @@ const selected: WritingItem[] = [
       'Adaptive systems promise individualized education but consistently underdeliver. A design research perspective on why the model keeps breaking down.',
     type: 'Essay',
     date: '2019',
-    href: 'https://uxdesign.cc/why-personalized-learning-keeps-failing-3dc9b0fe4e0',
+    href: '/writing/personalized-learning',
+    internal: true,
   },
   {
-    title: 'Redesigning Digital Reading for Struggling Readers',
+    title: 'The 5 Reasons Remote Classrooms Fail',
+    description:
+      'Four years of research with Title 1 students reveals the structural reasons why online learning breaks down — and why it\'s not the teacher\'s fault.',
+    type: 'Essay',
+    date: '2020',
+    href: '/writing/remote-classrooms',
+    internal: true,
+  },
+  {
+    title: 'Question Based Reading',
     description:
       'How Wonder Stories uses inquiry-based learning — embedded questions, bite-sized text, and immediate feedback — to help children build reading confidence.',
     type: 'Article',
     date: '2020',
-    href: 'https://www.wonderstories.app/research/redesignremote',
+    href: '/writing/question-based-reading',
+    internal: true,
+  },
+  {
+    title: 'Like the Help Button, Khanmigo Will Fail to Help My Underrepresented Students',
+    description:
+      'AI tutoring tools assume students will ask for help. The kids who need it most never do — and designing around that assumption changes everything.',
+    type: 'Essay',
+    date: '2023',
+    href: '/writing/khanmigo',
+    internal: true,
+  },
+  {
+    title: '3 Pillars of Teacher Adoption for Edtech',
+    description:
+      'Three months of research with Classcraft revealed why teachers sign up for edtech and never use it. The fix isn\'t better features — it\'s designing for Thursday afternoon.',
+    type: 'Essay',
+    date: '2023',
+    href: '/writing/teacher-adoption',
+    internal: true,
+  },
+  {
+    title: 'LEGO Technic: When Better Instructions Made Everything Worse',
+    description:
+      'Cleaner animations, more polished steps — and kids were more stressed than ever. What stress sensors revealed about how children actually experience building instructions.',
+    type: 'Case Study',
+    date: '2022',
+    href: '/writing/lego-technic',
+    internal: true,
+  },
+  {
+    title: 'Five Years Building Wonder.io With the Kids Who Needed It Most',
+    description:
+      'Over five years, 70+ versions, and hundreds of hours with Boys & Girls Club students. What eye tracking and emotion sensors taught us about reluctant readers.',
+    type: 'Case Study',
+    date: '2021',
+    href: '/writing/designing-wonder-io',
+    internal: true,
+  },
+  {
+    title: 'How a Tennis Ball Increased Lowe\'s Vacuum Sales by 9%',
+    description:
+      'Lowe\'s had 14 vacuums and customers who couldn\'t choose. A fake store, stress sensors, and one unexpected insight about suction led to 150+ design changes.',
+    type: 'Case Study',
+    date: '2020',
+    href: '/writing/lowes-vacuum',
+    internal: true,
+  },
+  {
+    title: 'Level Up: Building an AI Writing Coach That Doesn\'t Do the Writing',
+    description:
+      'We built a free Google Docs add-on that gives students personalized writing feedback without writing for them. The hard problem was keeping AI in the right role.',
+    type: 'Case Study',
+    date: '2023',
+    href: '/writing/level-up',
+    internal: true,
+  },
+  {
+    title: 'These Kids Aren\'t Lazy. They\'re Anxious.',
+    description:
+      'Middle schoolers were randomly clicking through diagnostic tests. Eye tracking and stress sensors revealed it wasn\'t apathy — and the messaging designed to help was making it worse.',
+    type: 'Case Study',
+    date: '2021',
+    href: '/writing/middle-school-tests',
+    internal: true,
+  },
+  {
+    title: 'From "I Won\'t Read a Paragraph" to "Can We Play Again?"',
+    description:
+      'Boys & Girls Club students refused to finish a single paragraph. After iterating on coin systems, bite-sized reveals, and Wonder Questions, they were asking to go again.',
+    type: 'Case Study',
+    date: '2021',
+    href: '/writing/boys-girls-club-reading',
+    internal: true,
   },
   {
     title: 'The Neuroscience of Struggling Readers',
@@ -64,6 +148,12 @@ const selected: WritingItem[] = [
 
 const press = [
   {
+    outlet: 'TEDxCambridge',
+    title: 'Improving the Emotional Experience of Kids with Autism',
+    description: 'How wearable emotion sensors can help children with autism and ADHD communicate their emotional experience during therapy.',
+    href: 'https://www.youtube.com/watch?v=DyUsjAjPYNE',
+  },
+  {
     outlet: 'The 74',
     title: 'An Antidote to Plagiarism',
     description: 'A new app uses AI to help students think critically — rather than write for them.',
@@ -76,6 +166,18 @@ const press = [
     href: 'https://www.youtube.com/watch?v=tZkgEHviMHY&t=1s',
   },
   {
+    outlet: 'Popular Science',
+    title: 'Can We Make Ourselves More Empathetic?',
+    description: 'How biometric sensors and design research are changing what it means to truly understand another person\'s experience.',
+    href: 'https://www.popsci.com/story/science/popsci-archive-empathy-machine/',
+  },
+  {
+    outlet: 'Scholastic',
+    title: 'Motivating Children to Show Up to Reading',
+    description: 'What design research reveals about getting reluctant readers genuinely engaged — not just compliant.',
+    href: 'https://edublog.scholastic.com/post/motivating-children-show-reading',
+  },
+  {
     outlet: 'Patch',
     title: 'Wonder Stories: Proven to Engage Child Readers Like Digital Games',
     description: 'How an interactive mystery app keeps children reading four times longer than traditional books.',
@@ -86,6 +188,12 @@ const press = [
     title: 'Wearable Device Reveals Consumer Emotions',
     description: 'Coverage of mPath and the MOXO sensor — measuring stress, frustration, and engagement in real environments.',
     href: 'http://news.mit.edu/2017/wearable-device-reveals-consumer-emotions-0712',
+  },
+  {
+    outlet: 'Wired Japan',
+    title: 'The Science of Emotion',
+    description: 'How measuring physiological arousal in real environments is redefining empathy in product design.',
+    href: 'http://wired.jp/special/2015/beyond-solution/03.html',
   },
   {
     outlet: 'Wired',
@@ -110,6 +218,12 @@ const press = [
     title: 'The Quantified Spouse Movement',
     description: 'Coverage of biometric tracking in everyday life, including work on measuring emotional experience.',
     href: 'http://www.huffingtonpost.com/2013/01/28/quantified-spouse-movement_n_2567459.html',
+  },
+  {
+    outlet: 'Metropolis Magazine',
+    title: 'Select 10: Up-and-Coming Designers',
+    description: 'mPath named among the top ten up-and-coming design practices.',
+    href: 'http://www.metropolismag.com/october-2013/the-select-ten/?cparticle=6&siarticle=5#artanc',
   },
   {
     outlet: 'Core77',
@@ -198,7 +312,7 @@ export default function Writing() {
         <div className={`${styles.hero} reveal`}>
           <h2 className={styles.title}>Writing</h2>
           <p className={styles.intro}>
-            Essays, articles, and research on learning, AI, and what happens when you put real tools in front of real people.
+            A decade of essays, articles, and research on learning, AI, and what happens when you put real tools in front of real people.
           </p>
         </div>
 
