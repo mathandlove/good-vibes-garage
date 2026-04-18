@@ -33,6 +33,7 @@ import EmpoweringParentsPage from './pages/EmpoweringParentsPage.tsx'
 import AddingRewardsPage from './pages/AddingRewardsPage.tsx'
 import DigitalMathPage from './pages/DigitalMathPage.tsx'
 import EducationComPage from './pages/EducationComPage.tsx'
+import OgPreviewPage from './pages/OgPreviewPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -64,6 +65,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/writing/adding-rewards" element={<AddingRewardsPage />} />
         <Route path="/writing/digital-math" element={<DigitalMathPage />} />
         <Route path="/writing/education-com-gamification" element={<EducationComPage />} />
+        <Route path="/_og-preview" element={<OgPreviewPage />} />
       </Routes>
     </BrowserRouter>
     </HelmetProvider>

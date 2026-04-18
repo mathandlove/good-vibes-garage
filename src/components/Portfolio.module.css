@@ -1,0 +1,230 @@
+/* ────────────────────────────────────────────
+   Section
+──────────────────────────────────────────── */
+.section {
+  padding-top: 120px;
+  padding-bottom: 128px;
+  background: var(--bg);
+}
+
+/* ────────────────────────────────────────────
+   Page hero
+──────────────────────────────────────────── */
+.hero {
+  max-width: 680px;
+  margin-bottom: 72px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+.intro {
+  font-size: 1.0625rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 580px;
+  margin-bottom: 20px;
+}
+
+.cvLink {
+  display: inline-block;
+  font-size: 0.825rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cvLink:hover {
+  color: var(--accent-dark);
+}
+
+/* ────────────────────────────────────────────
+   Section group labels
+──────────────────────────────────────────── */
+.groupBlock {
+  max-width: 760px;
+  margin-bottom: 4px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.groupBlockSpaced {
+  margin-top: 64px;
+}
+
+.groupLabel {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ────────────────────────────────────────────
+   Archive list
+──────────────────────────────────────────── */
+.archive {
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+}
+
+.entry {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border-light);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.archive .entry:first-child {
+  border-top: 1px solid var(--border-light);
+}
+
+.entryFeatured {
+  position: relative;
+}
+
+.entryFeatured::after {
+  content: 'Featured';
+  position: absolute;
+  top: 28px;
+  right: 0;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+
+.entryMain {
+  flex: 1;
+  min-width: 0;
+}
+
+.entryClientRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.entryClient {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.dot {
+  color: var(--text-faint);
+  font-size: 0.8rem;
+}
+
+.entrySector {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  letter-spacing: 0.02em;
+}
+
+.entryTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  color: var(--text);
+  margin-bottom: 8px;
+  transition: color 0.2s ease;
+}
+
+.entry:hover .entryTitle {
+  color: var(--accent-dark);
+}
+
+.entryDesc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+
+.entryOutcome {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.entryArrow {
+  font-size: 1rem;
+  color: var(--text-faint);
+  flex-shrink: 0;
+  margin-top: 4px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.entry:hover .entryArrow {
+  color: var(--accent);
+  transform: translateX(3px);
+}
+
+/* ────────────────────────────────────────────
+   Tablet
+──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .section {
+    padding-top: 88px;
+    padding-bottom: 96px;
+  }
+
+  .hero {
+    margin-bottom: 52px;
+  }
+}
+
+/* ────────────────────────────────────────────
+   Mobile
+──────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .section {
+    padding-top: 72px;
+    padding-bottom: 80px;
+  }
+
+  .hero {
+    margin-bottom: 40px;
+  }
+
+  .entry {
+    padding: 22px 0;
+    gap: 16px;
+  }
+
+  .entryArrow {
+    display: none;
+  }
+
+  .entryFeatured::after {
+    display: none;
+  }
+}

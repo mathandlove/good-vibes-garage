@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.buildempathy.com)",
+      "Bash(python3 -c ' *)",
+      "WebSearch"
+    ],
+    "additionalDirectories": [
+      "/Users/mathandlove/.claude"
+    ]
+  }
+}
