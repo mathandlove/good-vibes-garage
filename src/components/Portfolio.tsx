@@ -35,7 +35,7 @@ const allExamples: PortfolioItem[] = [
     outcome: 'Standing-room-only SXSWEDU talk; second iteration in testing',
     href: '/writing/level-up',
     internal: true,
-    ogImage: '/src/assets/Images/level-up/logo.webp',
+    ogImage: '/og-level-up.jpg',
   },
   {
     title: 'Onboarding Teacher Experience with Classcraft',
