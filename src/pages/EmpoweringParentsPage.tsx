@@ -2,14 +2,11 @@ import { Helmet } from 'react-helmet-async'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import {
-  ArticleHeader,
   ArticleHero,
   ArticleImage,
+  ArticleCard,
   ArticleProjectMeta,
-  ArticleStatRow,
-  ArticleStat,
   ArticleSectionHeading,
-  ArticleCallout,
   ArticleTimeline,
   ArticleTimelineItem,
   ArticlePullQuote,
@@ -19,10 +16,13 @@ import {
 } from '../components/article'
 import { useScrollReveal, useHeroEntrance } from '../hooks/useScrollReveal'
 import heroImg from '../assets/Images/empowering-parents/header.webp'
+import examplesImg from '../assets/Images/empowering-parents/examples.webp'
 import brainstormingImg from '../assets/Images/empowering-parents/brainstorming.webp'
 import appFlowImg from '../assets/Images/empowering-parents/appflow.webp'
+import codeImg from '../assets/Images/empowering-parents/code.webp'
+import captureImg from '../assets/Images/empowering-parents/capture.webp'
 import testingImg from '../assets/Images/empowering-parents/testing.webp'
-import resultsImg from '../assets/Images/empowering-parents/results.webp'
+import pilotweekImg from '../assets/Images/empowering-parents/pilotweek.webp'
 
 const CANONICAL_URL = 'https://goodvibesgarage.ai/writing/empowering-parents'
 const OG_IMAGE = 'https://goodvibesgarage.ai/og-empowering-parents.jpg'
@@ -69,16 +69,17 @@ export default function EmpoweringParentsPage() {
       <main className={styles.main}>
         <article className={styles.article}>
 
-          <ArticleHeader
+          <ArticleHero
+            img={heroImg}
+            imgAlt="Toddlers Can Read app prototype interface"
+            layout="below"
+            title="Empowering Parents as Teachers"
+            subtitle="The app worked. The parents didn't use it. Those are two different problems."
             type="Case Study"
             date="2019"
             author="Elliott Hedman"
             readTime="5 min read"
-            title="Empowering Parents as Teachers"
-            subtitle="The app worked. The parents didn't use it. Those are two different problems."
           />
-
-          <ArticleHero img={heroImg} imgAlt="Toddlers Can Read app prototype interface" layout="below" />
 
           <ArticleProjectMeta items={[
             { label: 'Client',  value: 'Toddlers Can Read' },
@@ -91,102 +92,209 @@ export default function EmpoweringParentsPage() {
           <div className={styles.container}>
             <div className={styles.body}>
               <p className={`${styles.lead} reveal`}>
-                Spencer had built a video library that could genuinely teach toddlers to read. His problem wasn't the content. It was that parents weren't getting far enough in to use it.
-              </p>
-              <p className={`${styles.p} reveal`}>
-                Two-hour video prerequisites. Activities that told parents what to do but not how it should look. Badges tied to goals parents didn't have. Every friction point was small on its own. Together, they were enough to make someone put the phone down.
-              </p>
-              <p className={`${styles.p} reveal`}>
-                We prototyped a new app in a single day, shipped it to parents with no instructions, and watched what happened.
+                Spencer, founder of Toddlers Can Read, has a strong vision: empower parents to help their children with literacy. He had an educational video library, but he wanted to see higher adoption and success rates. He believed an interactive app would help inspire parents to action.
               </p>
             </div>
           </div>
 
-          <ArticlePullQuote>
-            "Ask a mother if she wants to help her child read, and she will most likely say yes. Give a teaching app to a mother, and it will likely never be used."
-          </ArticlePullQuote>
+          <ArticleSectionHeading>Design Review of Current Offering</ArticleSectionHeading>
 
-          {/* ── Stats ── */}
-          <div className={styles.container}>
-            <ArticleStatRow>
-              <ArticleStat value="1 day" label="to first prototype" note="built, shipped, and tested" />
-              <ArticleStat value="2" label="user profiles discovered" note="Planners and Dreamers" />
-              <ArticleStat value="6" label="design principles" note="for the majority Dreamer parent" />
-            </ArticleStatRow>
+          <div className={styles.cardsContainer}>
+            <ArticleCard
+              img={examplesImg}
+              imgAlt="Examples of design principles applied to the current offering"
+              caption="Design review findings — opportunities identified in the existing product."
+              heading="Example Design Principles"
+              reverse
+            >
+              <p className={styles.p}>
+                We started with a design review. With my decade of experience building introductions to online tools, I could see some clear opportunities for improvement.
+              </p>
+              <ul className={styles.list}>
+                <li><strong>People Learn by Doing</strong> — Asking mothers to watch two hours of video before they begin can be daunting.</li>
+                <li><strong>Make Parent Actions Tangible</strong> — A video was provided with a montage of activities, but it was unclear which activity parents should do and how.</li>
+                <li><strong>Badges Only Work with Meaningful Goals</strong> — The video site gave more videos as parents completed videos, but parents do not have goals around completing videos. Their goals are around teaching reading.</li>
+              </ul>
+            </ArticleCard>
           </div>
 
-          <div className={styles.container}>
-            <div className={`${styles.divider} reveal`}>✦</div>
-          </div>
-
-          <ArticleSectionHeading>What the Research Found</ArticleSectionHeading>
+          <ArticleSectionHeading>Brainstorming and Designing Prototype #1</ArticleSectionHeading>
 
           <div className={styles.container}>
             <div className={styles.body}>
               <p className={`${styles.p} reveal`}>
-                At-home testing surfaced something we didn't expect: parents aren't a single type. Two distinct profiles emerged almost immediately.
-              </p>
-              <p className={`${styles.p} reveal`}>
-                <strong>Planners</strong> are highly organized. They research before acting, want comprehensive information, and will work through onboarding flows carefully. They're a minority — but they're the user most apps are unconsciously designed for.
-              </p>
-              <p className={`${styles.p} reveal`}>
-                <strong>Dreamers</strong> are the majority. They genuinely want to help their child. They have the desire. But when the first obstacle appears — a long video, an unclear activity, a decision they weren't expecting — they put it down. Not because they stopped caring. Because the path got too hard.
+                All staff met in Dallas and brainstormed what an ideal app might look like. I emphasized listening to team members and making their ideas tangible. At the end of the brainstorming, we had Prototype #1.
               </p>
             </div>
           </div>
 
+          <div className={styles.cardsContainer}>
+            <ArticleCard
+              img={brainstormingImg}
+              imgAlt="Brainstorming session with the Toddlers Can Read team"
+              caption="Collaborative brainstorming session that produced Prototype #1."
+              heading="The Brainstorm"
+            >
+              <p className={styles.p}>
+                All staff met in Dallas and brainstormed what an ideal app might look like. I emphasized listening to team members and making their ideas tangible. At the end of the brainstorming, we had Prototype #1.
+              </p>
+            </ArticleCard>
+            <ArticleCard
+              img={appFlowImg}
+              imgAlt="App flow diagram on a whiteboard showing the prototype structure"
+              caption="The app flow mapped out on a whiteboard — the skeleton of Prototype #1."
+              heading="The App Flow"
+              reverse
+            >
+              <p className={styles.p}>
+                Using HTML, CSS, and JavaScript, I built a digital prototype of the team's idea. We needed an app that could be easily shareable (which meant it needed to be on the web) and we needed the app to adapt to the child's diagnostic test — so it could not be static (e.g. Figma).
+              </p>
+            </ArticleCard>
+          </div>
+
+          <ArticleSectionHeading>Build Digital Prototype</ArticleSectionHeading>
+
+          <div className={styles.cardsContainer}>
+            <ArticleCard
+              img={codeImg}
+              imgAlt="Code for the digital prototype"
+              caption="Built in HTML, CSS, and JavaScript — shareable on the web and adaptive to each child's diagnostic results."
+              heading="The Prototype"
+            >
+              <p className={styles.p}>
+                Using HTML, CSS, and JavaScript, I built a digital prototype of the team's idea. We needed an app that could be easily shareable (which meant it needed to be on the web) and we needed the app to adapt to the child's diagnostic test — so it could not be static (e.g. Figma).
+              </p>
+              <p className={styles.p}>
+                <a href="https://wonder.io/tcr/intro" target="_blank" rel="noopener noreferrer">Link to prototype app we sent to parents</a> (best viewed on mobile)
+              </p>
+            </ArticleCard>
+          </div>
+
+          <ArticleSectionHeading>At-Home Prototype Testing</ArticleSectionHeading>
+
+          <ArticlePullQuote>
+            "Ask a mother if she wants to help her child read, and she will most likely say yes. Give a teaching app to a mother, and it will most likely never be used."
+          </ArticlePullQuote>
+
+          <div className={styles.cardsContainer}>
+            <ArticleCard
+              img={testingImg}
+              imgAlt="At-home testing session — interviewing a parent in their living room"
+              caption="At-home testing — prototypes distributed without instructions to surface genuine pain points."
+              heading="Testing at Home"
+            >
+              <p className={styles.p}>
+                I knew mothers' social bias (they want to be good parents) would prevent us from understanding their real pain points. We also knew if we instructed parents to use the app, they would, as they would have felt forced to perform. So we sent the app to parents "as a bonus" for helping us, never asking them to use the app.
+              </p>
+              <p className={styles.p}>
+                During our open-ended interviews, we asked parents to tell us what happened and why they did or did not use the app.
+              </p>
+            </ArticleCard>
+          </div>
+
+          <ArticleSectionHeading>Co-Creation During Interviews</ArticleSectionHeading>
+
+          <div className={styles.cardsContainer}>
+            <ArticleCard
+              img={pilotweekImg}
+              imgAlt="Pilot week results diagram showing the 6 design principles mapped onto the app"
+              caption="Pilot week results — design principles labeled on the prototype interface."
+              heading="Co-Creation"
+              reverse
+            >
+              <p className={styles.p}>
+                For many parents, they did not use the app daily. In prototyping, this was to be expected. We wanted to discover what was getting in the parents' way. We worked with each parent to redesign the app in a way where they would want to use it each day.
+              </p>
+            </ArticleCard>
+          </div>
+
+          <ArticleSectionHeading>Research Findings</ArticleSectionHeading>
+
+          <div className={styles.cardsContainer}>
+            <ArticleCard
+              img={captureImg}
+              imgAlt="Dreamers vs Planners spectrum — ability to teach child to read"
+              caption="Two distinct user profiles emerged from the research."
+              heading="Planners vs. Dreamers"
+            >
+              <p className={styles.p}>
+                Spencer's product had two distinct user profiles. Planner parents were masters at realizing their goals with their children: the type of parents who have the whole day scheduled, have looked at every teaching reading service, and most likely are stay-at-home. Spencer's first product (and, in many ways, Prototype #1) was geared toward the planners — giving them a flood of information to help with their master plan.
+              </p>
+              <p className={styles.p}>
+                The much larger profile are dreamers. They want to help their children prepare for school, but when an obstacle arises (e.g. "I don't know where to start"), they give up. Their path needs to be clear to proceed. The vast majority of Spencer's potential users are dreamers.
+              </p>
+            </ArticleCard>
+          </div>
+
           {/* ── Design principles ── */}
-          <ArticleSectionHeading>Six Principles for Dreamer Parents</ArticleSectionHeading>
+          <ArticleSectionHeading>Design Principles to Help Dreamer Parents</ArticleSectionHeading>
 
           <div className={styles.container}>
             <ArticleTimeline>
-              <ArticleImage src={brainstormingImg} alt="Brainstorming session with the Toddlers Can Read team" caption="Collaborative brainstorming session that produced Prototype #1." />
-
-              <ArticleTimelineItem step="01" heading="Drips, Not Firehoses">
+              <ArticleTimelineItem step="01" heading="Drips, Not Firehoses" continueLine>
                 <p className={styles.p}>
-                  Dreamers don't fail because they lack motivation. They fail because the opening ask is too large. Bite-sized, sequential steps — one at a time, in context — are far more likely to get completed than comprehensive guides. Don't give parents everything they need to know. Give them what they need right now.
+                  There are a million things we need to know to be the perfect parents, and we can't learn them all at once. The best way to learn is in the moment, through practice, and in bite-sized chunks. On Day 1, the parent may watch an introduction video. On Day 2, they may make flashcards. On Day 3, they may play a fun game with the flashcards with no learning objectives. What is the minimal learning a parent has to do each day to feel successful?
                 </p>
               </ArticleTimelineItem>
-              <ArticleTimelineItem step="02" heading="Soft Starts">
+              <ArticleTimelineItem step="02" heading="Soft Starts" continueLine>
                 <p className={styles.p}>
-                  Starting with reading instruction puts the bar too high before trust is established. We began with non-academic activities — animal sounds, simple games — to build routine and confidence before any literacy content appeared. Get the habit first. The content follows naturally.
+                  When I worked with i-Ready, we first introduced how to play a game before we taught a new skill (teach one thing at a time). Not only does a parent have to teach a new skill (phonics), but they also have to learn how to create structure around new learning games. Parent apps should have parents practice creating routine and game structures before starting to introduce educational content. Start by having kids practice animal sounds or shapes.
                 </p>
               </ArticleTimelineItem>
-              <ArticleImage src={appFlowImg} alt="App flow diagram showing the prototype structure" caption="The prototype app flow, built in a day for at-home testing." />
-
-              <ArticleTimelineItem step="03" heading="Eliminate Parent Choice">
+              <ArticleTimelineItem step="03" heading="Eliminate Parent Choice" continueLine>
                 <p className={styles.p}>
-                  Multiple options create decision paralysis. Every time a parent has to choose, there's a chance they choose nothing. Predetermined daily activities — "here's what to do today" — removed that friction entirely. The best designs for Dreamers make the next step obvious and singular.
+                  When I was designing a medical manual that instructed patients to "Insert 3 to 5 ml of insulin in the needle," the patients became confused. "Is it 3 or 4 or 5? How am I supposed to make a choice?" While choice may feel empowering as a designer, it often paralyzes and removes parents' confidence.
+                </p>
+                <p className={styles.p}>
+                  In our app, we asked parents to choose between four different games to play with their child (it didn't matter which one they chose). Parents had to watch videos for all the games and then were not sure which one they should do. What sound should they work on? How long should they play? Are they making the right choices? None of these questions were critical, but they each created a moment of doubt for the "dreamers."
+                </p>
+                <p className={styles.p}>
+                  Parents wanted the opposite of choice: "Just tell me that I am playing The Floor Is Lava while working on the 'B' sound." They wanted to open up the app and have an activity ready to go with their child — no thinking or choices required.
                 </p>
               </ArticleTimelineItem>
-              <ArticleTimelineItem step="04" heading="Hackable Tasks">
+              <ArticleTimelineItem step="04" heading="Hackable Tasks" continueLine>
                 <p className={styles.p}>
-                  Parents know their child. If an activity clearly won't work — wrong mood, wrong context, child is tired — the parent should be able to adapt it without feeling like they've broken the program. Guided defaults with built-in flexibility prevent the abandonment that happens when rigid systems meet messy real life.
+                  There's no way for Spencer to know every parent's situation. A common worry was "My kid has a lot of energy, and you probably did not account for that." While mothers do not want to have to think about daily exercises, when they do see the need for a change, they need to be empowered. If the activity today is "Teach your doll" but Mom needs her son to run around, she needs to be able to switch activities. So while everything starts as directed, parents need to be able to modify the lesson with additional, optional effort.
                 </p>
               </ArticleTimelineItem>
-              <ArticleTimelineItem step="05" heading="Leave AI in the Background">
+              <ArticleTimelineItem step="05" heading="Leave AI in the Background" continueLine>
                 <p className={styles.p}>
-                  FAQ sections went unused. Parents didn't want to ask questions — they wanted recommendations. Algorithmic suggestions that required no active input from the parent outperformed any interactive help system we tested. The less visible the intelligence, the more trusted it was.
+                  The TCR team thought a helper bot could answer questions parents might have, such as, "My child is not engaging; what should I do?"
+                </p>
+                <p className={styles.p}>
+                  We put a FAQ section in the app, and no parents read it. Asking an app for help is like making a choice — it requires thinking, energy, and planning, which our "dreamer" parents didn't want.
+                </p>
+                <p className={styles.p}>
+                  However, they were all excited about the app working in the background making those activity choices for them. "Our algorithm sees that your child has mastered the 'S' sound, and we recommend you to move on to 'M.'" This type of AI that doesn't require input but provides clear, intelligent direction was viewed as the best feature for our future prototype.
                 </p>
               </ArticleTimelineItem>
               <ArticleTimelineItem step="06" heading="Mandatory Fun">
                 <p className={styles.p}>
-                  Parent engagement tracks child engagement. When a child is excited, the parent keeps going. When a child is bored or frustrated, the parent puts it down. The app's success depended on the child experience as much as the parent experience. Fun wasn't optional — it was the mechanism.
+                  Parents don't want to fight with their kids to learn how to read. The #1 determinant of if a parent will use the app is if their child loves it and asks to play again.
+                </p>
+                <p className={styles.p}>
+                  In reality, many things that make learning fun are on the parent. Is Mom excited? How does Mom handle failure? How does she celebrate successes? We need to help Mom sell our app. We know this "fun factor" is critical for the app and will be prototyping new ways for apps to empower parents to make learning fun.
                 </p>
               </ArticleTimelineItem>
             </ArticleTimeline>
           </div>
 
-          <ArticleImage src={testingImg} alt="At-home testing session with parents and toddlers" caption="At-home testing — prototypes distributed without instructions to surface genuine pain points." />
+
+          <ArticleSectionHeading>Empowering Parents Requires Critical Design Research</ArticleSectionHeading>
 
           <div className={styles.container}>
-            <ArticleCallout label="The Core Design Insight" variant="insight">
-              <p>Effective parent-empowered literacy tools don't require parents to become teachers. They require removing the expertise, planning, and entertainment burdens entirely — so parents can feel confident doing something they already want to do.</p>
-            </ArticleCallout>
+            <div className={styles.body}>
+              <p className={`${styles.p} reveal`}>
+                This research study was a small, weeklong study looking at how to empower parents. What I have learned is that the future of learning can and should be in parents' hands. While parents are not expert teachers, that one-on-one time with early readers is so much more impactful than in the classrooms I work at with 30 children who are all behind and don't want to be there.
+              </p>
+              <p className={`${styles.p} reveal`}>
+                But the future of reading can only be in parents' hands if they are empowered. Future design should look to remove the requirement of having to be an expert in academics, planning, and entertaining. We need parents to feel that they can just push Play and they will be the Supermom. And I 100% believe moms can be the Supermoms when it comes to literacy — we just need design apps to help them believe in themselves.
+              </p>
+            </div>
           </div>
 
           <ArticleClosing>
-            The desire was always there. The design just had to stop getting in the way.
+            We need parents to feel that they can just push Play and they will be the Supermom.
           </ArticleClosing>
 
           <ArticleCta

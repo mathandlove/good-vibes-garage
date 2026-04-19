@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import {
-  ArticleHeader,
   ArticleHero,
   ArticleImage,
   ArticleProjectMeta,
@@ -79,13 +78,18 @@ export default function MiddleSchoolTestsPage() {
       <main className={styles.main}>
         <article className={styles.article}>
 
-          <ArticleHeader
+          {/* ── Hero image ── */}
+          <ArticleHero
+            img={fastGuessing}
+            imgAlt="Skin conductance chart for an 11th grade girl showing fast guessing phases during a multiplication test"
+            caption="An 11th grader's skin conductance during a test. The flat valleys labeled 'Fast Guessing' mark the moments she stopped engaging — exhausted and looking for any way out."
+            layout="below"
+            title="These Kids Aren't Lazy. They're Anxious."
+            subtitle="Diagnostic tests were showing garbage data. The fix wasn't harder enforcement. It was a different understanding of what was happening."
             type="Case Study"
             date="2021"
             author="Elliott Hedman"
             readTime="5 min read"
-            title="These Kids Aren't Lazy. They're Anxious."
-            subtitle="Diagnostic tests were showing garbage data. The fix wasn't harder enforcement. It was a different understanding of what was happening."
           />
 
           {/* ── Project metadata ── */}
@@ -96,25 +100,20 @@ export default function MiddleSchoolTestsPage() {
             { label: 'Method',   value: 'Eye tracking + MOXO stress sensors + interviews' },
           ]} />
 
-          {/* ── Hero image ── */}
-          <ArticleHero
-            img={fastGuessing}
-            imgAlt="Skin conductance chart for an 11th grade girl showing fast guessing phases during a multiplication test"
-            caption="An 11th grader's skin conductance during a test. The flat valleys labeled 'Fast Guessing' mark the moments she stopped engaging — exhausted and looking for any way out."
-            layout="below"
-          />
-
           {/* ── Intro ── */}
           <div className={styles.container}>
             <div className={styles.body}>
               <p className={`${styles.lead} reveal`}>
-                The school had a data problem. Students were blowing through diagnostic tests — clicking randomly, answering in seconds, making a mockery of the assessments meant to guide their curriculum. Teachers assumed the kids just didn't care.
+                Students were not taking diagnostics seriously, answering questions randomly. These false efforts were affecting school scores and students were being placed in content that was too easy for them.
               </p>
               <p className={`${styles.p} reveal`}>
                 We put eye tracking glasses on students and watched what actually happened when they hit a hard question.
               </p>
               <p className={`${styles.p} reveal`}>
                 They didn't skip hard questions because they were lazy. They quit because they were scared. Fast guessing wasn't apathy — it was a coping strategy for anxiety.
+              </p>
+              <p className={`${styles.p} reveal`}>
+                We prototyped different messages to give to students that might motivate them to try harder on tests. We found that middle school students paid the most attention and listened to high school students who adults didn't believe in. Students paid attention to the student lead messaging and reported more desire to try hard.
               </p>
             </div>
           </div>
@@ -131,6 +130,18 @@ export default function MiddleSchoolTestsPage() {
               <ArticleTimelineItem step="01" heading="Anxiety, Not Apathy">
                 <p className={styles.p}>
                   Eye tracking revealed the pattern: students would engage carefully with early questions, then accelerate through the section as difficulty increased. The speed-up happened exactly when questions got hard. MOXO sensors confirmed elevated stress at those moments. These weren't kids who didn't care — they were kids who cared enough to be afraid of failing and had learned that moving fast was how you got through without having to confront that fear directly.
+                </p>
+                <p className={styles.p}>
+                  Our client was planning on bringing in an animation studio to make an entertaining pitch to try hard on the test. Students didn't believe the prototyped animation nor care.
+                </p>
+                <p className={styles.p}>
+                  When we prototyped "real" student's stories students were leaning in and could remember every piece of information. Middle School students aspire to be high school students care deeply about what they had to say. We recommended all messaging be conducted from a high school student.
+                </p>
+                <p className={styles.p}>
+                  If the narrator doesn't believe in the student, the student does not trust them.
+                </p>
+                <p className={styles.p}>
+                  Students were fast guessing to avoid anxiety, not because of apathy.
                 </p>
               </ArticleTimelineItem>
             </ArticleTimeline>
@@ -149,6 +160,36 @@ export default function MiddleSchoolTestsPage() {
                 <p className={styles.p}>
                   We tested several kinds of motivational messaging before the test. Animated characters: students tuned out immediately. Generic "try your best" copy: equally ineffective. High school students speaking directly to camera about how they'd approached similar challenges: engagement stayed up. Real peers with real credibility — same school, similar background, speaking about their own experience — cut through in a way designed assets simply couldn't.
                 </p>
+                <p className={styles.p}>
+                  Videos of high school students were much more interesting. So much so, we recommended future lessons may want to have high school students teach middle school students.
+                </p>
+                <p className={styles.p}>
+                  In our early prototypes we presented various pieces of messaging and it was the student stories that were the most remembered.
+                </p>
+                <p className={styles.p}>
+                  Our main question became, how do we create a narrator the student believes in and wants to listen to.
+                </p>
+                <p className={styles.p}>
+                  While students were more relatable, teachers were more knowledgeable, so we recommended having a teacher alongside the student.
+                </p>
+                <p className={styles.p}>
+                  Initial messaging revolved around downplaying the challenge — "you can do this" and "this will be easy". When students ran into a hard problem they felt even dumb and misunderstood.
+                </p>
+                <p className={styles.p}>
+                  If you say "this test will be easy" students will think you don't know them or think they are dumb.
+                </p>
+                <p className={styles.p}>
+                  Students were much more motivated around messaging that centered around "I don't give up" and "proving yourself". Students believed they were great and wanted messaging that believed in that too.
+                </p>
+                <p className={styles.p}>
+                  Proving a teacher wrong, that you can do it, is a highly engaging and motivating archetype.
+                </p>
+                <p className={styles.p}>
+                  We tried various academic interventions to motivate children and they had no effect as children struggled to create aspirations.
+                </p>
+                <p className={styles.p}>
+                  Proving to a teacher that they underestimated you is highly motivating.
+                </p>
               </ArticleTimelineItem>
             </ArticleTimeline>
           </div>
@@ -165,6 +206,12 @@ export default function MiddleSchoolTestsPage() {
               <ArticleTimelineItem step="03" heading="Growth Framing Outperformed Effort Framing">
                 <p className={styles.p}>
                   "Try hard" messaging didn't move the needle. What resonated: "I don't give up" and "I'm here to prove something to myself." The distinction matters — effort framing puts the bar on how hard you work, which is vague and easy to dismiss. Growth framing connects the test to identity: what kind of person are you becoming? Students had something to prove to themselves that was more interesting than pleasing a system.
+                </p>
+                <p className={styles.p}>
+                  With eye tracking and MOXO sensors we saw children were giving up after encountering problems that were too difficult. Their coping mechanism was to not try hard afterwards.
+                </p>
+                <p className={styles.p}>
+                  Rather than emphasizing the importance of answering questions correctly, we instead emphasized that if you can't get a problem correct, it's okay — some of these questions almost no 8th grader can answer correctly.
                 </p>
               </ArticleTimelineItem>
             </ArticleTimeline>

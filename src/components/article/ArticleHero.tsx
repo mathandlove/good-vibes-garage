@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from './Article.module.css'
 
 type HeroLayout = 'overlay' | 'below' | 'split'
@@ -5,10 +6,17 @@ type HeroLayout = 'overlay' | 'below' | 'split'
 interface ArticleHeroProps {
   img: string
   imgAlt: string
-  title?: string         // optional — can be used independently of ArticleHeader
+  title?: string
   subtitle?: string
-  layout?: HeroLayout    // 'overlay' = title on top of image, 'below' = image then text, 'split' = side by side
+  layout?: HeroLayout
   caption?: string
+  // meta bar props (for 'below' layout)
+  type?: string
+  date?: string
+  author?: string
+  readTime?: string
+  backLabel?: string
+  backTo?: string
 }
 
 export default function ArticleHero({
@@ -18,7 +26,15 @@ export default function ArticleHero({
   subtitle,
   layout = 'below',
   caption,
+  type,
+  date,
+  author,
+  readTime,
+  backLabel = '← Writing',
+  backTo = '/writing',
 }: ArticleHeroProps) {
+  const hasMeta = type || date || author || readTime
+
   if (layout === 'overlay') {
     return (
       <div className={`${styles.heroOverlay} reveal`}>
@@ -50,14 +66,32 @@ export default function ArticleHero({
     )
   }
 
-  // Default: 'below' — full-width image, text underneath
+  // Default: 'below' — full-width image with optional meta bar, title + subtitle underneath
   return (
     <div className={`${styles.heroBelow} reveal`}>
+      {hasMeta && (
+        <div className={styles.heroMetaBar}>
+          <div className={styles.heroMetaBarLeft}>
+            <Link to={backTo} className={styles.heroMetaBarBack}>{backLabel}</Link>
+            {type && (
+              <>
+                <div className={styles.heroMetaBarDivider} />
+                <span className={styles.heroMetaBarType}>{type}</span>
+              </>
+            )}
+          </div>
+          <div className={styles.heroMetaBarRight}>
+            {date && <span className={styles.heroMetaBarDate}>{date}</span>}
+            {author && <><span className={styles.heroMetaBarDot}>·</span><span className={styles.heroMetaBarAuthor}>{author}</span></>}
+            {readTime && <><span className={styles.heroMetaBarDot}>·</span><span className={styles.heroMetaBarRead}>{readTime}</span></>}
+          </div>
+        </div>
+      )}
       <img src={img} alt={imgAlt} className={styles.heroImg} />
       {caption && <p className={styles.heroCaption}>{caption}</p>}
       {(title || subtitle) && (
         <div className={styles.heroBelowText}>
-          {title && <h2 className={styles.heroBelowTitle}>{title}</h2>}
+          {title && <h1 className={styles.heroBelowTitle}>{title}</h1>}
           {subtitle && <p className={styles.heroBelowSubtitle}>{subtitle}</p>}
         </div>
       )}

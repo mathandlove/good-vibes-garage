@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import {
-  ArticleHeader,
   ArticleHero,
   ArticleImage,
   ArticleImageGrid,
@@ -84,20 +83,17 @@ export default function LegoTechnicPage() {
       <main className={styles.main}>
         <article className={styles.article}>
 
-          <ArticleHeader
-            type="Case Study"
-            date="2022"
-            author="Elliott Hedman"
-            readTime="5 min read"
-            title="LEGO Technic: When Better Instructions Made Everything Worse"
-            subtitle="The animations were cleaner. The steps were clearer. The kids were more stressed than ever."
-          />
-
           {/* ── Hero image ── */}
           <ArticleHero
             img={legoHero}
             imgAlt="Child using LEGO Technic digital building instructions on a tablet"
             layout="below"
+            title="LEGO Technic: When Better Instructions Made Everything Worse"
+            subtitle="The animations were cleaner. The steps were clearer. The kids were more stressed than ever."
+            type="Case Study"
+            date="2022"
+            author="Elliott Hedman"
+            readTime="5 min read"
           />
 
           {/* ── Project metadata ── */}
@@ -119,6 +115,9 @@ export default function LegoTechnicPage() {
               </p>
               <p className={`${styles.p} reveal`}>
                 The sensors told a different story than the team expected.
+              </p>
+              <p className={`${styles.p} reveal`}>
+                While the "digital" version of instructions felt technologically impressive, it often failed at creating a better building experience.
               </p>
             </div>
           </div>
@@ -149,7 +148,13 @@ export default function LegoTechnicPage() {
             <ArticleTimeline>
               <ArticleTimelineItem step="01" heading="Animations Were Making Kids More Stressed, Not Less">
                 <p className={styles.p}>
-                  The 3D rotation animations — the ones the team was proudest of — were spiking stress every time they played. Kids couldn't follow the rapid movement, missed which piece went where, and started arbitrarily rotating the model when confused. The animation designed to clarify was the thing creating the confusion. The fix was counterintuitive: remove the animations entirely. Static, clear, frozen views outperformed every animated variation we tested.
+                  The original app allowed children to rotate the model around in 3D space. Each step was accompanied by an animation of the pieces flying into place on the model. When children were confused, they would rotate the model into an arbitrary angle, which made building even harder.
+                </p>
+                <p className={styles.p}>
+                  The animations in the beginning created a large amount of stress. Rather than go at their own pace, children had to note where all the pieces were moving in a few seconds.
+                </p>
+                <p className={styles.p}>
+                  The fix was counterintuitive: remove the animations entirely. Static, clear, frozen views outperformed every animated variation we tested.
                 </p>
                 <ArticleImageGrid columns={3}>
                   <ArticleImage src={legoSlide1} alt="Before: animated 3D rotation instruction step" layout="grid" />
@@ -159,13 +164,25 @@ export default function LegoTechnicPage() {
               </ArticleTimelineItem>
               <ArticleTimelineItem step="02" heading="Errors Needed to Be Catchable, Not Just Correctable">
                 <p className={styles.p}>
-                  Every complex build has mistakes. The original instructions were designed to be so clear that mistakes wouldn't happen. But they did — and when a child discovered an error three steps later, they were "lost and defeated." The fix wasn't better instructions: it was checkpoints. At key moments in the build, we added prompts asking children to verify whether a gear was turning correctly. Early detection transformed a catastrophic discovery into a manageable one.
+                  Instruction designers spend a considerable amount of time designing each page of instructions so that children would not make mistakes. But no matter how flawless the instructions were, children would inevitably make mistakes.
+                </p>
+                <p className={styles.p}>
+                  Children felt lost and defeated when they discovered a mistake. We inserted pages that asked children to look at their model and confirm gears worked correctly so they could catch errors early. Children reported that this feature was highly valuable.
+                </p>
+                <p className={styles.p}>
+                  We found a major pain point in building LEGO sets: What do I do when I make a mistake? Having to take things apart requires extensive planning that caused substantial stress. Our proposed solution was to help children reflect on their models more as they build.
                 </p>
                 <ArticleImage src={legoSlide5} alt="Checkpoint moment in LEGO building instructions verifying gear placement" layout="prose" caption="Checkpoint prompt: 'Is your gear turning?' — catching errors before they compound." />
               </ArticleTimelineItem>
               <ArticleTimelineItem step="03" heading="Parents Were the Missing Piece">
                 <p className={styles.p}>
-                  The original instructions were designed to be used alone. The assumption was that a child should be able to follow them independently. But the sensor data showed something the design had optimized away: when a parent was involved, kids showed measurably less stress and more capability. We redesigned the instructions to explicitly invite parental participation — not as a fallback for when things go wrong, but as a core feature of the experience.
+                  LEGO designers had a policy to not assume parents would be part of the building process, in part because parents were not always available.
+                </p>
+                <p className={styles.p}>
+                  Originally, we were going to exclude parents from the study. One parent insisted on joining in and showed us how important a mother is in helping her child pursue more difficult challenges.
+                </p>
+                <p className={styles.p}>
+                  Children are less stressed and more capable of taking on harder challenges when parents help. We suggested that future LEGO instructions find ways to invite parents in and make it easier to build together.
                 </p>
                 <ArticleImage src={legoSlide7} alt="Stress sensor graph comparing building with parent vs. alone — lower stress with parent present" layout="prose" caption="Skin conductance data: building with a parent vs. building alone. The difference is visible in every session." />
               </ArticleTimelineItem>
@@ -178,7 +195,7 @@ export default function LegoTechnicPage() {
           {/* ── Callout ── */}
           <div className={styles.container}>
             <ArticleCallout label="The Counterintuitive Finding" variant="insight">
-              <p>A successful building experience isn't just about comprehension. It's about helping children reflect, regulate, and feel a sense of achievement. Instructions that are "clear" on paper can still generate stress in practice — and sensors catch that gap in a way user interviews rarely do.</p>
+              <p>We helped the LEGO team recognize that the "building experience" was broader than just comprehending instructions. It also involves helping children reflect, regulate, and feel a sense of achievement. Now, these objectives are all possible through digital instructions.</p>
             </ArticleCallout>
           </div>
 
@@ -187,6 +204,12 @@ export default function LegoTechnicPage() {
             <div className={styles.body}>
               <p className={`${styles.p} reveal`}>
                 The LEGO team came in confident in their animations. The sensors disagreed. What came out of this research wasn't just a list of UI fixes — it was a different frame for what "good instructions" means.
+              </p>
+              <p className={`${styles.p} reveal`}>
+                After sneaking off to his mom and asking if he could quit, Matthew told us that this LEGO Technic set was his favorite one. Often, children pride themselves in being up for the challenge.
+              </p>
+              <p className={`${styles.p} reveal`}>
+                We sat in another room while Eric built his LEGO set, watching on video camera. Because Eric didn't feel judged or observed, he asked his father if he could quit halfway through — helping us see where building goes wrong.
               </p>
               <p className={`${styles.p} reveal`}>
                 Good instructions don't just transfer information. They manage the emotional arc of learning something hard. They make it possible to fail without falling apart, to catch mistakes early, and to feel the pride of figuring something out.

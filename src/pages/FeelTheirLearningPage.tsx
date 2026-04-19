@@ -2,9 +2,11 @@ import { Helmet } from 'react-helmet-async'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import {
-  ArticleHeader,
+  ArticleHero,
   ArticleCard,
   ArticleImage,
+  ArticleStatRow,
+  ArticleStat,
   ArticleSectionHeading,
   ArticleClosing,
   ArticleCta,
@@ -74,21 +76,23 @@ export default function FeelTheirLearningPage() {
       <main className={styles.main}>
         <article className={styles.article}>
 
-          <ArticleHeader
+          <ArticleHero
             type="Essay"
             date="March 5, 2018"
             author="Elliott Hedman"
             readTime="9 min read"
             title="7 Ways to Help Kids Feel They're Learning"
             subtitle="Kids want to feel like they are learning — and digital lessons are not delivering."
+            img="/og-feel-their-learning.jpg"
+            imgAlt="Kids learning with digital tools"
+            layout="below"
           />
 
           {/* ── SXSW EDU Talk ── */}
           <div className={styles.container}>
-            <div className="reveal" style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '8px' }}>
+            <div className={`${styles.videoWrapper} reveal`}>
               <iframe
                 src="https://player.vimeo.com/video/260646422"
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowFullScreen
                 title="SXSW EDU Talk: 7 Ways to Help Kids Feel They're Learning"
@@ -106,6 +110,19 @@ export default function FeelTheirLearningPage() {
                 We set out to develop a better understanding of the relationship between student engagement, motivation and learning. Our results point to a critical twist on the theory that engagement leads to better learning: the feeling of learning also leads to better engagement.
               </p>
             </div>
+          </div>
+
+          {/* ── Stats ── */}
+          <div className={styles.container}>
+            <ArticleStatRow>
+              <ArticleStat value="200+" label="students observed" note="eye tracking + emotion sensors" />
+              <ArticleStat value="6 µS" label="Abbey's peak engagement" note="3× higher than playing with LEGO" />
+              <ArticleStat value="7" label="design principles" note="for fostering the feeling of learning" />
+            </ArticleStatRow>
+          </div>
+
+          <div className={styles.container}>
+            <div className={`${styles.divider} reveal`}>✦</div>
           </div>
 
           {/* ── What the Feeling of Learning Looks Like ── */}

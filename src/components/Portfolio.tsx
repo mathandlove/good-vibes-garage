@@ -10,20 +10,10 @@ type PortfolioItem = {
   href: string
   internal?: boolean
   featured?: boolean
+  ogImage?: string
 }
 
 const prototypingExamples: PortfolioItem[] = [
-  {
-    title: 'Building a Multi-Agent AI Tutor',
-    description:
-      'Built Level Up, a free Google Docs add-on that gives students personalized writing feedback without writing for them. The hard problem was keeping AI in the right role.',
-    client: 'mPath',
-    sector: 'Education, AI, Writing',
-    outcome: 'Free tool used across classrooms worldwide',
-    href: '/writing/level-up',
-    internal: true,
-    featured: true,
-  },
   {
     title: 'Scaffolding Storytelling with the LEGO Group',
     description:
@@ -33,6 +23,19 @@ const prototypingExamples: PortfolioItem[] = [
     outcome: 'Published LEGO Play Stories product line',
     href: '/writing/lego-reading',
     internal: true,
+    featured: true,
+    ogImage: '/og-lego-reading.jpg',
+  },
+  {
+    title: 'Building a Multi-Agent AI Tutor',
+    description:
+      'Partnered with Ditch That Textbook to build Level Up — a "Grammarly that doesn\'t just give you the answer." Students were paraphrasing entire essays to beat TurnItIn. The real opportunity was helping them think, not just edit.',
+    client: 'mPath',
+    sector: 'Education, AI, Writing',
+    outcome: 'Standing-room-only SXSWEDU talk; second iteration in testing',
+    href: '/writing/level-up',
+    internal: true,
+    ogImage: '/src/assets/Images/level-up/logo.webp',
   },
   {
     title: 'Onboarding Teacher Experience with Classcraft',
@@ -43,6 +46,7 @@ const prototypingExamples: PortfolioItem[] = [
     outcome: 'Launched redesigned onboarding at Classcraft.com',
     href: '/writing/teacher-adoption',
     internal: true,
+    ogImage: '/og-teacher-adoption.jpg',
   },
   {
     title: 'Empowering Parents as Teachers',
@@ -53,6 +57,7 @@ const prototypingExamples: PortfolioItem[] = [
     outcome: 'Ready-to-ship prototype; identified Dreamers vs. Planners framework',
     href: '/writing/empowering-parents',
     internal: true,
+    ogImage: '/src/assets/Images/empowering-parents/header.webp',
   },
 ]
 
@@ -66,6 +71,7 @@ const uxDesignExamples: PortfolioItem[] = [
     outcome: '9% sales increase, 150+ design changes validated via RCT',
     href: '/writing/lowes-vacuum',
     internal: true,
+    ogImage: '/og-lowes-vacuum.jpg',
   },
   {
     title: 'Five Years Building Wonder.io With the Kids Who Needed It Most',
@@ -76,6 +82,7 @@ const uxDesignExamples: PortfolioItem[] = [
     outcome: '3 grade-level reading improvement; international readership',
     href: '/writing/designing-wonder-io',
     internal: true,
+    ogImage: '/og-designing-wonder-io.jpg',
   },
   {
     title: 'From "I Won\'t Read a Paragraph" to "Can We Play Again?"',
@@ -86,6 +93,7 @@ const uxDesignExamples: PortfolioItem[] = [
     outcome: 'Students actively read each line and asked to continue',
     href: '/writing/boys-girls-club-reading',
     internal: true,
+    ogImage: '/og-boys-girls-club-reading.jpg',
   },
   {
     title: 'LEGO Technic: When Better Instructions Made Everything Worse',
@@ -96,6 +104,7 @@ const uxDesignExamples: PortfolioItem[] = [
     outcome: '3 core redesign principles adopted by LEGO digital team',
     href: '/writing/lego-technic',
     internal: true,
+    ogImage: '/og-lego-technic.jpg',
   },
   {
     title: 'These Kids Aren\'t Lazy. They\'re Anxious.',
@@ -106,6 +115,7 @@ const uxDesignExamples: PortfolioItem[] = [
     outcome: 'Student-led messaging prototypes reduced test anxiety',
     href: '/writing/middle-school-tests',
     internal: true,
+    ogImage: '/og-middle-school-tests.jpg',
   },
   {
     title: 'Adding Rewards to Digital Lessons',
@@ -116,6 +126,7 @@ const uxDesignExamples: PortfolioItem[] = [
     outcome: 'Students requested additional lessons; try-it-again feature adopted',
     href: '/writing/adding-rewards',
     internal: true,
+    ogImage: '/og-adding-rewards.jpg',
   },
   {
     title: 'Understanding the Digital Math Experience',
@@ -126,6 +137,7 @@ const uxDesignExamples: PortfolioItem[] = [
     outcome: 'Redesigned feedback loops; "Feeling of Learning" framework developed',
     href: '/writing/digital-math',
     internal: true,
+    ogImage: '/og-digital-math.jpg',
   },
   {
     title: 'Gamification + Learning with Education.com',
@@ -136,6 +148,7 @@ const uxDesignExamples: PortfolioItem[] = [
     outcome: 'Gamification rubric and design principles adopted',
     href: '/writing/education-com-gamification',
     internal: true,
+    ogImage: '/og-education-com-gamification.jpg',
   },
   {
     title: 'Building an Engaging Reading App — Wonder Stories',
@@ -155,17 +168,33 @@ const uxDesignExamples: PortfolioItem[] = [
     outcome: 'Live at curious.wonder.io',
     href: 'https://curious.wonder.io',
   },
-  {
-    title: 'LEGO Reading and Play Study',
-    description:
-      'Worked with Denver Public Schools and LEGO store families across Colorado. Over 30 book prototypes. Emotion sensors showed family interaction is the key ingredient for storytelling play.',
-    client: 'The LEGO Group',
-    sector: 'Toys, Play, Family Research',
-    outcome: 'LEGO Play Stories product line launched',
-    href: '/writing/lego-reading',
-    internal: true,
-  },
 ]
+
+function EntryInner({ item }: { item: PortfolioItem }) {
+  return (
+    <>
+      {item.ogImage && (
+        <div className={styles.entryThumb}>
+          <img src={item.ogImage} alt="" aria-hidden="true" className={styles.entryThumbImg} />
+        </div>
+      )}
+      <div className={styles.entryMain}>
+        {item.featured && (
+          <span className={styles.entryEyebrow}>Selected Work</span>
+        )}
+        <div className={styles.entryClientRow}>
+          <span className={styles.entryClient}>{item.client}</span>
+          <span className={styles.dot}>·</span>
+          <span className={styles.entrySector}>{item.sector}</span>
+        </div>
+        <h4 className={styles.entryTitle}>{item.title}</h4>
+        <p className={styles.entryDesc}>{item.description}</p>
+        <span className={styles.entryOutcome}>{item.outcome}</span>
+      </div>
+      <span className={styles.entryArrow}>→</span>
+    </>
+  )
+}
 
 export default function Portfolio() {
   return (
@@ -192,7 +221,7 @@ export default function Portfolio() {
             for lasting change.
           </p>
           <a
-            href="/s/portfolio-design-lead.pdf"
+            href="/s/hedmanCV2025v1.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.cvLink}
@@ -212,28 +241,13 @@ export default function Portfolio() {
               item.featured ? styles.entryFeatured : '',
               `reveal reveal-delay-${Math.min(i + 1, 5)}`,
             ].filter(Boolean).join(' ')
-            const inner = (
-              <>
-                <div className={styles.entryMain}>
-                  <div className={styles.entryClientRow}>
-                    <span className={styles.entryClient}>{item.client}</span>
-                    <span className={styles.dot}>·</span>
-                    <span className={styles.entrySector}>{item.sector}</span>
-                  </div>
-                  <h4 className={styles.entryTitle}>{item.title}</h4>
-                  <p className={styles.entryDesc}>{item.description}</p>
-                  <span className={styles.entryOutcome}>{item.outcome}</span>
-                </div>
-                <span className={styles.entryArrow}>→</span>
-              </>
-            )
             return item.internal ? (
               <Link key={item.title} to={item.href} className={className}>
-                {inner}
+                <EntryInner item={item} />
               </Link>
             ) : (
               <a key={item.title} href={item.href} target="_blank" rel="noopener noreferrer" className={className}>
-                {inner}
+                <EntryInner item={item} />
               </a>
             )
           })}
@@ -246,28 +260,13 @@ export default function Portfolio() {
         <div className={styles.archive}>
           {uxDesignExamples.map((item, i) => {
             const className = `${styles.entry} reveal reveal-delay-${Math.min(i + 1, 5)}`
-            const inner = (
-              <>
-                <div className={styles.entryMain}>
-                  <div className={styles.entryClientRow}>
-                    <span className={styles.entryClient}>{item.client}</span>
-                    <span className={styles.dot}>·</span>
-                    <span className={styles.entrySector}>{item.sector}</span>
-                  </div>
-                  <h4 className={styles.entryTitle}>{item.title}</h4>
-                  <p className={styles.entryDesc}>{item.description}</p>
-                  <span className={styles.entryOutcome}>{item.outcome}</span>
-                </div>
-                <span className={styles.entryArrow}>→</span>
-              </>
-            )
             return item.internal ? (
               <Link key={item.title} to={item.href} className={className}>
-                {inner}
+                <EntryInner item={item} />
               </Link>
             ) : (
               <a key={item.title} href={item.href} target="_blank" rel="noopener noreferrer" className={className}>
-                {inner}
+                <EntryInner item={item} />
               </a>
             )
           })}

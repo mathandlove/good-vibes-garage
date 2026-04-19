@@ -19,6 +19,24 @@
   padding: 0 40px;
 }
 
+/* 16:9 responsive video embed */
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* Wide container for the image+text cards */
 .cardsContainer {
   max-width: 1160px;
@@ -28,33 +46,6 @@
 }
 
 /* ── Header ── */
-
-.header {
-  position: relative;
-}
-
-/* Watermark content type behind the title */
-.header::before {
-  content: attr(data-type);
-  position: absolute;
-  top: 48px;
-  left: 32px;
-  font-family: var(--font-display);
-  font-size: 9rem;
-  font-weight: 700;
-  color: var(--accent);
-  opacity: 0.04;
-  letter-spacing: -0.04em;
-  pointer-events: none;
-  user-select: none;
-  line-height: 1;
-  z-index: 0;
-}
-
-.header > * {
-  position: relative;
-  z-index: 1;
-}
 
 .breadcrumb {
   margin-bottom: 32px;
@@ -285,7 +276,7 @@
 
 .card {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.65fr 1fr;
   gap: 64px;
   align-items: center;
   padding: 64px 0;
@@ -303,7 +294,7 @@
 
 /* Reverse: image on right, text on left */
 .cardReverse {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0.65fr;
 }
 
 .cardReverse .cardImage {
@@ -731,6 +722,53 @@
   color: var(--text-muted);
 }
 
+/* ── Timeline split variant: text + portrait image side by side ── */
+
+.timelineItemSplit {
+  align-items: start;
+}
+
+.timelineSplitContent {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 32px;
+  align-items: start;
+}
+
+.timelineSplitReverse {
+  grid-template-columns: 180px 1fr;
+}
+
+.timelineSplitReverse .timelineSplitImage {
+  order: -1;
+}
+
+.timelineSplitText {
+  min-width: 0;
+}
+
+.timelineSplitImage {
+  flex-shrink: 0;
+}
+
+.timelineSplitImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 2px 16px rgba(24, 22, 15, 0.1);
+}
+
+@media (max-width: 600px) {
+  .timelineSplitContent {
+    grid-template-columns: 1fr;
+  }
+
+  .timelineSplitReverse .timelineSplitImage {
+    order: 0;
+  }
+}
+
 /* ── Callout ── */
 
 .callout {
@@ -842,16 +880,83 @@
 
 .heroBelow {
   max-width: 1160px;
-  margin: 0 auto 48px;
+  margin: 0 auto 32px;
   padding: 0 40px;
+}
+
+.heroMetaBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 14px;
+}
+
+.heroMetaBarLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.heroMetaBarBack {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
+.heroMetaBarBack:hover {
+  color: var(--accent);
+}
+
+.heroMetaBarDivider {
+  width: 1px;
+  height: 12px;
+  background: var(--border);
+}
+
+.heroMetaBarType {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-dim);
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+.heroMetaBarRight {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.heroMetaBarDate,
+.heroMetaBarAuthor,
+.heroMetaBarRead {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.heroMetaBarDot {
+  font-size: 0.78rem;
+  color: var(--text-faint);
 }
 
 .heroImg {
   width: 100%;
   height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  object-position: center top;
   display: block;
-  border-radius: 10px;
-  box-shadow: 0 4px 32px rgba(24, 22, 15, 0.1);
+  border-radius: 4px;
+  box-shadow: 0 2px 16px rgba(24, 22, 15, 0.08);
 }
 
 .heroCaption {
@@ -864,23 +969,26 @@
 }
 
 .heroBelowText {
-  padding-top: 24px;
+  padding-top: 16px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border);
 }
 
 .heroBelowTitle {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 600;
   color: var(--text);
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 .heroBelowSubtitle {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   color: var(--text-muted);
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 .heroOverlay {
@@ -894,7 +1002,7 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 .heroOverlayScrim {

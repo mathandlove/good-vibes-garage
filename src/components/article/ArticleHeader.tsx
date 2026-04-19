@@ -6,8 +6,8 @@ interface ArticleHeaderProps {
   date: string        // e.g. "April 8, 2025"
   author: string      // e.g. "Elliott Hedman"
   readTime: string    // e.g. "7 min read"
-  title: string
-  subtitle: string
+  title?: string      // only for articles without a hero image
+  subtitle?: string   // only for articles without a hero image
   backLabel?: string  // defaults to "← Writing"
   backTo?: string     // defaults to "/writing"
 }
@@ -37,8 +37,8 @@ export default function ArticleHeader({
           <span className={styles.dot}>·</span>
           <span className={styles.readTime}>{readTime}</span>
         </div>
-        <h1 className={styles.title}>{title}</h1>
-        <p className={styles.subtitle}>{subtitle}</p>
+        {title && <h1 className={styles.title}>{title}</h1>}
+        {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
       </header>
     </div>
   )

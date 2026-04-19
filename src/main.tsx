@@ -25,6 +25,7 @@ import LegoTechnicPage from './pages/LegoTechnicPage.tsx'
 import DesigningWonderIoPage from './pages/DesigningWonderIoPage.tsx'
 import LowesPage from './pages/LowesPage.tsx'
 import LevelUpPage from './pages/LevelUpPage.tsx'
+import LevelUpProductPage from './pages/LevelUpProductPage.tsx'
 import MiddleSchoolTestsPage from './pages/MiddleSchoolTestsPage.tsx'
 import BoysGirlsClubReadingPage from './pages/BoysGirlsClubReadingPage.tsx'
 import RemoteClassroomsPage from './pages/RemoteClassroomsPage.tsx'
@@ -57,6 +58,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/writing/designing-wonder-io" element={<DesigningWonderIoPage />} />
         <Route path="/writing/lowes-vacuum" element={<LowesPage />} />
         <Route path="/writing/level-up" element={<LevelUpPage />} />
+        <Route path="/level-up" element={<LevelUpProductPage />} />
         <Route path="/writing/middle-school-tests" element={<MiddleSchoolTestsPage />} />
         <Route path="/writing/boys-girls-club-reading" element={<BoysGirlsClubReadingPage />} />
         <Route path="/writing/remote-classrooms" element={<RemoteClassroomsPage />} />

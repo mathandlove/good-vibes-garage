@@ -1,173 +1,199 @@
 ```xml
 <original_task>
-Compare every article in the GVG Writing section against its buildempathy.com counterpart to verify text was copied word for word. Fix any discrepancies found.
+Match the text content of LowesPage.tsx (http://localhost:5173/writing/lowes-vacuum) exactly to the source text from https://www.buildempathy.com/casestudies/lowes. The user wants the GVG version to use the exact original text from that page, not paraphrased or rewritten versions.
 </original_task>
 
 <work_completed>
-None. The task was just assigned. No auditing has been done yet.
+- Read LowesPage.tsx (src/pages/LowesPage.tsx) in full
+- Fetched https://www.buildempathy.com/casestudies/lowes and extracted all text verbatim
+- Compared the two versions to identify discrepancies
 </work_completed>
 
 <work_remaining>
-## Internal GVG Writing Articles to Audit
 
-The Writing section lives in `src/components/Writing.tsx`. It has three categories: Featured, Selected Writing, and Academic Work. The articles with `internal: true` render as GVG pages — these are the ones to compare. External links (medium.com, etc.) are not relevant.
+## Exact Text Fixes Needed in src/pages/LowesPage.tsx
 
-### Article Pages → Source References
+### 1. Intro / Lead paragraph (lines 113–125)
+**Current GVG text:**
+```
+Lowe's hired mPath to reinvent the experience of buying a wet-dry vacuum. mPath conducted diagnostic research and emototyping to understand the current experience and develop a new approach that increased purchases, customer retention, and value.
 
-Each GVG page file is in `src/pages/`. Each page renders an article component from `src/components/`. The buildempathy references are in `References/buildempathy/`.
+We built a fake store in our lab, strapped MOXO sensors onto shoppers, and watched what actually happened when someone tried to buy a vacuum.
 
----
+The overarching theme in our design work was that shoppers were not feeling confident that they were making the right choice in their purchases.
 
-**1. AI Abstinence** (Featured)
-- GVG page: `src/pages/AIAbstinencePage.tsx`
-- Route: `/writing/ai-abstinence`
-- Buildempathy source: `References/buildempathy/articles/aiabstinence.md`
+We built a fake vacuum store and had shoppers visit in the morning, making changes in the afternoon.
+```
 
-**2. LEGO Reading — "5 Ways Books Can Empower Play"**
-- GVG page: `src/pages/LegoReadingPage.tsx`
-- Route: `/writing/lego-reading`
-- Buildempathy source: `References/buildempathy/case-studies/lego-play-reading-full.md` or `lego-play-reading-study.md` or `lego-reinventing-the-book.md`
+**Source text (buildempathy.com):**
+```
+Lowe's hired mPath to reinvent the experience of buying a wet-dry vacuum. mPath conducted diagnostic research and emototyping to understand the current experience and develop a new approach that increased purchases, customer retention, and value.
 
-**3. Death of Curiosity**
-- GVG page: `src/pages/DeathOfCuriosityPage.tsx`
-- Route: `/writing/death-of-curiosity`
-- Buildempathy source: check `References/buildempathy/articles/` — no direct match found yet; may be in `pages/` or missing
+The overarching theme in our design work was that shoppers were not feeling confident that they were making the right choice in their purchases.
 
-**4. Personalized Learning Keeps Failing**
-- GVG page: `src/pages/PersonalizedLearningPage.tsx`
-- Route: `/writing/personalized-learning`
-- Buildempathy source: likely in `References/buildempathy/articles/` — not found in initial listing; check for alternate filenames
+We built a fake vacuum store and had shoppers visit in the morning, making changes in the afternoon.
+```
 
-**5. Remote Classrooms — "5 Reasons Remote Classrooms Fail"**
-- GVG page: `src/pages/RemoteClassroomsPage.tsx`
-- Route: `/writing/remote-classrooms`
-- Buildempathy source: `References/buildempathy/pages/5 reasonsyour remote classroom will explode` (this is a directory with images, not a text file — check for a text/markdown file inside it or look elsewhere)
-
-**6. Question Based Reading**
-- GVG page: `src/pages/QuestionBasedReadingPage.tsx`
-- Route: `/writing/question-based-reading`
-- Buildempathy source: `References/wonderstories/inquiry-based-reading.md`
-
-**7. Khanmigo**
-- GVG page: `src/pages/KhanmigoPage.tsx`
-- Route: `/writing/khanmigo`
-- Buildempathy source: `References/buildempathy/articles/khanmigo.md`
-
-**8. Teacher Adoption — "3 Pillars of Teacher Adoption for Edtech"**
-- GVG page: `src/pages/TeacherAdoptionPage.tsx`
-- Route: `/writing/teacher-adoption`
-- Buildempathy source: `References/buildempathy/articles/teacher-adoption.md`
-
-**9. LEGO Technic**
-- GVG page: `src/pages/LegoTechnicPage.tsx`
-- Route: `/writing/lego-technic`
-- Buildempathy source: `References/buildempathy/case-studies/lego-technic-digital-instructions.md`
-
-**10. Designing Wonder.io — "Five Years Building Wonder.io"**
-- GVG page: `src/pages/DesigningWonderIoPage.tsx`
-- Route: `/writing/designing-wonder-io`
-- Buildempathy source: `References/buildempathy/case-studies/designing-wonder-io.md`
-
-**11. Lowe's Vacuum**
-- GVG page: `src/pages/LowesPage.tsx`
-- Route: `/writing/lowes-vacuum`
-- Buildempathy source: `References/buildempathy/case-studies/lowes-vacuum.md`
-
-**12. Level Up — AI Writing Coach**
-- GVG page: `src/pages/LevelUpPage.tsx`
-- Route: `/writing/level-up`
-- Buildempathy source: `References/buildempathy/case-studies/level-up-ai-tutor.md`
-
-**13. Middle School Tests — "These Kids Aren't Lazy"**
-- GVG page: `src/pages/MiddleSchoolTestsPage.tsx`
-- Route: `/writing/middle-school-tests`
-- Buildempathy source: `References/buildempathy/case-studies/middle-school-tests-full.md` or `middle-school-tests.md`
-
-**14. Boys & Girls Club Reading — "From I Won't Read a Paragraph"**
-- GVG page: `src/pages/BoysGirlsClubReadingPage.tsx`
-- Route: `/writing/boys-girls-club-reading`
-- Buildempathy source: `References/buildempathy/case-studies/boys-girls-club-engaged-reading.md` or `engaged-reading-bgc.md`
-
-**15. Feel Their Learning (in Academic section)**
-- GVG page: `src/pages/FeelTheirLearningPage.tsx`
-- Route: `/writing/feel-their-learning`
-- Buildempathy source: unknown — search `References/buildempathy/` for relevant content
-
-**16. Adding Rewards** (listed in pages/ but not in Writing.tsx — may be a portfolio case study)
-- GVG page: `src/pages/AddingRewardsPage.tsx`
-- Buildempathy source: `References/buildempathy/case-studies/adding-rewards-full.md` or `adding-rewards-lessons.md`
-
-**17. Empowering Parents**
-- GVG page: `src/pages/EmpoweringParentsPage.tsx`
-- Buildempathy source: `References/buildempathy/case-studies/empowering-parents-full.md`
-
-**18. Digital Math**
-- GVG page: `src/pages/DigitalMathPage.tsx`
-- Buildempathy source: `References/buildempathy/case-studies/digital-math-full.md` or `digital-math.md`
-
-**19. Education.com**
-- GVG page: `src/pages/EducationComPage.tsx`
-- Buildempathy source: `References/buildempathy/case-studies/education-com-gamification-full.md` or `education-com-gamification.md`
-
-**20. Rubric for Engaging Educational Games**
-- Note: This may be a portfolio page, not a writing page
-- Buildempathy source: `References/wonderstories/rubric-for-engaging-educational-games.md`
+**Fix:** Remove the invented line "We built a fake store in our lab, strapped MOXO sensors onto shoppers, and watched what actually happened when someone tried to buy a vacuum." — it does not appear on buildempathy.com. Keep the remaining three paragraphs exactly as-is.
 
 ---
 
-## Audit Process (for each article)
+### 2. Timeline Item 01 — "Simplify the Messaging" (lines 152–158)
+**Current GVG text (section heading subtext that is NOT on source):**
+The section heading on GVG is "Simplify the Messaging" — source uses "Simplify Messaging". Update heading to match exactly.
 
-1. Read the GVG page file (e.g., `src/pages/KhanmigoPage.tsx`) — find where the body text is rendered. It may be inline JSX or in a separate component.
-2. Read the corresponding buildempathy source file.
-3. Compare paragraph-by-paragraph. Note any:
-   - Missing paragraphs
-   - Paraphrased or reworded text
-   - Added text not in the original
-   - Reordered sections
-4. Fix any discrepancies in the GVG page file so the text matches word for word.
+**Current GVG body text:**
+```
+Boxes and signs had many unorganized messages and information. Shoppers were so overwhelmed they couldn't read any of it, let alone stop to touch.
 
-## Additional Lookup Needed
+The number-one question we identified from new shoppers was "Which one should I use at home?" To help make messages clear and relevant, we placed a label above boxes and displays: "Best vacuum for home use." We also placed a large, red, pop-up arrow next to the vacuum, saying "Try me out," achieving our primary goal of getting shoppers to touch the products.
+```
 
-- **Remote Classrooms**: The buildempathy reference is a directory with images only. Check `References/buildempathy/pages/` for a markdown file or search `References/` more broadly.
-- **Death of Curiosity**: No buildempathy match found in initial scan. Check `References/buildempathy/articles/` for alternate filenames, or check `References/seowonder/` or other directories.
-- **Personalized Learning**: Same — no clear match found. Search needed.
-- **Feel Their Learning**: No buildempathy match found. Search needed.
+**Source text:**
+```
+Boxes and signs had many unorganized messages and information. Shoppers were so overwhelmed they couldn't read any of it, let alone stop to touch.
+
+The number-one question we identified from new shoppers was "Which one should I use at home?"
+
+We placed a label above boxes and displays: "Best vacuum for home use."
+
+We also placed a large, red, pop-up arrow next to the vacuum, saying "Try me out," achieving our primary goal of getting shoppers to touch the products.
+```
+
+**Fix:** The body text is the same content, just split differently. The GVG version combines these into one paragraph — this is acceptable since paragraph breaks are presentational. No text content change needed here. However, the phrase "To help make messages clear and relevant," is NOT in the source — it was added. Remove it. The sentence should read: "The number-one question we identified from new shoppers was 'Which one should I use at home?' We placed a label above boxes and displays: 'Best vacuum for home use.'"
+
+**Also fix:** Section heading "Simplify the Messaging" → "Simplify Messaging" (source has no "the")
+
+---
+
+### 3. Timeline Item 02 — "Add Something to Touch" (lines 160–170)
+**Current GVG heading:** "Add Something to Touch"
+**Source heading:** "Add Interaction"
+
+**Current GVG body text:**
+```
+We addressed what people originally asked for: professional design, simple messaging, accessible products, and differentiable choices. After implementing all of these features, the space was still only rated 5/10.
+
+We noticed that most shoppers subconsciously put their hands on every vacuum to feel the suction, but all the suctions felt the same. We installed a tube with tennis balls to help customers visualize the suction; they rated the experience as the best they ever had at Lowe's.
+
+Over the weekend, we experimented with suction physics to see how we could better visualize horsepower.
+```
+
+**Source text:**
+```
+We addressed what people originally asked for: professional design, simple messaging, accessible products, and differentiable choices. After implementing all of these features, the space was still only rated 5/10.
+
+We noticed that most shoppers subconsciously put their hands on every vacuum to feel the suction, but all the suctions felt the same. We installed a tube with tennis balls to help customers visualize the suction; they rated the experience as the best they ever had at Lowe's.
+
+Over the weekend, we experimented with suction physics to see how we could better visualize horsepower.
+```
+
+**Fix:** Body text matches exactly. **Only fix the heading:** "Add Something to Touch" → "Add Interaction"
+
+---
+
+### 4. Timeline Item 03 — "Reduce the Choices" (lines 172–186)
+**Current GVG heading:** "Reduce the Choices"
+**Source heading:** "Simplify Choices"
+
+**Current GVG body text:**
+```
+Interviewed shoppers were expecting one wet/dry vacuum. Instead, they had to evaluate and choose between 14 different options. They could not differentiate between these options.
+
+We found that shoppers differentiated vacuums based on their storage size: small, medium, and large. They expected all vacuums to have strong suctions and similar accessories. For wet-dry vacuums, they tend to be indifferent to the brand.
+
+If you visit the Lowe's store today, you can see the tennis ball suction station ready for play.
+```
+
+**Source text:**
+```
+Interviewed shoppers were expecting one wet/dry vacuum. Instead, they had to evaluate and choose between 14 different options. They could not differentiate between these options.
+
+We found that shoppers differentiated vacuums based on their storage size: small, medium, and large. They expected all vacuums to have strong suctions and similar accessories. For wet-dry vacuums, they tend to be indifferent to the brand.
+
+If you visit the Lowe's store today, you can see the tennis ball sunction station ready for play.
+```
+
+**Fix:** Heading "Reduce the Choices" → "Simplify Choices". 
+
+Note: The source has a typo "sunction" (should be "suction") — GVG currently has the correct spelling "suction". Keep "suction" (do not copy the typo).
+
+---
+
+### 5. ArticleCallout — "The Core Insight" (lines 193–195)
+**Current GVG text:**
+```
+Customers weren't uninformed about vacuums. They were unconfident. The design fix wasn't to add more information — it was to give customers a way to feel certain before they committed. That's a meaningfully different problem to solve.
+```
+
+**Source text:** This callout does not appear on buildempathy.com at all. It was written for GVG.
+
+**Decision needed:** Keep as original GVG editorial addition, or remove it to stay purely source-faithful? The user said "copy the text exactly" — this block has no source equivalent. Likely should be removed or flagged for user decision.
+
+---
+
+### 6. Closing paragraphs (lines 201–207)
+**Current GVG text:**
+```
+Lowe's implemented over 150 of the design suggestions that came out of this research. The result was a 9% sales increase in an in-store randomized control test — alongside improved satisfaction and likelihood to recommend.
+
+The tennis ball demo is the detail I tell this story with, because it captures something true about all good design: you can't engineer confidence through better copywriting. Sometimes you have to let people touch the thing.
+```
+
+**Source text:**
+```
+Lowe's implemented over 150 of mPath's design suggestions and conducted an in-store, randomized control test. According to the results, mPath helped Lowe's increase their sales by over 9% and increase customer satisfaction and promotion.
+```
+
+**Fix:** Replace closing with source version. The second paragraph ("The tennis ball demo is the detail...") does not appear in source — it is GVG original. Remove or flag for user decision.
+
+**Source version:**
+```
+Lowe's implemented over 150 of mPath's design suggestions and conducted an in-store, randomized control test. According to the results, mPath helped Lowe's increase their sales by over 9% and increase customer satisfaction and promotion.
+```
+
+---
+
+### 7. ArticleClosing quote (line 211)
+**Current:** "Confidence isn't a feeling you can describe your way to. Sometimes you have to let people touch the thing."
+**Source:** No equivalent — GVG original. Flag for user decision.
+
+---
+
+## Summary of Changes
+
+| Location | Type | Action |
+|----------|------|--------|
+| Intro, line ~117 | Invented sentence | Remove "We built a fake store in our lab, strapped MOXO sensors..." |
+| Timeline 01 heading | Wrong wording | "Simplify the Messaging" → "Simplify Messaging" |
+| Timeline 01 body | Inserted phrase | Remove "To help make messages clear and relevant," |
+| Timeline 02 heading | Wrong wording | "Add Something to Touch" → "Add Interaction" |
+| Timeline 03 heading | Wrong wording | "Reduce the Choices" → "Simplify Choices" |
+| ArticleCallout | No source equivalent | Remove or get user decision |
+| Closing paragraphs | Wrong wording + extra paragraph | Replace with source text; remove editorial second paragraph |
+| ArticleClosing quote | No source equivalent | Remove or get user decision |
+
 </work_remaining>
 
 <attempted_approaches>
-No approaches attempted yet. This is a fresh handoff at the very start of the task.
+- Fetched buildempathy.com/casestudies/lowes via WebFetch to extract verbatim text
+- Read LowesPage.tsx in full
+- No edits attempted yet — this is a pre-edit analysis
 </attempted_approaches>
 
 <critical_context>
-## Project Structure
-- React + Vite + TypeScript. CSS Modules.
-- Page files: `src/pages/[Name]Page.tsx`
-- Article body text is either inline in page JSX or rendered via shared article components in `src/components/article/`
-- Writing section index: `src/components/Writing.tsx` — contains titles, descriptions, routes
-
-## What "Word for Word" Means Here
-The user wants the article body text (paragraphs, headings, pull quotes, etc.) to match the buildempathy source exactly. Descriptions in `Writing.tsx` are summaries/teasers — those may not need to match. Focus on the full article content in each page file.
-
-## Reference File Structure
-```
-References/
-  buildempathy/
-    articles/       # aiabstinence.md, khanmigo.md, teacher-adoption.md
-    case-studies/   # ~25 files covering most case study articles
-    pages/          # about-us, empowering-parents-app, empowerplay-prototypes, remote classrooms dir, etc.
-  wonderstories/    # inquiry-based-reading.md, rubric-for-engaging-educational-games.md
-  seowonder/        # two subdirectories: wonderio/, wonderstories.app/
-```
-
-## CLAUDE.md Rules to Follow
-- Before editing any file, state which exact file you're targeting.
-- When reporting a problem, fix it — don't report findings as a status update.
+- The source page (buildempathy.com) is the mPath company site. The GVG version is Elliott's personal retelling of the same project.
+- Several passages in GVG were written fresh (the "We built a fake store in our lab" line, the ArticleCallout, the closing editorial paragraph, the ArticleClosing quote) — these are good writing but don't exist in the source.
+- The user said "copy the text exactly" — needs to decide whether to keep any GVG-original editorial content or strip to pure source text.
+- Source has a typo: "sunction" instead of "suction" — do NOT copy this typo.
+- The stats block (9%, 150+, 14→3) and project meta are GVG additions with no source equivalent — user likely wants to keep these as they improve the article structure.
+- Image captions in GVG were also written for this version — source doesn't have equivalent captions.
 </critical_context>
 
 <current_state>
-- Status: NOT STARTED. No articles have been audited yet.
-- No files have been modified.
-- The handoff doc itself (`whats-next.md`) is the only artifact created.
-- Starting point: read `src/pages/AIAbstinencePage.tsx` and `References/buildempathy/articles/aiabstinence.md` in parallel to begin the first comparison.
+- No edits made yet
+- Analysis complete, exact diff documented above
+- Awaiting user decision on: ArticleCallout, editorial closing paragraph, ArticleClosing quote (keep as GVG original or remove to match source exactly)
+- All other fixes are clear and ready to implement
 </current_state>
 ```

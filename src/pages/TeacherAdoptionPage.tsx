@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import {
-  ArticleHeader,
   ArticleHero,
   ArticleImage,
   ArticleImageComparison,
@@ -81,20 +80,17 @@ export default function TeacherAdoptionPage() {
       <main className={styles.main}>
         <article className={styles.article}>
 
-          <ArticleHeader
-            type="Essay"
-            date="March 11, 2023"
-            author="Elliott Hedman"
-            readTime="6 min read"
-            title="3 Pillars of Teacher Adoption for Edtech"
-            subtitle="Teachers aren't resistant to technology. They're resistant to complexity at the worst possible time."
-          />
-
           {/* ── Hero ── */}
           <ArticleHero
             img={pillarsHero}
             imgAlt="Venn diagram showing the 3 Pillars of Teacher Adoption: Easy to Understand, Easy to Use, Easy to Sell"
             layout="below"
+            title="3 Pillars of Teacher Adoption for Edtech"
+            subtitle="Teachers aren't resistant to technology. They're resistant to complexity at the worst possible time."
+            type="Essay"
+            date="March 11, 2023"
+            author="Elliott Hedman"
+            readTime="6 min read"
           />
 
           {/* ── Intro ── */}
@@ -154,10 +150,10 @@ export default function TeacherAdoptionPage() {
             <ArticleTimeline>
               <ArticleTimelineItem step="02" heading="Easy to Use" continueLine>
                 <p className={styles.p}>
-                  The easiest way to teach new software is to make it so it doesn't need to be taught. Teachers are busy and don't have time to learn something new, especially something they are unsure will fit in their classrooms.
+                  The easiest way to teach new software is to make it so it doesn't need to be taught. Teachers are busy and don't have time to learn something new, especially something they are unsure will fit in their classrooms. The most accessible software should be easy to use and not require any tutorials at all.
                 </p>
                 <p className={styles.p}>
-                  The original interface required teachers to understand teams, levels, classes, HP, AP, XP, GP, plus button, minus button, powers, pledges, and elemental affinity. All of these features are useful but require so much up-front learning that they scare away all but the most tech-savvy teachers.
+                  Here is the original interface teachers needed to learn to use. They needed to understand teams, levels, classes, HP, AP, XP, GP, plus button, minus button, powers, pledges, and elemental affinity. All of these features are useful to a teacher but require so much up-front learning that they scare away all but the most tech-savvy teachers.
                 </p>
                 <p className={styles.p}>
                   We reduced Classcraft's initial onboarding to simply asking teachers to hit a plus button to reward experience points, which lead to student rewards (crystals). Ultimately, the software needs to be easy enough to use that teachers will feel comfortable using it in front of their students and answering the inevitable questions that come from their students.

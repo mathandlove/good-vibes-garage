@@ -2,12 +2,10 @@ import { Helmet } from 'react-helmet-async'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import {
-  ArticleHeader,
   ArticleHero,
   ArticleCard,
   ArticleImage,
   ArticleSectionHeading,
-  ArticlePullQuote,
   ArticleStatRow,
   ArticleStat,
   ArticleCallout,
@@ -17,7 +15,6 @@ import {
   ArticleProjectMeta,
   ArticleClosing,
   ArticleCta,
-  ArticleSources,
   articleStyles as styles,
 } from '../components/article'
 import { useScrollReveal, useHeroEntrance } from '../hooks/useScrollReveal'
@@ -90,20 +87,17 @@ export default function LegoReadingPage() {
       <main className={styles.main}>
         <article className={styles.article}>
 
-          <ArticleHeader
+          {/* ── Hero image ── */}
+          <ArticleHero
+            img="/og-lego-reading.jpg"
+            imgAlt="A spread of LEGO books on a table"
+            layout="below"
+            title="Reinventing the Book with the LEGO Group"
+            subtitle="How can we enhance playing with LEGO with a book?"
             type="Case Study"
             date="2023"
             author="Elliott Hedman"
             readTime="6 min read"
-            title="Reinventing the Book with the LEGO Group"
-            subtitle="How can we enhance playing with LEGO with a book?"
-          />
-
-          {/* ── Hero image ── */}
-          <ArticleHero
-            img={legoBooks}
-            imgAlt="A spread of LEGO books on a table"
-            layout="below"
           />
 
           {/* ── Project metadata ── */}

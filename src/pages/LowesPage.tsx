@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import {
-  ArticleHeader,
   ArticleHero,
   ArticleImage,
   ArticleImageGrid,
@@ -10,10 +9,8 @@ import {
   ArticleStatRow,
   ArticleStat,
   ArticleSectionHeading,
-  ArticleCallout,
   ArticleTimeline,
   ArticleTimelineItem,
-  ArticleClosing,
   ArticleCta,
   articleStyles as styles,
 } from '../components/article'
@@ -83,20 +80,17 @@ export default function LowesPage() {
       <main className={styles.main}>
         <article className={styles.article}>
 
-          <ArticleHeader
-            type="Case Study"
-            date="2020"
-            author="Elliott Hedman"
-            readTime="5 min read"
-            title="How a Tennis Ball Increased Lowe's Vacuum Sales by 9%"
-            subtitle="The problem wasn't the vacuums. It was that customers didn't feel confident enough to buy one."
-          />
-
           {/* ── Hero image ── */}
           <ArticleHero
             img={lowesHero}
             imgAlt="Researcher demonstrating the vacuum suction station prototype at Lowe's"
             layout="below"
+            title="How a Tennis Ball Increased Lowe's Vacuum Sales by 9%"
+            subtitle="The problem wasn't the vacuums. It was that customers didn't feel confident enough to buy one."
+            type="Case Study"
+            date="2020"
+            author="Elliott Hedman"
+            readTime="5 min read"
           />
 
           {/* ── Project metadata ── */}
@@ -111,13 +105,13 @@ export default function LowesPage() {
           <div className={styles.container}>
             <div className={styles.body}>
               <p className={`${styles.lead} reveal`}>
-                Lowe's came to us with a straightforward problem: wet-dry vacuums weren't selling. The displays looked fine. The products were good. But customers kept walking past.
+                Lowe's hired mPath to reinvent the experience of buying a wet-dry vacuum. mPath conducted diagnostic research and emototyping to understand the current experience and develop a new approach that increased purchases, customer retention, and value.
               </p>
               <p className={`${styles.p} reveal`}>
-                We built a fake store in our lab, strapped MOXO sensors onto shoppers, and watched what actually happened when someone tried to buy a vacuum.
+                The overarching theme in our design work was that shoppers were not feeling confident that they were making the right choice in their purchases.
               </p>
               <p className={`${styles.p} reveal`}>
-                What we found wasn't a product problem or a pricing problem. The overarching theme in everything we observed was the same: customers didn't feel confident. They couldn't tell which vacuum was right for them. They didn't know if they were about to make a mistake. So they didn't decide.
+                We built a fake vacuum store and had shoppers visit in the morning, making changes in the afternoon.
               </p>
             </div>
           </div>
@@ -145,21 +139,36 @@ export default function LowesPage() {
 
           <div className={styles.container}>
             <ArticleTimeline>
-              <ArticleTimelineItem step="01" heading="Simplify the Messaging">
+              <ArticleTimelineItem step="01" heading="Simplify Messaging">
                 <p className={styles.p}>
-                  The original signage tried to describe every feature of every vacuum. Sensors showed customers scanning it and moving on — the density of information was making the decision feel harder, not easier. We replaced the feature lists with simple directional language: "Best vacuum for home use." One sentence that answered the only question customers were actually asking. We added interactive prompts — "Try me out" — to signal permission to engage. Customers who felt invited to interact were far more likely to buy.
+                  Boxes and signs had many unorganized messages and information. Shoppers were so overwhelmed they couldn't read any of it, let alone stop to touch.
+                </p>
+                <p className={styles.p}>
+                  The number-one question we identified from new shoppers was "Which one should I use at home?" We placed a label above boxes and displays: "Best vacuum for home use." We also placed a large, red, pop-up arrow next to the vacuum, saying "Try me out," achieving our primary goal of getting shoppers to touch the products.
                 </p>
                 <ArticleImage src={lowesShop} alt="Customer examining vacuum hose attachment at the Lowe's suction testing station" layout="prose" />
               </ArticleTimelineItem>
-              <ArticleTimelineItem step="02" heading="Add Something to Touch">
+              <ArticleTimelineItem step="02" heading="Add Interaction">
                 <p className={styles.p}>
-                  The original display was clean. Visually, it scored reasonably well. But sensor data showed engagement flatlining. No one was touching anything. We installed a demo station with a tennis ball and loose debris — customers could pick up the vacuum and test the suction themselves. Satisfaction ratings went from 5/10 to, in the words of the Lowe's team, "the best they ever had." Watching a tennis ball get sucked across a table turns "I think this will work" into "I know this will work." Confidence through direct experience.
+                  We addressed what people originally asked for: professional design, simple messaging, accessible products, and differentiable choices. After implementing all of these features, the space was still only rated 5/10.
+                </p>
+                <p className={styles.p}>
+                  We noticed that most shoppers subconsciously put their hands on every vacuum to feel the suction, but all the suctions felt the same. We installed a tube with tennis balls to help customers visualize the suction; they rated the experience as the best they ever had at Lowe's.
+                </p>
+                <p className={styles.p}>
+                  Over the weekend, we experimented with suction physics to see how we could better visualize horsepower.
                 </p>
                 <ArticleImage src={lowesSuction} alt="Stress sensor graph showing engagement spike when customers interact with the suction station" layout="prose" caption="Skin conductance readings spike when customers physically interact with the suction demo — engagement through direct experience." />
               </ArticleTimelineItem>
-              <ArticleTimelineItem step="03" heading="Reduce the Choices">
+              <ArticleTimelineItem step="03" heading="Simplify Choices">
                 <p className={styles.p}>
-                  Fourteen vacuum models created a paradox of choice. Customers couldn't tell the difference between them, which meant choosing wrong felt equally possible on any option. We reorganized the display into three categories based on how customers actually thought about the purchase: small, medium, and large storage. Not by motor specs. Not by brand. By the mental model customers already had. Three clear options made the decision feel manageable.
+                  Interviewed shoppers were expecting one wet/dry vacuum. Instead, they had to evaluate and choose between 14 different options. They could not differentiate between these options.
+                </p>
+                <p className={styles.p}>
+                  We found that shoppers differentiated vacuums based on their storage size: small, medium, and large. They expected all vacuums to have strong suctions and similar accessories. For wet-dry vacuums, they tend to be indifferent to the brand.
+                </p>
+                <p className={styles.p}>
+                  If you visit the Lowe's store today, you can see the tennis ball suction station ready for play.
                 </p>
                 <ArticleImageGrid columns={3}>
                   <ArticleImage src={lowesVac1} alt="Wet-dry vacuum in the Lowe's display" layout="grid" />
@@ -170,28 +179,14 @@ export default function LowesPage() {
             </ArticleTimeline>
           </div>
 
-          {/* ── Callout ── */}
-          <div className={styles.container}>
-            <ArticleCallout label="The Core Insight" variant="insight">
-              <p>Customers weren't uninformed about vacuums. They were unconfident. The design fix wasn't to add more information — it was to give customers a way to feel certain before they committed. That's a meaningfully different problem to solve.</p>
-            </ArticleCallout>
-          </div>
-
           {/* ── Closing ── */}
           <div className={styles.container}>
             <div className={styles.body}>
               <p className={`${styles.p} reveal`}>
-                Lowe's implemented over 150 of the design suggestions that came out of this research. The result was a 9% sales increase in an in-store randomized control test — alongside improved satisfaction and likelihood to recommend.
-              </p>
-              <p className={`${styles.p} reveal`}>
-                The tennis ball demo is the detail I tell this story with, because it captures something true about all good design: you can't engineer confidence through better copywriting. Sometimes you have to let people touch the thing.
+                Lowe's implemented over 150 of mPath's design suggestions and conducted an in-store, randomized control test. According to the results, mPath helped Lowe's increase their sales by over 9% and increase customer satisfaction and promotion.
               </p>
             </div>
           </div>
-
-          <ArticleClosing>
-            Confidence isn't a feeling you can describe your way to. Sometimes you have to let people touch the thing.
-          </ArticleClosing>
 
           <ArticleCta
             sharePrompt="If this landed, forward it to someone designing retail or purchase experiences."

@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import {
-  ArticleHeader,
+  ArticleHero,
   ArticleImage,
   ArticleSectionHeading,
   ArticlePullQuote,
@@ -76,13 +76,16 @@ export default function PersonalizedLearningPage() {
       <main className={styles.main}>
         <article className={styles.article}>
 
-          <ArticleHeader
+          <ArticleHero
             type="Essay"
             date="2019"
             author="Elliott Hedman"
             readTime="9 min read"
             title="Why personalized learning keeps failing"
             subtitle="After hundreds of hours in the digital classroom, the problem isn't the technology."
+            img="/og-personalized-learning.jpg"
+            imgAlt="Student working alone on a digital learning tool"
+            layout="below"
           />
 
           {/* ── Intro ── */}
@@ -270,16 +273,10 @@ export default function PersonalizedLearningPage() {
             sharePrompt="If this landed, forward it to a teacher, designer, or school administrator you know."
           />
 
-          <ArticleSources sources={[
-            {
-              label: 'Silicon Valley Came to Kansas Schools. That Started a Rebellion.',
-              href: 'https://www.nytimes.com/2019/04/21/technology/silicon-valley-kansas-schools.html',
-            },
-            {
-              label: 'ThinkCERCA — Social Reading Platform',
-              href: 'https://thinkcerca.com/',
-            },
-          ]} />
+          <ArticleSources>
+            <li><a href="https://www.nytimes.com/2019/04/21/technology/silicon-valley-kansas-schools.html" target="_blank" rel="noopener noreferrer">Silicon Valley Came to Kansas Schools. That Started a Rebellion.</a></li>
+            <li><a href="https://thinkcerca.com/" target="_blank" rel="noopener noreferrer">ThinkCERCA — Social Reading Platform</a></li>
+          </ArticleSources>
 
         </article>
       </main>

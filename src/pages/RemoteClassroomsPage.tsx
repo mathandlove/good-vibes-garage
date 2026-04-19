@@ -2,8 +2,14 @@ import { Helmet } from 'react-helmet-async'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import {
-  ArticleHeader,
+  ArticleHero,
   ArticleImage,
+  ArticleStatRow,
+  ArticleStat,
+  ArticleSectionHeading,
+  ArticleTimeline,
+  ArticleTimelineItem,
+  ArticleCallout,
   ArticleClosing,
   ArticleCta,
   articleStyles as styles,
@@ -67,13 +73,16 @@ export default function RemoteClassroomsPage() {
       <main className={styles.main}>
         <article className={styles.article}>
 
-          <ArticleHeader
+          <ArticleHero
+            img={youtubeImg}
+            imgAlt="Child watching YouTube instead of doing schoolwork"
+            layout="below"
+            title="The 5 Reasons Remote Classrooms Fail"
+            subtitle="What four years of research with Title 1 students reveals about online learning."
             type="Essay"
             date="March 16, 2020"
             author="Elliott Hedman"
             readTime="5 min read"
-            title="The 5 Reasons Remote Classrooms Fail"
-            subtitle="What four years of research with Title 1 students reveals about online learning."
           />
 
           {/* ── Intro ── */}
@@ -91,103 +100,95 @@ export default function RemoteClassroomsPage() {
             </div>
           </div>
 
+          {/* ── Stats ── */}
+          <div className={styles.container}>
+            <ArticleStatRow>
+              <ArticleStat value="4" label="years of research" note="Title 1 classrooms and Boys & Girls Club" />
+              <ArticleStat value="5" label="structural failure modes" note="each predictable before you start" />
+              <ArticleStat value="0" label="times a student asked for help" note="in 4 years of digital lesson observation" />
+            </ArticleStatRow>
+          </div>
+
           <div className={styles.container}>
             <div className={`${styles.divider} reveal`}>✦</div>
           </div>
 
-          {/* ── Reason 1 ── */}
-          <div className={styles.container}>
-            <div className={styles.body}>
-              <h2 className={`${styles.h2} reveal`}>1. You are now competing with YouTube.</h2>
-              <p className={`${styles.p} reveal`}>
-                In a famous Stanford study, children were asked to delay their gratification and not eat a marshmallow for up to 20 minutes. They failed miserably — the marshmallow in front of them was too tempting.
-              </p>
-              <p className={`${styles.p} reveal`}>
-                The modern-day version of the marshmallow is YouTube, TikTok, Minecraft, and Fortnite. When you ask children to read a passage from Old Yeller, you are also asking them not to go on YouTube — which is a click away. In school computer labs, we watched many students "sneakily" watch YouTube with both the researchers and the teacher watching them. If you can get away with it, why not?
-              </p>
-              <p className={`${styles.p} reveal`}>
-                In a home environment, the watchful eye of an authoritative parent sets expectations. With that removed, many students do not have the self-regulation to pick reading over YouTube.
-              </p>
-            </div>
-          </div>
+          <ArticleSectionHeading>5 Reasons Remote Classrooms Fail</ArticleSectionHeading>
 
-          <ArticleImage
-            src={youtubeImg}
-            alt="Child watching YouTube instead of doing schoolwork"
-            layout="full"
-          />
-
-          {/* ── Reason 2 ── */}
           <div className={styles.container}>
-            <div className={styles.body}>
-              <h2 className={`${styles.h2} reveal`}>2. Where does your child go when it gets hard?</h2>
-              <p className={`${styles.p} reveal`}>
-                For digital learning, there exist two types: practice and learning new skills. For most of my digital clients, I push them hard to focus on practice — teaching something new to a child digitally is a monumental, often impossible task without an adult in the room. Unfortunately, as teachers, you often need to teach new content.
-              </p>
-              <p className={`${styles.p} reveal`}>
-                Digital content comes to a halt when a child is lost. I remember one studious child who was cruising through the area of squares but was then asked to find the area of a triangle — a question he hadn't learned in class. He answered it wrong. Then answered it wrong again. There was no out for him, and he just got frustrated and quit.
-              </p>
-              <p className={`${styles.p} reveal`}>
-                In a typical classroom, when a student doesn't know something, this is when great learning begins. They can ask their peers or ask a teacher. When you are in quarantine, those people aren't there. And even if the teacher is available to take questions online, children still won't ask. When a child is at a computer there is a stigma that they are doing an activity alone. In four years of watching children use digital lessons, I never saw a hand pop up asking a teacher for advice — even when the teacher was five feet away. Now that they are miles away without a face, I don't imagine children will start raising their digital hand.
-              </p>
-            </div>
+            <ArticleTimeline>
+              <ArticleTimelineItem step="01" heading="You Are Now Competing with YouTube" continueLine>
+                <p className={styles.p}>
+                  In a famous Stanford study, children were asked to delay their gratification and not eat a marshmallow for up to 20 minutes. They failed miserably — the marshmallow in front of them was too tempting.
+                </p>
+                <p className={styles.p}>
+                  The modern-day version of the marshmallow is YouTube, TikTok, Minecraft, and Fortnite. When you ask children to read a passage from Old Yeller, you are also asking them not to go on YouTube — which is a click away. In school computer labs, we watched many students "sneakily" watch YouTube with both the researchers and the teacher watching them. If you can get away with it, why not?
+                </p>
+                <p className={styles.p}>
+                  In a home environment, the watchful eye of an authoritative parent sets expectations. With that removed, many students do not have the self-regulation to pick reading over YouTube.
+                </p>
+              </ArticleTimelineItem>
+              <ArticleTimelineItem step="02" heading="Where Does Your Child Go When It Gets Hard?" continueLine>
+                <p className={styles.p}>
+                  For digital learning, there exist two types: practice and learning new skills. For most of my digital clients, I push them hard to focus on practice — teaching something new to a child digitally is a monumental, often impossible task without an adult in the room. Unfortunately, as teachers, you often need to teach new content.
+                </p>
+                <p className={styles.p}>
+                  Digital content comes to a halt when a child is lost. I remember one studious child who was cruising through the area of squares but was then asked to find the area of a triangle — a question he hadn't learned in class. He answered it wrong. Then answered it wrong again. There was no out for him, and he just got frustrated and quit.
+                </p>
+                <p className={styles.p}>
+                  In a typical classroom, when a student doesn't know something, this is when great learning begins. They can ask their peers or ask a teacher. When you are in quarantine, those people aren't there. And even if the teacher is available to take questions online, children still won't ask. When a child is at a computer there is a stigma that they are doing an activity alone. In four years of watching children use digital lessons, I never saw a hand pop up asking a teacher for advice — even when the teacher was five feet away. Now that they are miles away without a face, I don't imagine children will start raising their digital hand.
+                </p>
+              </ArticleTimelineItem>
+              <ArticleTimelineItem step="03" heading="We're Robbing Social Learners from the Social" continueLine>
+                <p className={styles.p}>
+                  Studying digital learning shows the high importance of peers and teachers in the learning process: when they're gone, things break down.
+                </p>
+                <p className={styles.p}>
+                  Peers and teachers provide social feedback. When a child tries hard and succeeds, it's important to have a moment of celebration and acknowledgement. For most kids, this positive feedback from peers and teachers is what keeps them going and striving.
+                </p>
+                <p className={styles.p}>
+                  In an isolated environment, social approval is erased. Getting a 90% on a test doesn't mean that much to a 3rd-grade student. Digital reports can't give them a feeling that they are learning and succeeding. That's really up to you.
+                </p>
+              </ArticleTimelineItem>
+              <ArticleTimelineItem step="04" heading="Accessibility" continueLine>
+                <p className={styles.p}>
+                  We visited many children's homes — watching how they use technology in their natural environment. For a lot of families, there is no computer, tablet, or laptop (though there's often a smartphone). For other families there's no internet access.
+                </p>
+                <p className={styles.p}>
+                  We built Wonder Stories to work on a smartphone as that felt like the most accessible medium — though definitely not universally accessible. But most digital learning programs require a laptop and an internet connection, which will leave many without a way to join in.
+                </p>
+              </ArticleTimelineItem>
+              <ArticleTimelineItem step="05" heading="There's No Time to Prototype the Digital Classroom">
+                <p className={styles.p}>
+                  Thousands of different strategies are going to be tried in the next month. One teacher I talked to said he'll be surprised if more than 20% of the work gets done. There is a way to make online teaching effective — homeschooling parents do it all the time. But effective remote classrooms set up cultures, expectations, and have an easily accessible adult guiding the process.
+                </p>
+                <p className={styles.p}>
+                  Most of my consulting work starts with creating small-scale attempts at positive learning environments. We often fail. The first attempt at Wonder Stories had kids quitting in less than five minutes.
+                </p>
+                <p className={styles.p}>
+                  Unfortunately, as this crisis happened so suddenly, teachers and parents are not given the tools and time to figure out how to make things work. You're being asked to pivot on a dime, and that seldom works.
+                </p>
+              </ArticleTimelineItem>
+            </ArticleTimeline>
           </div>
 
           <ArticleImage
             src={confusedImg}
             alt="Child frustrated and confused at a computer"
-            layout="full"
+            layout="wide"
           />
-
-          {/* ── Reason 3 ── */}
-          <div className={styles.container}>
-            <div className={styles.body}>
-              <h2 className={`${styles.h2} reveal`}>3. We're robbing social learners from the social.</h2>
-              <p className={`${styles.p} reveal`}>
-                Studying digital learning shows the high importance of peers and teachers in the learning process: when they're gone, things break down.
-              </p>
-              <p className={`${styles.p} reveal`}>
-                Peers and teachers provide social feedback. When a child tries hard and succeeds, it's important to have a moment of celebration and acknowledgement. For most kids, this positive feedback from peers and teachers is what keeps them going and striving.
-              </p>
-              <p className={`${styles.p} reveal`}>
-                In an isolated environment, social approval is erased. Getting a 90% on a test doesn't mean that much to a 3rd-grade student. Digital reports can't give them a feeling that they are learning and succeeding. That's really up to you.
-              </p>
-            </div>
-          </div>
-
-          {/* ── Reason 4 ── */}
-          <div className={styles.container}>
-            <div className={styles.body}>
-              <h2 className={`${styles.h2} reveal`}>4. Accessibility.</h2>
-              <p className={`${styles.p} reveal`}>
-                We visited many children's homes — watching how they use technology in their natural environment. For a lot of families, there is no computer, tablet, or laptop (though there's often a smartphone). For other families there's no internet access.
-              </p>
-              <p className={`${styles.p} reveal`}>
-                We built Wonder Stories to work on a smartphone as that felt like the most accessible medium — though definitely not universally accessible. But most digital learning programs require a laptop and an internet connection, which will leave many without a way to join in.
-              </p>
-            </div>
-          </div>
 
           <ArticleImage
             src={momImg}
             alt="Child at home without adequate technology for remote learning"
-            layout="full"
+            layout="wide"
           />
 
-          {/* ── Reason 5 ── */}
+          {/* ── Callout ── */}
           <div className={styles.container}>
-            <div className={styles.body}>
-              <h2 className={`${styles.h2} reveal`}>5. There's no time to prototype the digital classroom.</h2>
-              <p className={`${styles.p} reveal`}>
-                Thousands of different strategies are going to be tried in the next month. One teacher I talked to said he'll be surprised if more than 20% of the work gets done. There is a way to make online teaching effective — homeschooling parents do it all the time. But effective remote classrooms set up cultures, expectations, and have an easily accessible adult guiding the process.
-              </p>
-              <p className={`${styles.p} reveal`}>
-                Most of my consulting work starts with creating small-scale attempts at positive learning environments. We often fail. The first attempt at Wonder Stories had kids quitting in less than five minutes.
-              </p>
-              <p className={`${styles.p} reveal`}>
-                Unfortunately, as this crisis happened so suddenly, teachers and parents are not given the tools and time to figure out how to make things work. You're being asked to pivot on a dime, and that seldom works.
-              </p>
-            </div>
+            <ArticleCallout label="The Bottom Line" variant="insight">
+              <p>When things break down via an online education strategy, it's not the parent's fault, it's not the teacher's fault, and it's not the tech company's fault. Teaching little ones online is a difficult endeavor — one we're still researching and trying to figure out how to do correctly.</p>
+            </ArticleCallout>
           </div>
 
           <div className={styles.container}>

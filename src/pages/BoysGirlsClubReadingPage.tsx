@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import {
-  ArticleHeader,
   ArticleHero,
   ArticleImage,
   ArticleProjectMeta,
@@ -81,13 +80,16 @@ export default function BoysGirlsClubReadingPage() {
       <main className={styles.main}>
         <article className={styles.article}>
 
-          <ArticleHeader
+          <ArticleHero
+            img={heroImg}
+            imgAlt="3rd grader at the Boys & Girls Club working through the reading prototype on a laptop"
+            layout="below"
+            title='From "I Won&#39;t Read a Paragraph" to "Can We Play Again?"'
+            subtitle="The same kids. A different reading experience."
             type="Case Study"
             date="2021"
             author="Elliott Hedman"
             readTime="6 min read"
-            title='From "I Won&#39;t Read a Paragraph" to "Can We Play Again?"'
-            subtitle="The same kids. A different reading experience."
           />
 
           {/* ── Project metadata ── */}
@@ -98,13 +100,14 @@ export default function BoysGirlsClubReadingPage() {
             { label: 'Scope',    value: '3rd and 4th grade reluctant readers' },
           ]} />
 
-          <ArticleHero img={heroImg} imgAlt="3rd grader at the Boys & Girls Club working through the reading prototype on a laptop" layout="below" />
-
           {/* ── Intro ── */}
           <div className={styles.container}>
             <div className={styles.body}>
               <p className={`${styles.lead} reveal`}>
-                The first prototype we brought to the Boys & Girls Club had a clear problem: most students refused to finish a single paragraph.
+                We worked at the Boys & Girls Club to provide reading lessons for 3rd and 4th graders that reluctant readers would engage with, care about, and actively ask to do.
+              </p>
+              <p className={`${styles.p} reveal`}>
+                Many of these students would not even read one paragraph from our initial prototype.
               </p>
               <p className={`${styles.p} reveal`}>
                 These were third and fourth graders who had, over years, learned that reading was something that happened to them — not something they did. Handing them a digital reading lesson and asking them to engage was like asking someone who's been burned by a stove to try cooking again. The first ask was the hard one.
@@ -140,19 +143,46 @@ export default function BoysGirlsClubReadingPage() {
             <ArticleTimeline>
               <ArticleTimelineItem step="01" heading="Add Weight to the Questions">
                 <p className={styles.p}>
-                  Early versions let students skip wrong answers or move on without engaging. The result: students treated the whole experience as something to get through. We implemented a coin system — one coin per correct answer, within two attempts. This single change reframed every question from "obstacle" to "opportunity." Students who'd been guessing started re-reading passages. Eye tracking confirmed it: time-on-text went up the moment there was something worth earning. Later data showed coin accumulation correlated strongly with comprehension scores.
+                  In our initial reading tests, students seldom cared if they answered a reading question wrong. Consequentially, they did not read the text nor spend much time on the question. Most of the students skipped their grade at the end.
+                </p>
+                <p className={styles.p}>
+                  Students were offered a coin for every problem they got right within 2 guesses. Students would re-read sections and think carefully, knowing this coin was on the line. Later research showed that this coin was a strong indicator of achievement and added weight to problems.
+                </p>
+                <p className={styles.p}>
+                  With all the right motivators and rewards in place, children started asking us for help answering questions, which was our ultimate goal. In this prototype, we added the "Break it Down" button.
                 </p>
                 <ArticleImage src={coinSystemImg} alt="Coin system UI showing a multiple-choice question with coins to earn for correct answers" caption="One coin per correct answer, within two attempts. That was the whole change — and it flipped how students treated every question." />
               </ArticleTimelineItem>
               <ArticleTimelineItem step="02" heading="Remove the Visual Clutter">
                 <p className={styles.p}>
-                  Eye tracking caught something counterintuitive: images and questions were actually working against the reading. Students were skipping the text entirely to focus on the more visually engaging elements. The redesign stripped the interface down to one or two sentences at a time, with images and questions appearing only after the text was completed. The inspiration was the app Hooked — which uses progressive text reveals to maintain narrative tension. Students who had been skipping were suddenly reading to find out what came next.
+                  Through eye tracking, we saw children would often skip over the text and focus on questions which were more engaging. Vibrant images also pulled children's attention away.
+                </p>
+                <p className={styles.p}>
+                  Inspired by the app Hooked — we removed all visual distractions — there were only one to two sentences visible at a time. Questions and images only appeared once children finished reading texts. This simplification helped children ease into reading and stay focused.
+                </p>
+                <p className={styles.p}>
+                  We added simple cartoons like "Diary of a Wimpy Kid" as it helped kids reflect on what they read and not feel overwhelmed.
                 </p>
                 <ArticleImage src={cleanInterfaceImg} alt="Clean reading interface with cartoon illustration, fill-in-blank text, and progress bar at the bottom" caption="The stripped-down interface: one passage at a time, progress bar at the bottom, no visual escape routes." />
               </ArticleTimelineItem>
               <ArticleTimelineItem step="03" heading="Start with a Wonder Question">
                 <p className={styles.p}>
-                  Students were reading to finish, not to know. We introduced "Wonder Questions" at the beginning of each lesson — a genuinely uncertain question that the reading would answer. "Why do vultures eat dead animals?" isn't a setup. It's a real thing to wonder about. Before reading, students discussed the question with each other. That conversation gave them a stake in the answer. Reading became purposeful instead of obligatory.
+                  Children seldom had a reason to read a text other than to finish as fast as possible. Questions were present just to "prove that they read it." While adult readers often read for enjoyment, struggling readers did not enjoy reading the preselected texts given to them.
+                </p>
+                <p className={styles.p}>
+                  We added a key Wonder Question at the beginning of every text. For example, "Why do vultures eat dead animals?" We then had readers ask a neighbor the same question. This instilled in readers a sense of purpose and curiosity as they read the scientific text. At the end they were able to show they were able to answer the challenging question.
+                </p>
+                <p className={styles.p}>
+                  We found children were more engaged and answered faster when talking with each other rather than typing.
+                </p>
+                <p className={styles.p}>
+                  We alerted kids when they were skipping past the reading. Rather than be annoyed, children said reported that they really appreciated knowing they weren't reading as they were unaware themselves.
+                </p>
+                <p className={styles.p}>
+                  When providing Wonder Questions, we quickly found out that some questions were more fun and interesting than others. A rule of thumb — if you, an adult, already know the answer, it's probably not that fun.
+                </p>
+                <p className={styles.p}>
+                  Games are usually added as a reward. We found games were more effective if children could play one before they started reading. This helped them warm up their mind and get engaged with the material.
                 </p>
                 <ArticleImage src={wonderQuestionsSlideImg} alt="Slide showing Bad Wonder Questions vs Good Wonder Questions side by side" caption="The difference: bad Wonder Questions can be answered from a photo. Good ones require reading to resolve." />
               </ArticleTimelineItem>

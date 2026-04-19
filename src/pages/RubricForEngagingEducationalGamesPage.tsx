@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import {
-  ArticleHeader,
+  ArticleHero,
   ArticleImage,
   ArticleSectionHeading,
   ArticleTimeline,
@@ -72,13 +72,16 @@ export default function RubricForEngagingEducationalGamesPage() {
       <main className={styles.main}>
         <article className={styles.article}>
 
-          <ArticleHeader
+          <ArticleHero
             type="Research"
             date="May 15, 2023"
             author="Elliott Hedman"
             readTime="4 min read"
             title="A Rubric for Making Engaging Educational Games"
             subtitle="Most fail before kids even press play."
+            img="/og-rubric-for-engaging-educational-games.jpg"
+            imgAlt="Educational games rubric overview"
+            layout="below"
           />
 
           {/* ── Intro ── */}
@@ -144,7 +147,7 @@ export default function RubricForEngagingEducationalGamesPage() {
           <ArticleImage
             src={rubricImage}
             alt="Educational game engagement rubric scoring sheet"
-            layout="inset"
+            layout="wide"
             caption="The rubric used to evaluate engagement levels across educational game designs."
           />
 

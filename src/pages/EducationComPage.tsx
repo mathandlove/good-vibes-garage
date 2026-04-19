@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import {
-  ArticleHeader,
   ArticleHero,
   ArticleImage,
   ArticleImageGrid,
@@ -66,16 +65,17 @@ export default function EducationComPage() {
       <main className={styles.main}>
         <article className={styles.article}>
 
-          <ArticleHeader
+          <ArticleHero
+            img={heroImg}
+            imgAlt="Student using Education.com software at home"
+            layout="below"
+            title="Gamification + Learning with Education.com"
+            subtitle="Most educational games are designed to be completed, not returned to. We set out to build something students would actually ask to play again."
             type="Case Study"
             date="2018"
             author="Elliott Hedman"
             readTime="4 min read"
-            title="Gamification + Learning with Education.com"
-            subtitle="Most educational games are designed to be completed, not returned to. We set out to build something students would actually ask to play again."
           />
-
-          <ArticleHero img={heroImg} imgAlt="Student using Education.com software at home" layout="below" />
 
           <ArticleProjectMeta items={[
             { label: 'Client',  value: 'Education.com' },
@@ -88,10 +88,10 @@ export default function EducationComPage() {
           <div className={styles.container}>
             <div className={styles.body}>
               <p className={`${styles.lead} reveal`}>
-                A large portion of Education.com's market is homeschooled students. So we went to them — travelling across the United States, sitting with children in their homes, watching them use the software the way they naturally would.
+                A large portion of Education.com's market is homeschooled students, so we travelled across the United States having students use the software in the home the way they naturally would.
               </p>
               <p className={`${styles.p} reveal`}>
-                What we found first was a navigation problem. When the researcher left the room, younger students became disoriented. Without an adult to redirect them, they wandered away from lessons. They needed structure that didn't depend on supervision.
+                When researchers left the room, we could see young students becoming lost in the software without an adult to guide them back to the "right lesson."
               </p>
               <p className={`${styles.p} reveal`}>
                 What we found next was a motivation problem. The games existed, but students weren't choosing to return to them. Completing a game once was enough. There was nothing pulling them back.
@@ -117,7 +117,7 @@ export default function EducationComPage() {
           <div className={styles.container}>
             <div className={styles.body}>
               <p className={`${styles.p} reveal`}>
-                We built 15 paper-based prototype games using PowerPoint — low-fidelity enough to iterate quickly, testable enough to get real reactions. We shipped them to students remotely, watched sessions, took feedback, and refined.
+                We built 15 paper prototype games with students using Powerpoint that we had them use over the internet. Based on the children's feedback, we would remove, iterate, and add to these games. By the end, students were saying these games were their favorite games.
               </p>
               <p className={`${styles.p} reveal`}>
                 Some games we scrapped entirely. Some we enhanced. By the end of the iteration cycle, students were consistently picking particular games as their favorites — and asking to play them again. Those preferences weren't random. They pointed to patterns.

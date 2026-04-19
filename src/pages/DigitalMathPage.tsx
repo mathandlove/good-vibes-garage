@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import {
-  ArticleHeader,
   ArticleHero,
   ArticleImage,
   ArticleImageGrid,
@@ -70,16 +69,17 @@ export default function DigitalMathPage() {
       <main className={styles.main}>
         <article className={styles.article}>
 
-          <ArticleHeader
+          <ArticleHero
+            img={heroImg}
+            imgAlt="Child using digital math prototype while researcher observes"
+            layout="below"
+            title="Understanding the Digital Math Experience"
+            subtitle="The prototype worked in the classroom. Alone at a screen, children fell apart."
             type="Case Study"
             date="2019"
             author="Elliott Hedman"
             readTime="5 min read"
-            title="Understanding the Digital Math Experience"
-            subtitle="The prototype worked in the classroom. Alone at a screen, children fell apart."
           />
-
-          <ArticleHero img={heroImg} imgAlt="Child using digital math prototype while researcher observes" layout="below" />
 
           <ArticleProjectMeta items={[
             { label: 'Client',   value: 'Math EdTech Client' },
@@ -93,6 +93,9 @@ export default function DigitalMathPage() {
             <div className={styles.body}>
               <p className={`${styles.lead} reveal`}>
                 The math team had built a working prototype for teaching addition — double and single digits, animated, polished. It performed well when teachers were present. Then we put 19 children in front of it alone.
+              </p>
+              <p className={`${styles.p} reveal`}>
+                Children wore eye tracking glasses and MOXO Sensors as they tried to learn the concept of addition.
               </p>
               <p className={`${styles.p} reveal`}>
                 Each child wore eye tracking glasses and MOXO sensors measuring skin conductance. We watched what they actually looked at, where they disengaged, and where their stress spiked.
@@ -128,17 +131,35 @@ export default function DigitalMathPage() {
                 <p className={styles.p}>
                   The original prototype used long animation clips — movement, jokes, teacher-style instruction — to explain concepts. Eye tracking showed children watching for a few seconds, then mentally checking out. By the time the key instructional moment arrived, most students had already disengaged. The fix wasn't to make better animations. It was to make them shorter. Animations should serve as brief introductions only — after roughly five seconds, they stop teaching and start losing people.
                 </p>
+                <p className={styles.p}>
+                  A major finding was that animations talking to students about educational concepts was highly ineffective; children often stopped watching altogether. The "talk at" method of teaching didn't work in the digital space.
+                </p>
                 <ArticleImage src={animationImg} alt="Digital math lesson prototype showing animation-based instruction" caption="The original animation approach — engaging for seconds, then losing students entirely." />
               </ArticleTimelineItem>
               <ArticleTimelineItem step="02" heading="Minimal Feedback Creates Helplessness">
                 <p className={styles.p}>
                   When children got something wrong, the original response was: "That's not right; try again!" After three failed attempts, the answer was simply given. Sensor data showed children learning helplessness — they clicked through, waiting to be shown the answer. Dynamic feedback, by contrast, became the primary teaching mechanism. When the system responded to wrong answers with information rather than just correction, children learned from their mistakes instead of waiting them out. The difference between a teaching moment and a "click-to-continue" experience was in the specificity of the feedback.
                 </p>
+                <p className={styles.p}>
+                  This was the first time we saw that answering questions was highly engaging, which would eventually lead to our framework of "The Feeling of Learning" as the backbone of engagement.
+                </p>
+                <p className={styles.p}>
+                  Educators typically blame content being too easy or too hard for why it doesn't work. We challenged them to think about adding scaffolding and support when things get tough.
+                </p>
                 <ArticleImage src={feedbackImg} alt="Digital math prototype showing feedback interaction design" caption="Dynamic feedback as the primary teaching mechanism — not just correction, but explanation." />
               </ArticleTimelineItem>
               <ArticleTimelineItem step="03" heading="Interfaces Must Be Explicitly Taught">
                 <p className={styles.p}>
-                  Children who couldn't figure out the interface assumed they didn't understand the math. The two things were completely conflated. A child who couldn't find the "+10 button" wasn't confused about addition — they were confused about the interface. But what they experienced was math failure. The fix was treating interface teaching as content: model every new button, explicitly, before asking students to use it. When children understood how to use the tool, they also learned the math. The UX was the pedagogy.
+                  Children who couldn't figure out the interface assumed they didn't understand the math. The two things were completely conflated. A child who couldn't find the "+10 button" wasn't confused about addition — they were confused about the interface. But what they experienced was math failure. The fix was treating interface teaching as content: model every new button, explicitly, before asking students to use it.
+                </p>
+                <p className={styles.p}>
+                  For example, they learned the +10 button adds an entire 10 bracket through a character hitting the button and saying, "Your turn! Can you add 10 apples?"
+                </p>
+                <p className={styles.p}>
+                  By the time we had improved the UX and taught the child how to use the tool, they had also learned the math concept.
+                </p>
+                <p className={styles.p}>
+                  When children understood how to use the tool, they also learned the math. The UX was the pedagogy.
                 </p>
                 <ArticleImageGrid columns={2}>
                   <ArticleImage src={interfaceImg} alt="Math interface showing explicit button instruction" layout="grid" caption="Teaching the +10 button explicitly before use." />
@@ -160,13 +181,13 @@ export default function DigitalMathPage() {
           <div className={styles.container}>
             <div className={styles.body}>
               <p className={`${styles.p} reveal`}>
-                "I can't believe that he could identify problems and come up with some solutions on the spot without having to bring it back to an editor. I love that he created his own prototype. I consider him a real asset to our team."
+                "I can't believe that he could identify problems and come up with some solutions on the spot without having to bring it back to an editor. I love that he created his own prototype. I consider him a real asset to our team and I wish I could articulate better how much I enjoyed working with him."
               </p>
               <p className={`${styles.p} reveal`}>
-                "This is 100% absolutely amazingly helpful. I'm learning, they're helping me think about the design of the product, and it's so incredibly INFORMATIVE... Even in just watching Sara and Elliott work with the 'digital' paper prototype — I'd love to learn how to do more of that."
+                "This is 100% absolutely amazingly helpful. I'm learning, they're helping me think about the design of the product, and it's so incredibly INFORMATIVE... Even in just watching Sara and Elliott work with the 'digital' paper prototype — I'd love to learn how to do more of that. That was very cool."
               </p>
               <p className={`${styles.p} reveal`}>
-                "Wow — super impressed with Elliott's findings. This is really powerful data to be getting. And just seeing the kid get bored was a powerful image."
+                "Wow — super impressed with Elliott's findings This is really powerful data to be getting. And just seeing the kid get bored was a powerful image."
               </p>
             </div>
           </div>

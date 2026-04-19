@@ -2,18 +2,10 @@ import { Helmet } from 'react-helmet-async'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import {
-  ArticleHeader,
   ArticleHero,
   ArticleImage,
   ArticleProjectMeta,
-  ArticleStatRow,
-  ArticleStat,
   ArticleSectionHeading,
-  ArticleCallout,
-  ArticleTimeline,
-  ArticleTimelineItem,
-  ArticleClosing,
-  ArticleCta,
   ArticleSources,
   articleStyles as styles,
 } from '../components/article'
@@ -79,13 +71,16 @@ export default function DesigningWonderIoPage() {
       <main className={styles.main}>
         <article className={styles.article}>
 
-          <ArticleHeader
+          <ArticleHero
+            img={heroImg}
+            imgAlt="Student wearing eye-tracking glasses at a laptop during a Wonder.io research session"
+            layout="below"
+            title="Five Years Building Wonder.io With the Kids Who Needed It Most"
+            subtitle="What 70 versions, eye tracking, and emotion sensors taught us about reluctant readers."
             type="Case Study"
             date="2021"
             author="Elliott Hedman"
             readTime="6 min read"
-            title="Five Years Building Wonder.io With the Kids Who Needed It Most"
-            subtitle="What 70 versions, eye tracking, and emotion sensors taught us about reluctant readers."
           />
 
           {/* ── Project metadata ── */}
@@ -96,114 +91,61 @@ export default function DesigningWonderIoPage() {
             { label: 'Outcome',  value: '3 grade-level reading improvement; international adoption' },
           ]} />
 
-          <ArticleHero img={heroImg} imgAlt="Student wearing eye-tracking glasses at a laptop during a Wonder.io research session" layout="below" />
-
-          {/* ── Intro ── */}
-          <div className={styles.container}>
-            <div className={styles.body}>
-              <p className={`${styles.lead} reveal`}>
-                For five years, I taught literacy at the Boys & Girls Club in Denver. Every week, I brought in a new version of something — a different book, a different app, a different approach — and watched what happened.
-              </p>
-              <p className={`${styles.p} reveal`}>
-                The kids I was working with were predominantly struggling readers from underrepresented backgrounds. Many had decided, somewhere along the way, that reading wasn't for them. My job wasn't just to teach reading. It was to figure out how to make them want to try again.
-              </p>
-              <p className={`${styles.p} reveal`}>
-                Over five years and more than 70 versions, Wonder.io was the answer we built together.
-              </p>
-            </div>
-          </div>
-
-          {/* ── Stats ── */}
-          <div className={styles.container}>
-            <ArticleStatRow>
-              <ArticleStat value="70+" label="versions built" note="each tested with real students" />
-              <ArticleStat value="5" label="years of research" note="weekly sessions at Boys & Girls Club" />
-              <ArticleStat value="3" label="grade levels" note="average reading improvement" />
-            </ArticleStatRow>
-          </div>
-
-          <div className={styles.container}>
-            <div className={`${styles.divider} reveal`}>✦</div>
-          </div>
-
-          {/* ── What the sensors showed ── */}
-          <ArticleSectionHeading>What Eye Tracking and Emotion Sensors Revealed</ArticleSectionHeading>
+          {/* ── Representation ── */}
+          <ArticleSectionHeading>Representation:</ArticleSectionHeading>
 
           <div className={styles.container}>
             <div className={styles.body}>
               <p className={`${styles.p} reveal`}>
-                Early in the research, we started using two measurement tools that changed how we understood what was happening.
-              </p>
-              <p className={`${styles.p} reveal`}>
-                Eye tracking showed us that struggling readers would skip large sections of text — but return to questions two or three times. Questions weren't interruptions to the reading. They were the reason to read.
-              </p>
-              <p className={`${styles.p} reveal`}>
-                Emotion sensors showed us when students were actually engaged versus just present. The data confirmed what the eye tracking suggested: answering questions correctly produced strong emotional spikes. The feedback loop mattered. Getting something right, in real time, was the experience students needed more of.
+                Over five years, we co-created Wonder.io with students at the Boys & Girls Club, who were mostly diverse, struggling readers. We asked, "How can we make reading something you identify with and want to engage with?" Dr. Hedman became a literacy teacher at the club, trying different books with the students and implementing their suggestions for improving the app each week. We then distributed Wonder.io in after-school clubs across Denver.
               </p>
             </div>
           </div>
 
-          <ArticleImage src={sensorChartImg} alt="Skin conductance chart showing engagement dropping during reading and spiking sharply at questions" caption="Emotion sensor data from a student session: engagement flatlined during reading, then spiked the moment questions appeared." />
-
-          {/* ── Design decisions ── */}
-          <ArticleSectionHeading>What Got Built Into Wonder.io</ArticleSectionHeading>
+          {/* ── Methodology ── */}
+          <ArticleSectionHeading>Methodology:</ArticleSectionHeading>
 
           <div className={styles.container}>
-            <ArticleTimeline>
-              <ArticleTimelineItem step="01" heading="Questions as the Core Structure">
-                <p className={styles.p}>Every story in Wonder.io is built around a central question. Students don't read and then answer — they read <em>in order to</em> answer. The inquiry drives the reading forward. This design came directly from watching eye tracking data: questions stopped skimmers cold.</p>
-              </ArticleTimelineItem>
-              <ArticleTimelineItem step="02" heading="Immediate, Honest Feedback">
-                <p className={styles.p}>Early versions of educational apps coddled wrong answers. We went the other direction. A wrong answer in Wonder.io sounds wrong — immediate, clear feedback. But instead of discouraging students, this made them lean in. After a wrong answer, kids wanted redemption. They re-read more carefully. Failure, handled right, is a hook.</p>
-              </ArticleTimelineItem>
-              <ArticleTimelineItem step="03" heading="Bite-Sized Reveals">
-                <p className={styles.p}>A full page of text caused early readers to shut down before starting. We shifted to revealing one or two sentences at a time. Students were routinely shocked to learn they'd just finished a 100-page book. Breaking something intimidating into small pieces makes it feel possible.</p>
-              </ArticleTimelineItem>
-              <ArticleTimelineItem step="04" heading="70+ Iterations Before Shipping Widely">
-                <p className={styles.p}>We didn't decide what the app should look like and then build it. We built something, watched kids use it, threw out what didn't work, and tried again the following week. This happened more than 70 times. The students who tested it weren't a focus group — they were co-designers. The app exists in its current form because of what they showed us.</p>
-              </ArticleTimelineItem>
-            </ArticleTimeline>
+            <div className={styles.body}>
+              <p className={`${styles.p} reveal`}>
+                Eye tracking showed how readers would skip over the text but then reread each question two to three times.
+              </p>
+              <p className={`${styles.p} reveal`}>
+                Our emotion sensor showed how important answering questions and receiving positive feedback was for students.
+              </p>
+            </div>
           </div>
 
-          <ArticleImage src={appUiImg} alt="Four Wonder.io app screens showing The Big Question, bite-sized text reveals, and a comprehension question" caption="The full reading arc in four screens: a question to drive intent, text revealed a sentence at a time, story in context, answer when ready." />
+          <ArticleImage src={sensorChartImg} alt="Skin conductance chart showing engagement dropping during reading and spiking sharply at questions" caption="Emotion sensor data from a student session." />
 
-          {/* ── Callout ── */}
+          {/* ── Iteration ── */}
+          <ArticleSectionHeading>Iteration:</ArticleSectionHeading>
+
           <div className={styles.container}>
-            <ArticleCallout label="Key Insight" variant="insight">
-              <p>Students weren't skipping text because they were lazy. They were skipping text because the text wasn't giving them a reason to read it. The moment we embedded a question they genuinely needed the text to answer, everything changed.</p>
-            </ArticleCallout>
+            <div className={styles.body}>
+              <p className={`${styles.p} reveal`}>
+                We have created over 70 different versions of Wonder.io (and are still making more). In our next version, we hope to better capitalize on students' desire for more images and comics and more humor.
+              </p>
+            </div>
           </div>
+
+          <ArticleImage src={appUiImg} alt="Four Wonder.io app screens showing The Big Question, bite-sized text reveals, and a comprehension question" caption="Wonder.io app screens." />
 
           {/* ── Outcome ── */}
+          <ArticleSectionHeading>Outcome:</ArticleSectionHeading>
+
           <div className={styles.container}>
             <div className={styles.body}>
               <p className={`${styles.p} reveal`}>
-                Students using Wonder.io showed an average three-grade-level reading improvement. The app is now used in classrooms internationally. Parents and teachers email regularly to describe how it's changed their students' relationship with reading.
-              </p>
-              <p className={`${styles.p} reveal`}>
-                None of that came from a hypothesis we had in year one. It came from five years of watching kids tell us, through their behavior, what they actually needed.
+                Students reading Wonder.io have increased their reading level by three grade levels. Wonder.io is read internationally and has come highly recommended by struggling readers. You can try Wonder.io free here. A write-up on why Wonder.io works can be read here:
               </p>
             </div>
           </div>
 
-          <ArticleClosing>
-            The kids weren't broken. The books were.
-          </ArticleClosing>
-
-          <ArticleCta
-            sharePrompt="If this landed, forward it to a teacher, parent, or literacy researcher you know."
-          />
-
-          <ArticleSources sources={[
-            {
-              label: 'Motivating Struggling Readers to Mentally Show Up with Wonder Stories (ELO Conference, 2021)',
-              href: 'https://www.buildempathy.com/s/HedmanELO2021.pdf',
-            },
-            {
-              label: 'Wonder.io — Free reading app for students',
-              href: 'https://wonder.io',
-            },
-          ]} />
+          <ArticleSources>
+            <li><a href="https://www.buildempathy.com/wonder-stories" target="_blank" rel="noopener noreferrer">Inquiry-Based Reading — Wonder Stories</a></li>
+            <li><a href="https://www.buildempathy.com/s/HedmanELO2021.pdf" target="_blank" rel="noopener noreferrer">Motivating Struggling Readers to Mentally Show Up with Wonder Stories, 2021</a></li>
+          </ArticleSources>
 
         </article>
       </main>

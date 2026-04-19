@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import {
-  ArticleHeader,
   ArticleHero,
   ArticleImage,
   ArticleImageGrid,
@@ -70,16 +69,17 @@ export default function AddingRewardsPage() {
       <main className={styles.main}>
         <article className={styles.article}>
 
-          <ArticleHeader
+          <ArticleHero
+            img={heroImg}
+            imgAlt="Boys & Girls Club digital lesson prototype with reward system"
+            layout="below"
+            title="Adding Rewards to Digital Lessons"
+            subtitle="The avatar system was perfectly designed. Students didn't care about it at all."
             type="Case Study"
             date="2020"
             author="Elliott Hedman"
             readTime="5 min read"
-            title="Adding Rewards to Digital Lessons"
-            subtitle="The avatar system was perfectly designed. Students didn't care about it at all."
           />
-
-          <ArticleHero img={heroImg} imgAlt="Boys & Girls Club digital lesson prototype with reward system" layout="below" />
 
           <ArticleProjectMeta items={[
             { label: 'Client',  value: 'Boys & Girls Club' },
@@ -92,10 +92,13 @@ export default function AddingRewardsPage() {
           <div className={styles.container}>
             <div className={styles.body}>
               <p className={`${styles.lead} reveal`}>
-                The client came in with a clear hypothesis: students needed better rewards to stay motivated. They wanted an avatar system — characters students could customize and level up as they completed lessons.
+                We worked at the Boys & Girls Club to look at how we could better motivate students during lessons. How might we add rewards and framing to add "weight" to questions and help students feel like they are achieving.
               </p>
               <p className={`${styles.p} reveal`}>
-                We tested it. Elementary students struggled to form goals around avatar collection. The cosmetic rewards felt disconnected from what they were actually doing in the lesson. When the avatar leveled up, it didn't feel earned — it felt arbitrary.
+                Like other educational software, our client wanted an avatar and collection system to motivate students. Our early research showed that students cared more about rewards more closely tied to their academic achievements, and these avatar rewards did not tie into their hard work.
+              </p>
+              <p className={`${styles.p} reveal`}>
+                While the client was originally planning on making a complex avatar system our research guided them to instead focus on local rewards immediately after questions and to implement try-it-again in their lessons so students can form and meet goals.
               </p>
               <p className={`${styles.p} reveal`}>
                 The problem wasn't a lack of rewards. It was that the rewards were pointing at the wrong thing.
@@ -122,13 +125,28 @@ export default function AddingRewardsPage() {
             <ArticleTimeline>
               <ArticleTimelineItem step="01" heading="Acknowledgment Over Prizes">
                 <p className={styles.p}>
-                  Students cared far more about rewards tied directly to their academic achievements than about cosmetic prizes. A simple checkbox or star representing "I got this right" was more motivating than a new avatar outfit. The reward had to mean something about the student's competency — not just their participation. Deci's model of intrinsic motivation explains why: rewards that support feelings of competence increase internal motivation. Rewards that feel like external payments undermine it.
+                  Students cared far more about rewards tied directly to their academic achievements than about cosmetic prizes. A simple checkbox or star representing "I got this right" was more motivating than a new avatar outfit. The reward had to mean something about the student's competency — not just their participation.
+                </p>
+                <p className={styles.p}>
+                  We found filling in stars or checkboxes after answering four questions right in a row was much more motivating and allowed students to form goals around the rewards. The checkboxes represented competency, something students cared deeply about.
+                </p>
+                <p className={styles.p}>
+                  Deci's model of intrinsic motivation explains why: rewards that support feelings of competence increase internal motivation. Rewards that feel like external payments undermine it.
                 </p>
                 <ArticleImage src={lesson1Img} alt="Early lesson prototype without effective reward structure" caption="Early prototype: lesson completion without meaningful acknowledgment left students disengaged." />
               </ArticleTimelineItem>
               <ArticleTimelineItem step="02" heading="Immediate Rewards, Not End-of-Lesson Prizes">
                 <p className={styles.p}>
-                  When rewards came at the end of the lesson, students didn't try harder to earn them. The gap between effort and reward was too large. Moving acknowledgment to immediately after each correct answer changed the dynamic completely. Every question became its own small loop: effort → correct answer → immediate recognition. Students who had been coasting started engaging. The feedback interval was the mechanism.
+                  Prizes and rewards were given at the end of the lesson. This was too far in advance for a student to set goals or recognize they are missing their goal. Consequentially, these end-of-lesson rewards did not improve effort or retention.
+                </p>
+                <p className={styles.p}>
+                  Since students didn't think in probability or the long term, we made rewards occur immediately after each question. These local rewards made answering the question much more important and failure clearer. These local rewards also gave students more reason to celebrate when answering a challenging problem.
+                </p>
+                <p className={styles.p}>
+                  Typical online lessons move on if a child gets a problem wrong. After moving on once or twice, students stopped paying attention and caring if they got a problem right. When we added "weight" to problems with strong rewards, children cared deeply about being able to show they got it right.
+                </p>
+                <p className={styles.p}>
+                  When rewards came at the end of the lesson, students didn't try harder to earn them. The gap between effort and reward was too large. Every question became its own small loop: effort → correct answer → immediate recognition. Students who had been coasting started engaging. The feedback interval was the mechanism.
                 </p>
                 <ArticleImageGrid columns={2}>
                   <ArticleImage src={coin1Img} alt="Coin reward UI showing immediate per-question acknowledgment" layout="grid" caption="Coin earned immediately after correct answer." />
@@ -137,7 +155,13 @@ export default function AddingRewardsPage() {
               </ArticleTimelineItem>
               <ArticleTimelineItem step="03" heading="Try-It-Again Is Non-Negotiable">
                 <p className={styles.p}>
-                  Standard lesson flows advance students regardless of whether they understood the content. Students who got something wrong felt stuck — not because they couldn't learn it, but because the system took the opportunity away. Adding unlimited retries let students pursue mastery instead of just completion. The prototype proved so engaging that students who finished the lesson asked to do the roman numerals extension — an entirely optional additional challenge. That's what motivated students look like.
+                  Children are now given as many tries as they needed to get an answer right. This allowed them to fill all the checkbox rewards and achieve their goals. I'd argue, not being able to try-again is the number one demotivator in most online learning content.
+                </p>
+                <p className={styles.p}>
+                  One child got a problem wrong and cleared the entire internet data cache rather than have to continue with an incorrect mark floating on his screen. Try-It-Again is so important.
+                </p>
+                <p className={styles.p}>
+                  By the time our prototype was finished, students were lining up and asking to play again our roman numeral lessons.
                 </p>
                 <ArticleImage src={image3Img} alt="Try-again feature prototype showing retry option after incorrect answers" caption="Unlimited retries: the option to demonstrate mastery rather than just move on." />
               </ArticleTimelineItem>

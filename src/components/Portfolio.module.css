@@ -51,8 +51,8 @@
    Section group labels
 ──────────────────────────────────────────── */
 .groupBlock {
-  max-width: 760px;
-  margin-bottom: 4px;
+  max-width: 900px;
+  margin-bottom: 16px;
   padding-bottom: 14px;
   border-bottom: 1px solid var(--border);
 }
@@ -74,45 +74,117 @@
    Archive list
 ──────────────────────────────────────────── */
 .archive {
-  max-width: 760px;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
+  gap: 6px;
 }
 
 .entry {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
   gap: 24px;
-  padding: 28px 0;
-  border-bottom: 1px solid var(--border-light);
+  padding: 20px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--bg) 60%, var(--border) 40%);
   text-decoration: none;
-  transition: background 0.2s ease;
+  box-shadow:
+    0 1px 2px hsl(42deg 20% 50% / 0.07),
+    0 2px 4px hsl(42deg 20% 50% / 0.05);
+  transition:
+    background  0.22s ease,
+    box-shadow  0.22s ease,
+    transform   0.22s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.archive .entry:first-child {
-  border-top: 1px solid var(--border-light);
+.entry:hover {
+  background: color-mix(in srgb, var(--bg) 30%, var(--border) 70%);
+  box-shadow:
+    0 2px 4px  hsl(42deg 20% 45% / 0.09),
+    0 4px 10px hsl(42deg 20% 45% / 0.07),
+    0 8px 20px hsl(42deg 20% 45% / 0.04);
+  transform: translateY(-1px);
 }
 
+/* ── Featured entry: stacked layout ── */
 .entryFeatured {
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  gap: 0;
+}
+
+.entryFeatured:hover {
+  transform: translateY(-2px);
+}
+
+.entryFeatured .entryThumb {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  border-radius: 0;
+}
+
+.entryFeatured .entryMain {
+  padding: 22px 24px 24px;
+}
+
+.entryFeatured .entryTitle {
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+}
+
+.entryFeatured .entryArrow {
+  display: none;
+}
+
+.entryEyebrow {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.75;
+  margin-bottom: 8px;
+}
+
+/* ── Thumbnail ── */
+.entryThumb {
+  flex-shrink: 0;
+  width: 220px;
+  aspect-ratio: 3 / 2;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--border);
   position: relative;
 }
 
-.entryFeatured::after {
-  content: 'Featured';
+.entryThumb::after {
+  content: '';
   position: absolute;
-  top: 28px;
-  right: 0;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-  border: 1px solid var(--border);
-  padding: 2px 8px;
-  border-radius: 100px;
+  inset: 0;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px hsl(42deg 15% 40% / 0.15);
+  pointer-events: none;
+  z-index: 1;
 }
 
+.entryThumbImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.92) brightness(0.98);
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    filter    0.3s ease;
+}
+
+.entry:hover .entryThumbImg {
+  transform: scale(1.035);
+  filter: saturate(1) brightness(1);
+}
+
+/* ── Card copy ── */
 .entryMain {
   flex: 1;
   min-width: 0;
@@ -139,20 +211,21 @@
 }
 
 .entrySector {
-  font-size: 0.72rem;
+  font-size: 0.67rem;
   color: var(--text-faint);
+  opacity: 0.7;
   letter-spacing: 0.02em;
 }
 
 .entryTitle {
   font-family: var(--font-display);
-  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
   font-weight: 500;
   letter-spacing: -0.015em;
   line-height: 1.25;
   color: var(--text);
   margin-bottom: 8px;
-  transition: color 0.2s ease;
+  transition: color 0.18s ease;
 }
 
 .entry:hover .entryTitle {
@@ -160,19 +233,26 @@
 }
 
 .entryDesc {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
-  line-height: 1.65;
-  margin-bottom: 10px;
+  line-height: 1.7;
+  margin-bottom: 12px;
 }
 
 .entryOutcome {
-  display: block;
-  font-size: 0.72rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-faint);
+  letter-spacing: 0.01em;
+  color: var(--accent-dark);
+}
+
+.entryOutcome::before {
+  content: '↗';
+  font-size: 0.65rem;
+  opacity: 0.6;
 }
 
 .entryArrow {
@@ -180,7 +260,7 @@
   color: var(--text-faint);
   flex-shrink: 0;
   margin-top: 4px;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: color 0.18s ease, transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .entry:hover .entryArrow {
@@ -205,6 +285,27 @@
 /* ────────────────────────────────────────────
    Mobile
 ──────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .entry {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .entryThumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+  }
+
+  .entryThumb::after {
+    border-radius: 6px;
+  }
+
+  .entryArrow {
+    display: none;
+  }
+}
+
 @media (max-width: 480px) {
   .section {
     padding-top: 72px;
@@ -216,15 +317,14 @@
   }
 
   .entry {
-    padding: 22px 0;
-    gap: 16px;
+    padding: 16px;
   }
 
-  .entryArrow {
-    display: none;
+  .entryFeatured {
+    padding: 0;
   }
 
-  .entryFeatured::after {
-    display: none;
+  .entryFeatured .entryMain {
+    padding: 16px 18px 18px;
   }
 }

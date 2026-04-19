@@ -3,7 +3,9 @@
     "allow": [
       "WebFetch(domain:www.buildempathy.com)",
       "Bash(python3 -c ' *)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(cp \"/Users/mathandlove/.claude/projects/-Users-mathandlove-Documents-Projects-good-vibes-garage/03320bc8-5a8b-41ca-a6a7-be8cd2a52007/tool-results/webfetch-1776565901112-167yj7.png\" \"/Users/mathandlove/Documents/Projects/good-vibes-garage/src/assets/Images/empowering-parents/pilotweek.png\")",
+      "Bash(cwebp -q 80 \"/Users/mathandlove/Documents/Projects/good-vibes-garage/src/assets/Images/empowering-parents/pilotweek.png\" -o \"/Users/mathandlove/Documents/Projects/good-vibes-garage/src/assets/Images/empowering-parents/pilotweek.webp\")"
     ],
     "additionalDirectories": [
       "/Users/mathandlove/.claude"

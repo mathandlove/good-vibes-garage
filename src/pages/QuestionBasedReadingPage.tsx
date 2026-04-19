@@ -2,10 +2,8 @@ import { Helmet } from 'react-helmet-async'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import {
-  ArticleHeader,
   ArticleHero,
   ArticleCard,
-  ArticleImage,
   ArticleSectionHeading,
   ArticlePullQuote,
   ArticleStatRow,
@@ -16,7 +14,6 @@ import {
   ArticleProjectMeta,
   ArticleClosing,
   ArticleCta,
-  ArticleSources,
   articleStyles as styles,
 } from '../components/article'
 import { useScrollReveal, useHeroEntrance } from '../hooks/useScrollReveal'
@@ -85,20 +82,17 @@ export default function QuestionBasedReadingPage() {
       <main className={styles.main}>
         <article className={styles.article}>
 
-          <ArticleHeader
-            type="Research"
-            date="2020"
-            author="Elliott Hedman"
-            readTime="5 min read"
-            title="Question Based Reading"
-            subtitle="What does it take to make a struggling reader lean in?"
-          />
-
           {/* ── Hero image ── */}
           <ArticleHero
             img={hero}
             imgAlt="Research overview slide showing the question-based reading design framework"
             layout="below"
+            title="Question Based Reading"
+            subtitle="What does it take to make a struggling reader lean in?"
+            type="Research"
+            date="2020"
+            author="Elliott Hedman"
+            readTime="5 min read"
           />
 
           {/* ── Project metadata ── */}
