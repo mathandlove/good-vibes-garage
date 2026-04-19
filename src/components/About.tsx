@@ -39,7 +39,7 @@ export default function About() {
               technical problem. I think it is a mindset problem.
             </p>
             <p className={`${styles.bio} reveal reveal-delay-5`}>
-              Looking to work together? <Link to="/portfolio">Here's my portfolio →</Link>
+              Looking to work together? <Link to="/portfolio" className={styles.link}>Here's my portfolio →</Link>
             </p>
           </div>
         </div>

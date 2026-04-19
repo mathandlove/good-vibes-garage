@@ -272,6 +272,27 @@
   color: var(--text-muted);
   line-height: 1.7;
   margin-bottom: 12px;
+  white-space: pre-line;
+}
+
+.entryNoLink {
+  cursor: default;
+}
+
+.entryNoLink:hover {
+  background: color-mix(in srgb, var(--bg) 60%, var(--border) 40%);
+  box-shadow:
+    0 1px 2px hsl(42deg 20% 50% / 0.07),
+    0 2px 4px hsl(42deg 20% 50% / 0.05);
+  transform: none;
+}
+
+.entryNoLink .entryArrow {
+  display: none;
+}
+
+.entryNoLink .entryTitle {
+  color: var(--text);
 }
 
 .entryOutcome {

@@ -7,7 +7,7 @@ type PortfolioItem = {
   client: string
   sector: string
   outcome: string
-  href: string
+  href?: string
   internal?: boolean
   featured?: boolean
   ogImage?: string
@@ -17,7 +17,7 @@ const allExamples: PortfolioItem[] = [
   {
     title: 'Scaffolding Storytelling with the LEGO Group',
     description:
-      'A year of design research with struggling readers in Denver Public Schools. 11+ prototype cycles. The key pivot: children don\'t want books to help them build — they want help with storytelling.',
+      'Started from weak research suggesting kids wanted to read while building.\nPrototypes kept failing.\nAfter ~40 book experiments, it became clear they didn\'t want help during — they wanted help storytelling after.',
     client: 'The LEGO Group',
     sector: 'Toys, Play, Education, Publishing',
     outcome: 'Launched LEGO Play Stories — a new product line built on what we found',
@@ -27,9 +27,9 @@ const allExamples: PortfolioItem[] = [
     ogImage: '/og-lego-reading.jpg',
   },
   {
-    title: 'Building a Multi-Agent AI Tutor',
+    title: 'Level Up',
     description:
-      'We set out to stop students from using AI to write their essays. Then we tested the prototype and found out that wasn\'t the problem at all. Built a multi-agent AI tutor that intervenes at the thinking layer, not the output layer — and coded it ourselves.',
+      'Tried to build an AI tool that helped students think critically while writing.\nRan into a wall: the motivation to think hard had to come from teachers, not the AI.',
     client: 'mPath',
     sector: 'Education, AI, Writing',
     outcome: 'Standing-room-only SXSWEDU talk; second iteration in testing',
@@ -40,7 +40,7 @@ const allExamples: PortfolioItem[] = [
   {
     title: 'Onboarding Teacher Experience with Classcraft',
     description:
-      'Classcraft had teachers signing up and never logging in. We kept prototyping new onboarding flows until we realized we were solving the wrong problem. It wasn\'t a feature problem. It was a Thursday afternoon problem.',
+      'Classcraft believed student privacy concerns were blocking teacher adoption.\nPrototyping showed the real issue was simplicity — teachers needed confidence, not more controls.\nThat insight became a playbook now used across HMH.',
     client: 'Classcraft',
     sector: 'Edtech, Teacher Onboarding',
     outcome: 'Launched redesigned onboarding at Classcraft.com',
@@ -51,7 +51,7 @@ const allExamples: PortfolioItem[] = [
   {
     title: 'Empowering Parents as Teachers',
     description:
-      'Spencer had a great video library for teaching toddlers to read — and parents who opened it once and disappeared. Built and shipped a prototype in a single day. What we found in the homes changed the whole product direction.',
+      'Worked with Spencer Russell to understand what was preventing parents from teaching their kids to read.\nPrototypes pointed to a gap: parents didn\'t need more information, they needed the right 5-minute intervention at their fingertips.',
     client: 'Toddlers Can Read',
     sector: 'App Design, Education, Parents',
     outcome: 'Ready-to-ship prototype; identified Dreamers vs. Planners framework',
@@ -147,8 +147,16 @@ export default function Portfolio() {
             const className = [
               styles.entry,
               item.featured ? styles.entryFeatured : '',
+              !item.href ? styles.entryNoLink : '',
               `reveal reveal-delay-${Math.min(i + 1, 5)}`,
             ].filter(Boolean).join(' ')
+            if (!item.href) {
+              return (
+                <div key={item.title} className={className}>
+                  <EntryInner item={item} />
+                </div>
+              )
+            }
             return item.internal ? (
               <Link key={item.title} to={item.href} className={className}>
                 <EntryInner item={item} />
