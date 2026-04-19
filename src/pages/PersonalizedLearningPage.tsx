@@ -30,13 +30,13 @@ export default function PersonalizedLearningPage() {
   return (
     <>
       <Helmet>
-        <title>Why personalized learning keeps failing | Elliott Hedman</title>
+        <title>Why Personalized Learning Keeps Failing | Elliott Hedman</title>
         <meta name="description" content="After hundreds of hours watching kids fail at educational software, the problem isn't the technology — it's that we keep designing learning as if it's supposed to be a solo activity." />
         <link rel="canonical" href={CANONICAL_URL} />
 
         {/* Open Graph */}
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="Why personalized learning keeps failing" />
+        <meta property="og:title" content="Why Personalized Learning Keeps Failing" />
         <meta property="og:description" content="After hundreds of hours watching kids fail at educational software, the problem isn't the technology — it's that we keep designing learning as if it's supposed to be a solo activity." />
         <meta property="og:url" content={CANONICAL_URL} />
         <meta property="og:image" content={OG_IMAGE} />
@@ -45,7 +45,7 @@ export default function PersonalizedLearningPage() {
 
         {/* Twitter / X */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Why personalized learning keeps failing" />
+        <meta name="twitter:title" content="Why Personalized Learning Keeps Failing" />
         <meta name="twitter:description" content="After hundreds of hours watching kids fail at educational software, the problem isn't the technology — it's that we keep designing learning as if it's a solo activity." />
         <meta name="twitter:image" content={OG_IMAGE} />
 
@@ -53,7 +53,7 @@ export default function PersonalizedLearningPage() {
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Article",
-          "headline": "Why personalized learning keeps failing",
+          "headline": "Why Personalized Learning Keeps Failing",
           "description": "After hundreds of hours watching kids fail at educational software, the problem isn't the technology — it's that we keep designing learning as if it's supposed to be a solo activity.",
           "author": {
             "@type": "Person",
@@ -81,7 +81,7 @@ export default function PersonalizedLearningPage() {
             date="2019"
             author="Elliott Hedman"
             readTime="9 min read"
-            title="Why personalized learning keeps failing"
+            title="Why Personalized Learning Keeps Failing"
             subtitle="After hundreds of hours in the digital classroom, the problem isn't the technology."
             img="/og-personalized-learning.jpg"
             imgAlt="Student working alone on a digital learning tool"

@@ -6,6 +6,8 @@ import {
   ArticleCard,
   ArticleProjectMeta,
   ArticleSectionHeading,
+  ArticleClosing,
+  ArticleCta,
   ArticleSources,
   articleStyles as styles,
 } from '../components/article'
@@ -76,7 +78,7 @@ export default function DesigningWonderIoPage() {
             img={heroImg}
             imgAlt="Student wearing eye-tracking glasses at a laptop during a Wonder.io research session"
             layout="below"
-            title="Building Wonder.io at the Boys & Girls Club"
+            title="Five Years Building Wonder.io With the Kids Who Needed It Most"
             subtitle="What 70 versions, eye tracking, and emotion sensors taught us about reluctant readers."
             type="Case Study"
             date="2021"
@@ -140,6 +142,14 @@ export default function DesigningWonderIoPage() {
               </p>
             </div>
           </div>
+
+          <ArticleClosing>
+            Five years. 70 versions. The same kids, week after week. That's what it takes to build something that works.
+          </ArticleClosing>
+
+          <ArticleCta
+            sharePrompt="If this landed, forward it to a teacher, designer, or literacy researcher you know."
+          />
 
           <ArticleSources>
             <li><a href="/writing/question-based-reading">Question-Based Reading — Wonder Stories</a></li>

@@ -3,9 +3,20 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 
+declare global {
+  interface Window {
+    gtag: (...args: unknown[]) => void
+  }
+}
+
 function ScrollToTop() {
   const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'page_view', { page_path: pathname })
+    }
+  }, [pathname])
   return null
 }
 import './index.css'
