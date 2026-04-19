@@ -1,0 +1,85 @@
+Creating a Great LEGO Building Experience — mPath
+
+0
+
+Skip to Content
+
+Education
+
+Research & Media
+
+About Us
+
+Free Consultation
+
+Open Menu
+Close Menu
+
+Education
+
+Research & Media
+
+About Us
+
+Free Consultation
+
+Open Menu
+Close Menu
+
+Education
+
+Research & Media
+
+About Us
+
+Free Consultation
+
+Creating a Great LEGO-Building Experience
+The LEGO Group hired mPath to help design the digital experience of LEGO Technic instructions. We observed 10 boys follow the digital instructions and build as they wore MOXO Sensors.
+Outcome: We helped the LEGO team recognize that the “building experience” was broader than just comprehending instructions. It also involves helping children reflect, regulate, and feel a sense of achievement. Now, these objectives are all possible through digital instructions.
+Our Team:
+Alyssa Reese, Tina Sorensen, Bo Stjerne Thomsen, Marianne Thanning, Elliott Hedman
+
+Digital “Eye Candy” Causes Stress
+Before mPath:  3D Rotation is Key Value Add
+The original app allowed children to rotate the model around in 3D space. Each step was accompanied by an animation of the pieces flying into place on the model. When children were confused, they would rotate the model into an arbitrary angle, which made building even harder.
+After mPath:  Remove 3D Views and Animations
+The animations in the beginning created a large amount of stress. Rather than go at their own pace, children had to note where all the pieces were moving in a few seconds.
+
+Assume Mistakes Will Occur
+Before mPath:  Make Instructions Flawless
+Instruction designers spend a considerable amount of time designing each page of instructions so that children would not make mistakes. But no matter how flawless the instructions were, children would inevitably make mistakes.
+After mPath:  Create Moments of Reflection
+Children felt lost and defeated when they discovered a mistake. We inserted pages that asked children to look at their model and confirm gears worked correctly so they could catch errors early. Children reported that this feature was highly valuable.
+
+Parents as Key Emotion Regulators
+Before mPath:  Parent-Independent
+LEGO designers had a policy to not assume parents would be part of the building process, in part because parents were not always available.
+After mPath:  Invite Parents In
+Children are less stressed and more capable of taking on harder challenges when parents help. We suggested that future LEGO instructions find ways to invite parents in and make it easier to build together.
+
+While the "digital" version of instructions felt technologically impressive, it often failed at creating a better building experience.
+
+After sneaking off to his mom and asking if he could quit, Matthew told us that this LEGO Technic set was his favorite one. Often, children pride themselves in being up for the challenge.
+
+We sat in another room while Eric built his LEGO set, watching on video camera. Because Eric didn't feel judged or observed, he asked his father if he could quit halfway through--helping us see where building goes wrong.
+
+We worked with researchers, designers, and engineers of the LEGO instruction team daily. We found the design insights together, making adoption much easier.
+
+This was the first project where I noticed that there was very little celebration for achieving something hard in LEGO Technic. In my later Learning Software work, kids not seeing their successes became even more pronounced.
+
+Originally, we were going to exclude parents from the study. One parent insisted on joining in and showed us how important a mother is in helping her child pursue more difficult challenges.
+
+We found a major pain point in building LEGO sets: What do I do when I make a mistake? Having to take things apart requires extensive planning that caused substantial stress. Our proposed solution was to help children reflect on their models more as they build.
+
+Previous
+
+Previous
+
+Building an Engaging Reading App
+
+Next
+
+Next
+
+Teaching the Concept of Addition Digitally

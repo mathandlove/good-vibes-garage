@@ -1,0 +1,27 @@
+[
+  {
+    "url": "https://images.squarespace-cdn.com/content/v1/5ed569db8782fe132fa19658/1591044613273-HAPB82LV1TO9S2MNYPTR/logo.png?format=1500w",
+    "alt": "mPath",
+    "local": "casestudies/cancerdetection/images/content_v1_5ed569db8782fe132fa19658_1591044613273-HAPB82LV1TO9S2MNYPTR_logo.png__format_1500w.png"
+  },
+  {
+    "url": "https://images.squarespace-cdn.com/content/v1/5ed569db8782fe132fa19658/1591044613273-HAPB82LV1TO9S2MNYPTR/logo.png?format=1500w",
+    "alt": "mPath",
+    "local": "casestudies/cancerdetection/images/content_v1_5ed569db8782fe132fa19658_1591044613273-HAPB82LV1TO9S2MNYPTR_logo.png__format_1500w.png"
+  },
+  {
+    "url": "https://images.squarespace-cdn.com/content/v1/5ed569db8782fe132fa19658/1591212891692-040EOFQEKZWGXE99DP75/diagnostics4all1.png",
+    "alt": "The diagnostic guide emphasized numbers, which confused the participants. Colors were small and surrounded by a large amount of gray, which understated their importance. The instructions were separate from the diagnostic tool, and the participants c…",
+    "local": "casestudies/cancerdetection/images/content_v1_5ed569db8782fe132fa19658_1591212891692-040EOFQEKZWGXE99DP75_diagnostics4all1.png"
+  },
+  {
+    "url": "https://images.squarespace-cdn.com/content/v1/5ed569db8782fe132fa19658/1591212948472-LNU9P5ICAFX8RH6LF1KZ/image-asset.png",
+    "alt": "We added more colors, removed the numbers, and included the instructions on the tool. People became more confused by the gradient, as they were not sure which of the many options their color fell into when there was not an exact match. Because the c…",
+    "local": "casestudies/cancerdetection/images/content_v1_5ed569db8782fe132fa19658_1591212948472-LNU9P5ICAFX8RH6LF1KZ_image-asset.png"
+  },
+  {
+    "url": "https://images.squarespace-cdn.com/content/v1/5ed569db8782fe132fa19658/1591213032176-2VL4RICSZDDDGBRCIBWM/image-asset.png",
+    "alt": "We fully implemented and embedded instructions into the diagnostic tool, starting with Step 1 at the top. Smiley faces were used to indicate positive and negative, as they were internationally understood and did not drown users in medical jargon. We…",
+    "local": "casestudies/cancerdetection/images/content_v1_5ed569db8782fe132fa19658_1591213032176-2VL4RICSZDDDGBRCIBWM_image-asset.png"
+  }
+]

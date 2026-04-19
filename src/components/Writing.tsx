@@ -12,14 +12,6 @@ const featured = {
 
 const selected: WritingItem[] = [
   {
-    title: 'Why Kids Work Hard at Fortnite, Not Frog and Toad',
-    description:
-      'Game mechanics motivate children in ways traditional reading never could. What that gap reveals about how we design learning experiences.',
-    type: 'Article',
-    date: '2023',
-    href: 'https://medium.com/inspired-ideas-prek-12/why-kids-work-hard-at-fortnite-not-frog-and-toad-af070ce242f7',
-  },
-  {
     title: '5 Ways Books Can Empower Play — LEGO Case Study',
     description:
       'A year of design research with struggling readers in Denver Public Schools. The key finding: books only matter to kids when reading is essential to the play itself.',
@@ -27,6 +19,16 @@ const selected: WritingItem[] = [
     date: '2023',
     href: '/writing/lego-reading',
     internal: true,
+    ogImage: '/og-lego-reading.jpg',
+  },
+  {
+    title: 'Why Kids Work Hard at Fortnite, Not Frog and Toad',
+    description:
+      'Game mechanics motivate children in ways traditional reading never could. What that gap reveals about how we design learning experiences.',
+    type: 'Article',
+    date: '2023',
+    href: 'https://medium.com/inspired-ideas-prek-12/why-kids-work-hard-at-fortnite-not-frog-and-toad-af070ce242f7',
+    ogImage: '/src/assets/Images/frogandtoad/1_affjXwpemKc2Ti9AbXRf6g.webp',
   },
   {
     title: 'The Death of Curiosity',
@@ -36,6 +38,7 @@ const selected: WritingItem[] = [
     date: '2019',
     href: '/writing/death-of-curiosity',
     internal: true,
+    ogImage: '/og-death-of-curiosity.jpg',
   },
   {
     title: 'Why Personalized Learning Keeps Failing',
@@ -45,6 +48,7 @@ const selected: WritingItem[] = [
     date: '2019',
     href: '/writing/personalized-learning',
     internal: true,
+    ogImage: '/og-personalized-learning.jpg',
   },
   {
     title: 'The 5 Reasons Remote Classrooms Fail',
@@ -54,6 +58,7 @@ const selected: WritingItem[] = [
     date: '2020',
     href: '/writing/remote-classrooms',
     internal: true,
+    ogImage: '/og-remote-classrooms.jpg',
   },
   {
     title: 'Question Based Reading',
@@ -63,6 +68,7 @@ const selected: WritingItem[] = [
     date: '2020',
     href: '/writing/question-based-reading',
     internal: true,
+    ogImage: '/og-question-based-reading.jpg',
   },
   {
     title: 'Like the Help Button, Khanmigo Will Fail to Help My Underrepresented Students',
@@ -72,6 +78,7 @@ const selected: WritingItem[] = [
     date: '2023',
     href: '/writing/khanmigo',
     internal: true,
+    ogImage: '/og-khanmigo.jpg',
   },
   {
     title: '3 Pillars of Teacher Adoption for Edtech',
@@ -81,15 +88,7 @@ const selected: WritingItem[] = [
     date: '2023',
     href: '/writing/teacher-adoption',
     internal: true,
-  },
-  {
-    title: 'LEGO Technic: When Better Instructions Made Everything Worse',
-    description:
-      'Cleaner animations, more polished steps — and kids were more stressed than ever. What stress sensors revealed about how children actually experience building instructions.',
-    type: 'Case Study',
-    date: '2022',
-    href: '/writing/lego-technic',
-    internal: true,
+    ogImage: '/og-teacher-adoption.jpg',
   },
   {
     title: 'Five Years Building Wonder.io With the Kids Who Needed It Most',
@@ -99,6 +98,7 @@ const selected: WritingItem[] = [
     date: '2021',
     href: '/writing/designing-wonder-io',
     internal: true,
+    ogImage: '/og-designing-wonder-io.jpg',
   },
   {
     title: 'How a Tennis Ball Increased Lowe\'s Vacuum Sales by 9%',
@@ -108,6 +108,7 @@ const selected: WritingItem[] = [
     date: '2020',
     href: '/writing/lowes-vacuum',
     internal: true,
+    ogImage: '/og-lowes-vacuum.jpg',
   },
   {
     title: 'Level Up: Building an AI Writing Coach That Doesn\'t Do the Writing',
@@ -117,6 +118,7 @@ const selected: WritingItem[] = [
     date: '2023',
     href: '/writing/level-up',
     internal: true,
+    ogImage: '/og-level-up.jpg',
   },
   {
     title: 'These Kids Aren\'t Lazy. They\'re Anxious.',
@@ -126,15 +128,7 @@ const selected: WritingItem[] = [
     date: '2021',
     href: '/writing/middle-school-tests',
     internal: true,
-  },
-  {
-    title: 'From "I Won\'t Read a Paragraph" to "Can We Play Again?"',
-    description:
-      'Boys & Girls Club students refused to finish a single paragraph. After iterating on coin systems, bite-sized reveals, and Wonder Questions, they were asking to go again.',
-    type: 'Case Study',
-    date: '2021',
-    href: '/writing/boys-girls-club-reading',
-    internal: true,
+    ogImage: '/og-middle-school-tests.jpg',
   },
   {
     title: 'The Neuroscience of Struggling Readers',
@@ -143,6 +137,7 @@ const selected: WritingItem[] = [
     type: 'Essay',
     date: '2018',
     href: 'https://medium.com/@elliotthedman/the-neuroscience-of-struggling-readers-why-children-need-harder-books-2dc0a1e3ef2b',
+    ogImage: '/src/assets/Images/neuroscieenceofstrugglingreaders/1_sm2IeoZJkG0X-u4HygTxhw.webp',
   },
 ]
 
@@ -233,7 +228,7 @@ const press = [
   },
 ]
 
-type WritingItem = { title: string; description: string; type: string; date: string; href: string; internal?: boolean }
+type WritingItem = { title: string; description: string; type: string; date: string; href: string; internal?: boolean; ogImage?: string }
 type AcademicItem = WritingItem
 
 const academic: AcademicItem[] = [
@@ -249,14 +244,14 @@ const academic: AcademicItem[] = [
     description: 'ELO Conference. Why some children disengage from reading — and what design can do about it.',
     type: 'Conference Paper',
     date: '2021',
-    href: 'https://www.buildempathy.com/s/HedmanELO2021.pdf',
+    href: '/HedmanELO2021.pdf',
   },
   {
     title: 'Effective Feedback Depends on Emotional Weight',
     description: 'AERA 2018. The emotional context around feedback determines whether students use it or ignore it.',
     type: 'Conference Paper',
     date: '2018',
-    href: 'https://www.buildempathy.com/s/AERA2018_student_feedback_symposium.pdf',
+    href: '/AERA2018_student_feedback_symposium.pdf',
   },
   {
     title: 'Beyond Consent: 6 Ways of Bringing Equity into Neuroscience',
@@ -270,7 +265,7 @@ const academic: AcademicItem[] = [
     description: 'Doctoral dissertation. Using physiological measurement as a tool for building genuine empathy in the design process.',
     type: 'Dissertation',
     date: '2014',
-    href: 'https://www.buildempathy.com/s/hedmanDissertation.pdf',
+    href: '/hedmanDissertation.pdf',
   },
   {
     title: 'Digital Math Has a Guessing Crisis',
@@ -321,15 +316,20 @@ export default function Writing() {
           to={featured.href}
           className={`${styles.featured} reveal reveal-delay-1`}
         >
-          <div className={styles.featuredMeta}>
-            <span className={styles.typeTag}>{featured.type}</span>
-            <span className={styles.dot}>·</span>
-            <span className={styles.date}>{featured.date}</span>
-            <span className={styles.featuredBadge}>Featured</span>
+          <div className={styles.featuredThumb}>
+            <img src="/og-ai-abstinence.jpg" alt="" aria-hidden="true" className={styles.featuredThumbImg} />
           </div>
-          <h3 className={styles.featuredTitle}>{featured.title}</h3>
-          <p className={styles.featuredDesc}>{featured.description}</p>
-          <span className={styles.cta}>Read article <span className={styles.arrow}>→</span></span>
+          <div className={styles.featuredBody}>
+            <div className={styles.featuredMeta}>
+              <span className={styles.typeTag}>{featured.type}</span>
+              <span className={styles.dot}>·</span>
+              <span className={styles.date}>{featured.date}</span>
+              <span className={styles.featuredBadge}>Featured</span>
+            </div>
+            <h3 className={styles.featuredTitle}>{featured.title}</h3>
+            <p className={styles.featuredDesc}>{featured.description}</p>
+            <span className={styles.cta}>Read article <span className={styles.arrow}>→</span></span>
+          </div>
         </Link>
 
         {/* Selected Writing */}
@@ -341,6 +341,11 @@ export default function Writing() {
             const className = `${styles.entry} reveal reveal-delay-${Math.min(i + 1, 5)}`
             const inner = (
               <>
+                {item.ogImage && (
+                  <div className={styles.entryThumb}>
+                    <img src={item.ogImage} alt="" aria-hidden="true" className={styles.entryThumbImg} />
+                  </div>
+                )}
                 <div className={styles.entryMain}>
                   <h4 className={styles.entryTitle}>{item.title}</h4>
                   <p className={styles.entryDesc}>{item.description}</p>

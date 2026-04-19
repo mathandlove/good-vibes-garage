@@ -82,9 +82,9 @@
 
 .entry {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 24px;
-  padding: 20px;
+  padding: 20px 125px;
   border-radius: 10px;
   background: color-mix(in srgb, var(--bg) 60%, var(--border) 40%);
   text-decoration: none;
@@ -259,13 +259,29 @@
   font-size: 1rem;
   color: var(--text-faint);
   flex-shrink: 0;
-  margin-top: 4px;
   transition: color 0.18s ease, transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .entry:hover .entryArrow {
   color: var(--accent);
   transform: translateX(3px);
+}
+
+/* ────────────────────────────────────────────
+   Closing / connective tissue
+──────────────────────────────────────────── */
+.closing {
+  max-width: 680px;
+  margin-top: 72px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+}
+
+.closingText {
+  font-size: 1.0625rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 /* ────────────────────────────────────────────

@@ -7,6 +7,7 @@ const projects = [
     tag: 'Product',
     href: 'https://www.wonderstories.app',
     featured: true,
+    external: true,
   },
   {
     name: 'Robodexo',
@@ -14,20 +15,23 @@ const projects = [
     tag: 'Experiment',
     href: 'https://www.robodexo.com',
     featured: false,
+    external: true,
   },
   {
     name: 'Level UP',
     description: 'An app that helps kids reflect on their writing — built before Claude Code existed. Took me 3 months. I could build it in 3 days now.',
     tag: 'Teaching',
-    href: 'https://www.buildempathy.com/levelup',
+    href: '/writing/level-up',
     featured: false,
+    external: false,
   },
   {
     name: 'Toddlers Can Read',
     description: 'First time I built a testable prototype for a client in a single day. We shipped it to parents to find out what they actually wanted when it comes to teaching reading.',
     tag: 'Prototype',
-    href: 'https://www.buildempathy.com/empoweringparents',
+    href: '/writing/empowering-parents',
     featured: false,
+    external: false,
   },
   {
     name: 'Play Extremes',
@@ -35,6 +39,7 @@ const projects = [
     tag: 'Game',
     href: 'https://www.playextremes.com',
     featured: false,
+    external: true,
   },
 ]
 
@@ -54,8 +59,7 @@ export default function Work() {
             <a
               key={p.name}
               href={p.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...(p.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               className={[
                 styles.card,
                 p.featured ? styles.cardFeatured : '',

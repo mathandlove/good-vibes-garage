@@ -1,7 +1,6 @@
 const OG_IMAGES = [
   { slug: 'adding-rewards', label: 'Adding Rewards' },
   { slug: 'ai-abstinence', label: 'AI Abstinence' },
-  { slug: 'boys-girls-club-reading', label: 'Boys & Girls Club Reading' },
   { slug: 'death-of-curiosity', label: 'Death of Curiosity' },
   { slug: 'designing-wonder-io', label: 'Designing Wonder.io' },
   { slug: 'digital-math', label: 'Digital Math' },

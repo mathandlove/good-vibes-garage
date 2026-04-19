@@ -1,0 +1,107 @@
+Adding Rewards to Digital Lessons — mPath
+
+0
+
+Skip to Content
+
+Education
+
+Research & Media
+
+About Us
+
+Free Consultation
+
+Open Menu
+Close Menu
+
+Education
+
+Research & Media
+
+About Us
+
+Free Consultation
+
+Open Menu
+Close Menu
+
+Education
+
+Research & Media
+
+About Us
+
+Free Consultation
+
+Adding Rewards to Digital Lessons
+We worked at the Boys & Girls Club to look at how we could better motivate students during lessons. How might we add rewards and framing to add “weight” to questions and help students feel like they are achieving.
+Outcome:
+While the client was originally planning on making a complex avatar system our research guided them to instead focus on local rewards immediately after questions and to implement try-it-again in their lessons so students can form and meet goals. By the time our prototype was finished, students were lining up and asking to play again our roman numeral lessons.
+Our Team:
+Garrett Hedman, Meredith Wilson, Christine Zanchi,  Elysa Greenberger, Elliott Hedman
+
+Acknowledgement is more important than prizes
+Before: Avatars and Game Time as Key Motivators
+Like other educational software, our client wanted an avatar and collection system to motivate students. Our early research showed that students cared more about rewards more closely tied to their academic achievements, and these avatar rewards did not tie into their hard work.
+After: Localized Checkboxes as Rewards
+We found filling in stars or checkboxes after answering four questions right in a row was much more motivating and allowed students to form goals around the rewards. The checkboxes represented competency, something students cared deeply about.
+
+Tie Rewards Directly to Questions
+Before: Give a reward after passing the lesson
+Prizes and rewards were given at the end of the lesson. This was too far in advance for a student to set goals or recognize they are missing their goal. Consequentially, these end-of-lesson rewards did not improve effort or retention.
+After:  Rewards  given after every question
+Since students didn’t think in probability or the long term, we made rewards occur immediately after each question. These local rewards made answering the question much more important and failure clearer. These local rewards also gave students more reason to celebrate when answering a challenging problem
+
+Try-It-Again is Essential
+Before: Keep the Lesson Moving On, Do not Repeat Content
+Typical online lessons move on if a child gets a problem wrong. After moving on once or twice, students stopped paying attention and caring if they got a problem right. When we added “weight” to problems with strong rewards, children cared deeply about being able to show they got it right.
+After: Try-It-Again is foundational for setting goals
+Children are now given as many tries as they needed to get an answer right. This allowed them to fill all the checkbox rewards and achieve their goals. I’d argue, not being able to try-again is the number one demotivator in most online learning content.
+
+This is what motivated students look like.
+Most digital learning software fails to engage and motivate students. When we got the reward framework correct, below is what happens. We encourage all learning software to engage at this level.
+
+</iframe>">
+
+Children told us the stars were more important than the treasure as the stars were directly related to answering a question right.
+
+Elementary students were not that interested in "collecting them all" and struggled to form goals around drawing an avatar.
+
+We started with pictures of a brain growing, but children did not find collecting brains interesting at all.
+
+We tried to create a social motivator, by putting children's avatar on a physical wall. Children did not form goals around getting further or getting a better avatar.
+
+Our prototype interface. We put the stars and rewards front and center for why a child was learning content.
+
+These simple green markers were all that were needed to motivate children, much more than the avatar in the corner.
+
+We called out in clear language that a child failed to earn a reward. Children always pushed retry when presented with this situation.
+
+With strong reward frameworks, children became much more excited getting problems right.
+
+The reality is that most children are not proud of completing digital learning material.
+
+Our prototype solutions reflected closely from Deci's framework for intrinsic motivation.
+
+Children reengage when they choose to retry.
+
+While getting new challenges and answering correctly motivate, getting prizes and collecting did not engage.
+
+Many adults want to build more resilience in children, but we found that children just needed more chances to try again and prove themselves.
+
+One child got a problem wrong and cleared the entire internet data cache rather than have to continue with an incorrect mark floating on his screen. Try-It-Again is so important.
+
+If rewards work, then children should be more excited when they answer a problem wrong. When this child finally gets the star, it doesn't mean anything to him - it was answering correctly that was important.
+
+Previous
+
+Previous
+
+Creating an Engaging Reading Experience
+
+Next
+
+Next
+
+Motivating Middle School Students to Take Tests

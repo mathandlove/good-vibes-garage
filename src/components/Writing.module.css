@@ -36,14 +36,16 @@
    Featured card
 ──────────────────────────────────────────── */
 .featured {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
   text-decoration: none;
-  padding: 40px 44px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
   margin-bottom: 56px;
-  max-width: 760px;
+  max-width: 900px;
+  overflow: hidden;
   position: relative;
   transition:
     border-color 0.25s ease,
@@ -51,17 +53,36 @@
     background 0.25s ease;
 }
 
-.featured::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  border-radius: 12px 12px 0 0;
-  background: var(--accent);
-  opacity: 0.7;
+.featuredThumb {
+  flex-shrink: 0;
+  width: 260px;
+  position: relative;
+  overflow: hidden;
 }
+
+.featuredThumbImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  filter: saturate(0.92) brightness(0.98);
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    filter    0.3s ease;
+}
+
+.featured:hover .featuredThumbImg {
+  transform: scale(1.035);
+  filter: saturate(1) brightness(1);
+}
+
+.featuredBody {
+  flex: 1;
+  padding: 36px 40px;
+  min-width: 0;
+}
+
 
 .featured:hover {
   border-color: var(--accent);
@@ -151,7 +172,7 @@
    Section group labels
 ──────────────────────────────────────────── */
 .groupBlock {
-  max-width: 760px;
+  max-width: 900px;
   margin-bottom: 4px;
   padding-bottom: 14px;
   border-bottom: 1px solid var(--border);
@@ -181,24 +202,74 @@
    Archive list
 ──────────────────────────────────────────── */
 .archive {
-  max-width: 760px;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
+  gap: 6px;
 }
 
 .entry {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 28px 0;
-  border-bottom: 1px solid var(--border-light);
+  padding: 20px 24px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--bg) 60%, var(--border) 40%);
   text-decoration: none;
-  transition: background 0.2s ease;
+  box-shadow:
+    0 1px 2px hsl(42deg 20% 50% / 0.07),
+    0 2px 4px hsl(42deg 20% 50% / 0.05);
+  transition:
+    background  0.22s ease,
+    box-shadow  0.22s ease,
+    transform   0.22s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.archive .entry:first-child {
-  border-top: 1px solid var(--border-light);
+.entry:hover {
+  background: color-mix(in srgb, var(--bg) 30%, var(--border) 70%);
+  box-shadow:
+    0 2px 4px  hsl(42deg 20% 45% / 0.09),
+    0 4px 10px hsl(42deg 20% 45% / 0.07),
+    0 8px 20px hsl(42deg 20% 45% / 0.04);
+  transform: translateY(-1px);
+}
+
+/* ── Thumbnail ── */
+.entryThumb {
+  flex-shrink: 0;
+  width: 180px;
+  aspect-ratio: 3 / 2;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--border);
+  position: relative;
+}
+
+.entryThumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px hsl(42deg 15% 40% / 0.15);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.entryThumbImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.92) brightness(0.98);
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    filter    0.3s ease;
+}
+
+.entry:hover .entryThumbImg {
+  transform: scale(1.035);
+  filter: saturate(1) brightness(1);
 }
 
 .entryMain {
@@ -269,7 +340,7 @@
    Press grid
 ──────────────────────────────────────────── */
 .pressGrid {
-  max-width: 760px;
+  max-width: 900px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
@@ -331,8 +402,15 @@
   }
 
   .featured {
-    padding: 32px 28px;
     margin-bottom: 44px;
+  }
+
+  .featuredThumb {
+    width: 200px;
+  }
+
+  .featuredBody {
+    padding: 28px 28px;
   }
 }
 
@@ -350,12 +428,32 @@
   }
 
   .featured {
-    padding: 26px 22px;
+    flex-direction: column;
+  }
+
+  .featuredThumb {
+    width: 100%;
+    height: 200px;
+  }
+
+  .featuredBody {
+    padding: 24px 22px;
   }
 
   .entry {
-    padding: 22px 0;
-    gap: 16px;
+    flex-direction: column;
+    padding: 16px 18px;
+    gap: 14px;
+  }
+
+  .entryThumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+  }
+
+  .entryThumb::after {
+    border-radius: 6px;
   }
 
   .entryArrow {

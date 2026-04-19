@@ -28,7 +28,7 @@ export default function Nav() {
           </li>
           <li>
             <a
-              href="mailto:elliott@goodvibesgarage.ai"
+              href="mailto:hedman@buildempathy.com"
               className={styles.ctaLink}
               onClick={() => setMenuOpen(false)}
             >

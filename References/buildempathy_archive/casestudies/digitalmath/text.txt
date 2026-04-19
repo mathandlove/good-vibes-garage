@@ -1,0 +1,89 @@
+Understanding the Digital Math Experience — mPath
+
+0
+
+Skip to Content
+
+Education
+
+Research & Media
+
+About Us
+
+Free Consultation
+
+Open Menu
+Close Menu
+
+Education
+
+Research & Media
+
+About Us
+
+Free Consultation
+
+Open Menu
+Close Menu
+
+Education
+
+Research & Media
+
+About Us
+
+Free Consultation
+
+Understanding the Emotional Experience of Digital Math Lessons
+The math team built out a working prototype of an example math lesson. mPath evaluated the emotional experiences of 19 children learning how to add double and single digits.
+Outcome: Our results helped the team understand how classroom pedagogy does not work when children are learning by themselves digitally.
+
+Animations
+Before:  Animations as Key Engagers and Teachers
+Long clips of animation with movement, jokes, and instruction were used. Animations were to teach like teachers.
+After: Only Use Animations as Short, Sticky Intros
+mPath found after about five seconds, animations quickly disengaged children, making them miss key instructions.
+
+Feedback
+Before:  Minimal Feedback
+When a child incorrectly answered a question, they were told “That’s not right; try again!” After three attempts, they were directly given the answer.
+After:  Feedback as Primary Teaching Method
+With dynamic feedback, children learned from their mistakes (highly effective) and  were much less likely to feel helpless, which leads to “click-to-continue” behavior.
+
+Teaching Interfaces
+Before:  Nonintuitive Interfaces
+Interfaces were never directly taught. Children had to learn on their own, which was a struggle most of the time. Children interpreted this struggle with the interfaces as not being good at math.
+After:  Teaching Interfaces Is Teaching Math
+The lesson modeled behavior with every new button. Children learned the math skill as they learned the buttons. For example, they learned the +10 button adds an entire 10 bracket through a character hitting the button and saying, “Your turn! Can you add 10 apples?”
+
+Our Client’s Response
+
+“I can’t believe that he could identify problems and come up with some solutions on the spot without having to bring it back to an editor. I love that he created his own prototype. I consider him a real asset to our team, and I wish I could articulate better how much I enjoyed working with him.”
+
+“This is 100% absolutely amazingly helpful. I’m learning, they’re helping me think about the design of the product, and it’s so incredibly INFORMATIVE... Even in just watching Sara and Elliott work with the ‘digital’ paper prototype–I’d love to learn how to do more of that. That was very cool.”
+
+“Wow–super impressed with Elliott’s findings This is really powerful data to be getting. And just seeing the kid get bored was a powerful image.”
+
+At the end, we built prototypes to showcase alternative ways to teach addition by "teaching interfaces."
+
+This was the first time we saw that answering questions was highly engaging, which would eventually lead to our framework of "The Feeling of Learning" as the backbone of engagement.
+
+Educators typically blame content being too easy or too hard for why it doesn't work. We challenged them to think about adding scaffolding and support when things get tough.
+
+Children wore eye tracking glasses and MOXO Sensors as they tried to learn the concept of addition.
+
+By the time we had improved the UX and taught the child how to use the tool, they had also learned the math concept.
+
+A major finding was that animations talking to students about educational concepts was highly ineffective; children often stopped watching altogether. The "talk at" method of teaching didn't work in the digital space.
+
+Previous
+
+Previous
+
+Teaching Phonemic Awareness Digitally
+
+Next
+
+Next
+
+Improving Cancer Detection

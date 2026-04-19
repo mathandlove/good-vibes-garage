@@ -10,6 +10,7 @@ interface ArticleCardProps {
   reverse?: boolean     // image on right, text on left (only applies when img is present)
   number?: string       // e.g. "01" — shows ghost number behind heading
   quote?: string        // optional inline pull quote shown below card text
+  fullBleedImg?: boolean // image spans full width above text
 }
 
 export default function ArticleCard({
@@ -21,19 +22,25 @@ export default function ArticleCard({
   reverse = false,
   number,
   quote,
+  fullBleedImg = false,
 }: ArticleCardProps) {
   const hasImage = Boolean(img)
 
-  const cardClass = hasImage
-    ? reverse
-      ? `${styles.card} ${styles.cardReverse} reveal`
-      : `${styles.card} reveal`
-    : `${styles.cardTextOnly} reveal`
+  let cardClass: string
+  if (!hasImage) {
+    cardClass = `${styles.cardTextOnly} reveal`
+  } else if (fullBleedImg) {
+    cardClass = `${styles.cardStacked} reveal`
+  } else if (reverse) {
+    cardClass = `${styles.card} ${styles.cardReverse} reveal`
+  } else {
+    cardClass = `${styles.card} reveal`
+  }
 
   return (
     <div className={cardClass}>
       {hasImage && (
-        <div className={styles.cardImage}>
+        <div className={fullBleedImg ? styles.cardImageFull : styles.cardImage}>
           <img src={img} alt={imgAlt} className={styles.img} />
           {caption && <div className={styles.cardCaption}>{caption}</div>}
         </div>

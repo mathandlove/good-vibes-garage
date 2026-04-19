@@ -17,7 +17,7 @@ export default function Series() {
           <p className={styles.body}>
             With your permission, the session becomes part of an upcoming series.
           </p>
-          <a href="mailto:elliott@goodvibesgarage.ai?subject=I have an idea" className={styles.guestLink}>
+          <a href="mailto:hedman@buildempathy.com?subject=I have an idea" className={styles.guestLink}>
             Tell me about your idea &rarr;
           </a>
         </div>

@@ -3,7 +3,6 @@ import Nav from './components/Nav'
 import Hero from './components/Hero'
 import SXSW from './components/SXSW'
 import Series from './components/Series'
-import Testimonial from './components/Testimonial'
 import Work from './components/Work'
 import About from './components/About'
 import Footer from './components/Footer'
@@ -33,7 +32,6 @@ export default function App() {
 
         <SXSW />
         <About />
-        <Testimonial />
         <Work />
         <Series />
 

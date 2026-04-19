@@ -27,7 +27,6 @@ import LowesPage from './pages/LowesPage.tsx'
 import LevelUpPage from './pages/LevelUpPage.tsx'
 import LevelUpProductPage from './pages/LevelUpProductPage.tsx'
 import MiddleSchoolTestsPage from './pages/MiddleSchoolTestsPage.tsx'
-import BoysGirlsClubReadingPage from './pages/BoysGirlsClubReadingPage.tsx'
 import RemoteClassroomsPage from './pages/RemoteClassroomsPage.tsx'
 import PortfolioPage from './pages/PortfolioPage.tsx'
 import EmpoweringParentsPage from './pages/EmpoweringParentsPage.tsx'
@@ -60,7 +59,6 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/writing/level-up" element={<LevelUpPage />} />
         <Route path="/level-up" element={<LevelUpProductPage />} />
         <Route path="/writing/middle-school-tests" element={<MiddleSchoolTestsPage />} />
-        <Route path="/writing/boys-girls-club-reading" element={<BoysGirlsClubReadingPage />} />
         <Route path="/writing/remote-classrooms" element={<RemoteClassroomsPage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/writing/empowering-parents" element={<EmpoweringParentsPage />} />

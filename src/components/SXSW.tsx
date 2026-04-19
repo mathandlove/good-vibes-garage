@@ -23,7 +23,7 @@ export default function SXSW() {
             </p>
 
             <div className={`${styles.ctaWrap} reveal reveal-delay-3`}>
-              <a href="#" className={styles.ctaLink}>
+              <a href="/writing/ai-abstinence" className={styles.ctaLink}>
                 Read the article &rarr;
               </a>
             </div>

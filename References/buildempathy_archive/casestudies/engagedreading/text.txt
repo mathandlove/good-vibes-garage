@@ -1,0 +1,84 @@
+Creating an Engaging Reading Experience — mPath
+
+0
+
+Skip to Content
+
+Education
+
+Research & Media
+
+About Us
+
+Free Consultation
+
+Open Menu
+Close Menu
+
+Education
+
+Research & Media
+
+About Us
+
+Free Consultation
+
+Open Menu
+Close Menu
+
+Education
+
+Research & Media
+
+About Us
+
+Free Consultation
+
+Mapping the Emotional Experience of Digital Education (Middle School)
+We worked at the Boys & Girls Club to provide reading lessons for 3rd and 4th graders that reluctant readers would engage with, care about, and actively ask to do.
+Outcome:
+Through a series of prototypes, we designed reading lessons where students would actively read each line, pay attention to feedback, and ask to do it again. Many of these students would not even read one paragraph from our initial prototype.
+Our Team:
+Garrett Hedman, Meredith Wilson, Christine Zanchi,  Elysa Greenberger, Sara Stump
+
+Add “weight” to questions
+Before: Grades as motivator
+In our initial reading tests, students seldom cared if they answered a reading question wrong. Consequentially, they did not read the text nor spend much time on the question. Most of the students skipped their grade at the end.
+After: Clear, Constant Reward Framework
+Students were offered a coin for every problem they got right within 2 guesses. Students would re-read sections and think carefully, knowing this coin was on the line. Later research showed that this coin was a strong indicator of achievement and added weight to problems.
+
+Remove visual clutter
+Before: Images and Questions make texts more exciting
+Through eye tracking, we saw children would often skip over the text and focus on questions which were more engaging. Vibrant images also pulled children’s attention away.
+After:  Make texts simple and distraction free
+Inspired by the app Hooked - we removed all visual distractions - there were only one to two sentences visible at a time. Questions and images only appeared once children finished reading texts. This simplification helped children ease into reading and stay focused.
+
+Bring in Big Questions
+Before: Children read because it is fun.
+Children seldom had a reason to read a text other than to finish as fast as possible. Questions were present just to “prove that they read it.” While adult readers often read for enjoyment, struggling readers did not enjoy reading the preselected texts given to them.
+After: Children read to answer big questions.
+We added a key Wonder Question at the beginning of every text. For example, “Why do vultures dead animals?” We then had readers ask a neighbor the same question. This instilled in readers a sense of purpose and curiosity as they read the scientific text. At the end they were able to show they were able to answer the challenging question.
+
+We found children were more engaged and answered faster when talking with each other rather than typing.
+
+We alerted kids when they were skipping past the reading. Rather than be annoyed, children said reported that they really appreciated knowing they weren't reading as they were unaware themselves.
+
+We added simple cartoons like "Diary of a Wimpy Kid" as it helped kids reflect on what they read and not feel overwhelmed.
+
+With all the right motivators and rewards in place, children started asking us for help answering questions, which was our ultimate goal. In this prototype, we added the "Break it Down" button.
+
+When providing Wonder Questions, we quickly found out that some questions were more fun and interesting than others. A rule of thumb - if you, an adult, already know the answer, it's probably not that fun.
+
+Games are usually added as a reward. We found games were more effective if children could play one before they started reading. This helped them warm up their mind and get engaged with the material.
+
+Previous
+
+Previous
+
+Mapping the Emotional Experience of Digital Education (Middle School)
+
+Next
+
+Next
+
+Adding Rewards to Digital Lessons

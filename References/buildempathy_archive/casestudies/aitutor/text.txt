@@ -1,0 +1,70 @@
+Building a Multi Agent AI Tutor — mPath
+
+0
+
+Skip to Content
+
+Education
+
+Research & Media
+
+About Us
+
+Free Consultation
+
+Open Menu
+Close Menu
+
+Education
+
+Research & Media
+
+About Us
+
+Free Consultation
+
+Open Menu
+Close Menu
+
+Education
+
+Research & Media
+
+About Us
+
+Free Consultation
+
+How Do Students Really Want to Use AI?
+We partnered with Ditch That Textbook to create a custom AI tool for schools, designed to address students' prolific use of AI for homework. Our starting idea was simple: a "Grammarly that doesn’t just give you the answer, but helps you learn."
+I created a walkthrough of all the AI + UX design decisions I made for Level Up here.
+After interviewing teachers, we built a multi-agent prototype called Level Up and tested it with students. The research was eye-opening. Traditional plagiarism detectors like TurnItIn weren’t working—students were paraphrasing entire papers to avoid detection. While students enjoyed the gamified editing experience, they were still editing essays they hadn’t written themselves. We realized the real opportunity was in helping students think critically and find their own voice.
+Our second iteration takes a new approach: using AI to support student thinking through the Socratic Method. Early prototype testing shows that students are not only thinking more deeply, but also enjoying the writing process more than with typical assignments.
+Read more about all of our insights in our blog article: Why AI Abstinence Policies Are Backfiring
+Or watch our SXSWEDU talk that was the most popular single speaker session - standing room only!
+
+Critical Thinking Feedback
+Before mPath:  Guardrails to Prevent Plagiarism
+Level Up began as a  plagiarism detection tool. But we quickly uncovered a deeper issue: students were using AI to paraphrase, which bypassed detection, while missing key learning moments.
+After mPath:  Encouraging Critical Thinking
+We reframed writing as a way to cultivate critical thinking. Using a prototype Socratic Method app, we introduced AI-driven questions that pushed students to think more deeply, reflect, and defend their ideas. The focus shifted from generating answers to engaging with ideas.
+
+Student Led
+
+Before mPath: AI for Teacher Efficiency
+Most AI tools today focus on making grading more efficient. But in reality, teachers are efficiently grading work that students didn’t actually write.
+
+After mPath:  Student-Focused AI Tutors
+Students engage more deeply when they receive feedback in the moment, directly tied to the task at hand. Live AI tutors support real-time learning and help students understand that effort and reflection are part of the process.
+
+Emojis are Your Friend
+Before mPath:  That Sounds Like a Tutor
+Our initial agents were designed to mimic professional tutors. The result? Polite but bland feedback that students barely read, let alone responded to.
+
+After mPath:  Emojify the Feedback
+Through multiple prototypes, we discovered a surprising truth—asking the AI to add “a ton of emojis” made feedback more engaging and easier to understand. Suddenly, students were reading it. AI didn’t need to sound like a tutor. It needed to sound like something entirely new.
+
+Next
+
+Next
+
+Improving the Vacuum-Buying Experience
