@@ -4,11 +4,33 @@ import styles from './Footer.module.css'
 export default function Footer() {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    // TODO: wire up mailing list platform
-    setSubmitted(true)
+    setError('')
+    setLoading(true)
+
+    try {
+      const response = await fetch('/api/email/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setSubmitted(true)
+      } else {
+        setError(data.error || 'Something went wrong. Try again.')
+      }
+    } catch {
+      setError('Something went wrong. Try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -37,10 +59,12 @@ export default function Footer() {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     className={styles.signupInput}
+                    disabled={loading}
                   />
-                  <button type="submit" className={styles.signupButton}>
-                    Sign up
+                  <button type="submit" className={styles.signupButton} disabled={loading}>
+                    {loading ? '...' : 'Sign up'}
                   </button>
+                  {error && <p className={styles.signupError}>{error}</p>}
                 </form>
               )}
             </div>

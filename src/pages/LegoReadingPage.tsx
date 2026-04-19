@@ -19,7 +19,6 @@ import {
 } from '../components/article'
 import { useScrollReveal, useHeroEntrance } from '../hooks/useScrollReveal'
 
-import legoBooks from '../assets/Images/lego-reading/LEGOBooks.webp'
 import legograph from '../assets/Images/lego-reading/legograph.webp'
 import prototypes from '../assets/Images/lego-reading/figure4.webp'
 import book2 from '../assets/Images/lego-reading/sadgirl.webp'

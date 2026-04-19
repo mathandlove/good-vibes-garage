@@ -14,10 +14,6 @@ export default function ArticleInlineCta({
   note,
   external = false,
 }: ArticleInlineCtaProps) {
-  const linkProps = external
-    ? { target: '_blank', rel: 'noopener noreferrer' }
-    : {}
-
   return (
     <div className={`${styles.inlineCta} reveal`}>
       {note && <span className={styles.inlineCtaNote}>{note} </span>}

@@ -34,7 +34,6 @@ import Footer from '../components/Footer'
 import {
   ArticleHeader,
   ArticleCard,
-  ArticleImage,
   ArticleSectionHeading,
   ArticleClosing,
   ArticleCta,

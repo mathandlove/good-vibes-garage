@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { type ReactNode } from 'react'
 import styles from './Article.module.css'
 
 type CalloutVariant = 'default' | 'insight' | 'warning' | 'result' | 'testimonial'

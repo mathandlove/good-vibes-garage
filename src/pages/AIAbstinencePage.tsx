@@ -299,7 +299,7 @@ export default function AIAbstinencePage() {
               <ul className={`${styles.list} reveal`}>
                 <li>A final paper that's a documented conversation with Socrates himself.</li>
                 <li>An AI-led podcast where students must <em>own</em> their voice.</li>
-                <li><strong>Level Up</strong>, a free tool that acts like Grammarly but helps students self-reflect instead of giving answers.</li>
+                <li><a href="/writing/level-up"><strong>Level Up</strong></a>, a free tool that acts like Grammarly but helps students self-reflect instead of giving answers.</li>
               </ul>
 
               <p className={`${styles.p} reveal`}>
