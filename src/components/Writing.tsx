@@ -28,7 +28,7 @@ const selected: WritingItem[] = [
     type: 'Article',
     date: '2023',
     href: 'https://medium.com/inspired-ideas-prek-12/why-kids-work-hard-at-fortnite-not-frog-and-toad-af070ce242f7',
-    ogImage: '/src/assets/Images/frogandtoad/1_affjXwpemKc2Ti9AbXRf6g.webp',
+    ogImage: '/og-frog-and-toad.jpg',
   },
   {
     title: 'The Death of Curiosity',
@@ -137,7 +137,7 @@ const selected: WritingItem[] = [
     type: 'Essay',
     date: '2018',
     href: 'https://medium.com/@elliotthedman/the-neuroscience-of-struggling-readers-why-children-need-harder-books-2dc0a1e3ef2b',
-    ogImage: '/src/assets/Images/neuroscieenceofstrugglingreaders/1_sm2IeoZJkG0X-u4HygTxhw.webp',
+    ogImage: '/og-neuroscience-struggling-readers.jpg',
   },
 ]
 

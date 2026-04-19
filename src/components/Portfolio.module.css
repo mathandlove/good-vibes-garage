@@ -12,7 +12,7 @@
 ──────────────────────────────────────────── */
 .hero {
   max-width: 680px;
-  margin-bottom: 72px;
+  margin-bottom: 32px;
 }
 
 .title {
@@ -33,6 +33,17 @@
   margin-bottom: 20px;
 }
 
+.heroTag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.75;
+  margin-bottom: 14px;
+}
+
 .cvLink {
   display: inline-block;
   font-size: 0.825rem;
@@ -45,6 +56,30 @@
 
 .cvLink:hover {
   color: var(--accent-dark);
+}
+
+/* ── How I work block ── */
+.howIWork {
+  max-width: 580px;
+  margin-bottom: 72px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.howIWorkLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 10px;
+}
+
+.howIWorkText {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 20px;
 }
 
 /* ────────────────────────────────────────────

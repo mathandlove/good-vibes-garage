@@ -57,7 +57,7 @@ const allExamples: PortfolioItem[] = [
     outcome: 'Ready-to-ship prototype; identified Dreamers vs. Planners framework',
     href: '/writing/empowering-parents',
     internal: true,
-    ogImage: '/src/assets/Images/empowering-parents/header.webp',
+    ogImage: '/og-empowering-parents.jpg',
   },
   {
     title: 'How a Tennis Ball Increased Lowe\'s Vacuum Sales by 9%',
@@ -116,11 +116,21 @@ export default function Portfolio() {
 
         {/* Hero */}
         <div className={`${styles.hero} reveal`}>
-          <h2 className={styles.title}>Portfolio</h2>
+          <span className={styles.heroTag}>Ongoing work</span>
+          <h2 className={styles.title}>I spend a lot of time building things with AI.</h2>
           <p className={styles.intro}>
-            I've spent 15 years building learning products with organizations like The LEGO Group, Classcraft,
-            and i‑Ready. I prototype, test with real people, and follow the evidence. The goal is always
-            the same: how can I bring out people's love for learning.
+            This is a selection of projects where something actually got made.
+            A lot of these started from ideas that weren't very clear at the beginning.
+          </p>
+        </div>
+
+        {/* How I work */}
+        <div className={`${styles.howIWork} reveal`}>
+          <p className={styles.howIWorkLabel}>How I work</p>
+          <p className={styles.howIWorkText}>
+            Most of the time, things start pretty vague.
+            I try to build something quickly so there's something concrete to react to.
+            Then it's about figuring out what actually holds up.
           </p>
           <a
             href="/Portfolio - Design Lead.pdf"
